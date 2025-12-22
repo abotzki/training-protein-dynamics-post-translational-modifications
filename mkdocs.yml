@@ -1,9 +1,13 @@
 site_name: ELIXIR Training Lesson
 nav:
     - About: index.md
+    - "Course schedule": course_schedule.md
     - Course Content:
-      - "1. title of first chapter": chapters/chapter_01.md
-      - "2. title of second chapter": chapters/chapter_02.md
+      - "1. Introducing the biological context": chapters/chapter_01.md
+      - "2. Building biological profiles": chapters/chapter_02.md
+      - "3. Introducing Scop3P": chapters/chapter_03.md
+      - "4. Combining PTM annotations to biophysical properties": chapters/chapter_04.md
+      - "5. Closing": chapters/chapter_05.md
       - "References": chapters/references.md
     - "Follow up training": follow_up_training.md
 
@@ -20,8 +24,8 @@ theme:
     text: Lato
 
 # Repository
-repo_name: elixir-europe-training/ELIXIR-TrP-LessonTemplate-MkDocs
-repo_url: https://github.com/elixir-europe-training/ELIXIR-TrP-LessonTemplate-MkDocs
+repo_name: Bio2Byte/training-protein-dynamics-post-translational-modifications
+repo_url: https://github.com/Bio2Byte/training-protein-dynamics-post-translational-modifications
 edit_uri: edit/main/docs/
 
 plugins:
@@ -34,7 +38,7 @@ plugins:
 
   
 # Footer
-copyright: By the ELIXIR Training Platform
+copyright: Template made by the ELIXIR Training Platform. Training content written by Pathmanaban Ramasamy and Adrián Díaz
 
 markdown_extensions:
   - abbr

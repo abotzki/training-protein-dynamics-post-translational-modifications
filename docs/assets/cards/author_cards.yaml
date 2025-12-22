@@ -1,17 +1,14 @@
-- title: Zeus
+- title: Pathmanaban Ramasamy
   content: |
-    [:custom-orcid:](https://orcid.org/) [:simple-github:](https://github.com/) [:simple-linkedin:](https://linkedin.com/)<br>
-    Lorem ipsum dolor sit amet.
-  image: ./assets/images/cards/001-zeus.png
+    [:custom-orcid:](https://orcid.org/0000-0003-4039-5230) [:simple-github:](https://github.com/Pathmanaban) [:simple-linkedin:](https://www.linkedin.com/in/pathmanaban-ramasamy/)<br>
+    **Postdoctoral Researcher, Ghent University, BE** <br><br>
+    He completed his master's degree in Bioinformatics at Saarland University, Germany, where he worked on detecting protein similarity in fast-evolving viral proteins using graph mining approaches. In 2016, he joined the CompOmics group and IB2 as a joint PhD student under the supervision of Prof. Lennart Martens (Ghent University) and Prof. Wim Vranken (Vrije Universiteit Brussel). His doctoral research focused on the FoldMod project, which aims to understand the role of local amino acid interactions in protein folding, fold stability, and the localization of post-translational modifications. He applies expertise in structural bioinformatics and proteomics informatics to study protein phosphorylation.
+  image: ./assets/images/cards/001-pathmanaban-ramasamy.jpg
 
-- title: Athena
+- title: Adrián Díaz
   content: |
-    [:custom-orcid:](https://orcid.org/) [:simple-github:](https://github.com/) [:simple-linkedin:](https://linkedin.com/)<br>
-    Lorem ipsum dolor sit amet.
-  image: ./assets/images/cards/003-athena.png
-
-- title: Poseidon
-  content: |
-    [:custom-orcid:](https://orcid.org/) [:simple-github:](https://github.com/) [:simple-linkedin:](https://linkedin.com/)<br>
-    Lorem ipsum dolor sit amet.
-  image: ./assets/images/cards/007-poseidon.png
+    [:custom-orcid:](https://orcid.org/0000-0003-0165-1318) [:simple-github:](https://github.com/agdiaz) [:simple-linkedin:](https://www.linkedin.com/in/adriangustavodiaz/)<br>
+    **Scientific collaborator/RSE at Bio2Byte, VUB, BE** <br><br>
+    He is a Scientific Collaborator at the Bio2Byte lab, led by Prof. Dr. Wim Vranken, where he works on software development and deployment, contributing to the development and maintenance of the lab's ELIXIR Belgium node services (B2BTools, Biophysical Proteome Atlas).
+    He holds an Engineering degree in Systems Engineering (FRBA-UTN, Argentina) and an MSc in Bioinformatics (UNQ, Argentina). Before joining the Bio2Byte lab in 2021, he gained over ten years of experience in software engineering in Argentina.
+  image: ./assets/images/cards/002-adrian-diaz.jpg
