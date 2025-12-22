@@ -1,4 +1,4 @@
-## 5.1 First subtopic
+## 5.1 Wrapping up
 Here you can enter text and if you need to cite[@creative_commons_2022]
 
 !!! example "Challenge 1"
@@ -10,6 +10,12 @@ Here you can enter text and if you need to cite[@creative_commons_2022]
         This is an example solution for Challenge 1.
 
 
-## 5.2 Second subtopic
+## 5.2 Lessons learnt
 
-## 5.3 Third subtopic
+TBC
+
+## 5.3 Take-home messages
+
+TBC
+
+## 5.4 Discussion and open questions

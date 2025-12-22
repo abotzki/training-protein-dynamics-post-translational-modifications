@@ -1,4 +1,4 @@
-site_name: ELIXIR Training Lesson
+site_name: Assess protein dynamics & post-translational modifications
 nav:
     - About: index.md
     - "Course schedule": course_schedule.md
@@ -38,7 +38,7 @@ plugins:
 
   
 # Footer
-copyright: Template made by the ELIXIR Training Platform. Training content written by Pathmanaban Ramasamy and Adrián Díaz
+copyright: Template made by the ELIXIR Training Platform. Training content written by Pathmanaban Ramasamy and Adrián Díaz. This is a VIB Training. ELIXIR Belgium is a partner of this course.
 
 markdown_extensions:
   - abbr

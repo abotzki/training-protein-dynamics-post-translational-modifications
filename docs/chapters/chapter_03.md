@@ -1,4 +1,4 @@
-## 3.1 First subtopic
+## 3.1 Exploring experimentally supported PTMs
 Here you can enter text and if you need to cite[@creative_commons_2022]
 
 !!! example "Challenge 1"
@@ -10,6 +10,4 @@ Here you can enter text and if you need to cite[@creative_commons_2022]
         This is an example solution for Challenge 1.
 
 
-## 3.2 Second subtopic
-
-## 3.3 Third subtopic
+## 3.2 Mapping PTMs onto predicted structures
