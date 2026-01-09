@@ -1,0 +1,57 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <template id="sibSwissBioPicsStyle">
+        <style>
+            ul > li > a {
+                font-style:oblique;
+            }
+            ul.notpresent li > .subcell_description {
+                display:none;
+            }
+            svg #SL0039 *:not(text) {fill:orange}
+            svg #SL0039 *:not(path, .coloured) {opacity:0.8}
+            svg #SL0039 .coloured {stroke:black}
+            svg .mp_SL0039 *:not(text) {fill:orange}
+            svg .mp_SL0039 *:not(path, .coloured) {opacity:0.8}
+            svg .mp_SL0039 .coloured {stroke:black}
+            svg .part_SL0039 *:not(text) {fill:orange}
+            svg .part_SL0039 *:not(path, .coloured) {opacity:0.8}
+            svg .part_SL0039 .coloured {stroke:black}
+            
+            svg #SL0100 *:not(text) {fill:red}
+            svg #SL0100 *:not(path, .coloured) {opacity:0.8}
+            svg #SL0100 .coloured {stroke:black}
+            svg .mp_SL0100 *:not(text) {fill:red}
+            svg .mp_SL0100 *:not(path, .coloured) {opacity:0.8}
+            svg .mp_SL0100 .coloured {stroke:black}
+            svg .part_SL0100 *:not(text) {fill:red}
+            svg .part_SL0100 *:not(path, .coloured) {opacity:0.8}
+            svg .part_SL0100 .coloured {stroke:black}
+            
+            svg #SL0101 *:not(text) {fill:darkred}
+            svg #SL0101 *:not(path, .coloured) {opacity:0.8}
+            svg #SL0101 .coloured {stroke:black}
+            svg .mp_SL0101 *:not(text) {fill:darkred}
+            svg .mp_SL0101 *:not(path, .coloured) {opacity:0.8}
+            svg .mp_SL0101 .coloured {stroke:black}
+            svg .part_SL0101 *:not(text) {fill:darkred}
+            svg .part_SL0101 *:not(path, .coloured) {opacity:0.8}
+            svg .part_SL0101 .coloured {stroke:black}
+        </style>
+    </template>
+    <template id="sibSwissBioPicsSlLiItem">
+        <li class="subcellular_location" style="display:none">
+            <a class="subcell_name"></a> <!-- the class name is required and textContent will be set on it -->
+            <span class="subcell_description"></span> <!-- the class name is required and textContent will be set on it -->
+        </li>
+    </template>
+    <sib-swissbiopics-sl taxid="9606" sls="SL-0039,SL-0100,SL-0101" ></sib-swissbiopics-sl>
+    <script type="module" src="https://www.swissbiopics.org/static/swissbiopics.js"></script>
+    <script defer>
+        if (! window.customElements.get("sib-swissbiopics-sl"))
+            window.customElements.define("sib-swissbiopics-sl", SwissBioPicsSL);
+    </script>
+  </body>
+</html>

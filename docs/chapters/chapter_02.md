@@ -11,7 +11,22 @@
 
 ## 2.1 The target protein **P07949**
 
-This course is focused on the "Proto-oncogene tyrosine-protein kinase receptor Ret" protein associated to the gene "RET". 
+This course is focused on the "Proto-oncogene tyrosine-protein kinase receptor Ret" protein associated to the gene "RET" of homo sapiens. 
+
+!!! notes "Subcellular location"
+    
+    Based on the information extracted from UniProt, this protein can be found in:
+    
+    1. The cell membrane, the selectively permeable membrane which separates the cytoplasm from its surroundings: Single-pass type I membrane protein
+    1. The membrane surrounding the endosome: Single-pass type I membrane protein
+    
+    Note: Predominantly located on the plasma membrane (PubMed:23333276, PubMed:9575150). In the presence of SORL1 and GFRA1, directed to endosomes (PubMed:23333276).
+    
+    <div class="subcellular" style="width: 600px; margin: auto 25%;">
+        <iframe src="/../assets/html/subcellular.html" height="500" width="100%" title="1D-2.5D-3D"></iframe>
+    </div>
+
+    _Proto-oncogene tyrosine-protein kinase receptor Ret is located inside the human cells in "cell membrane" ([SL-0039](https://www.uniprot.org/locations/SL-0039)) and "endosome membrane" ([SL-0100](https://www.uniprot.org/locations/SL-0100))_
 
 This protein has a sequence length of 1114 amino acids. It can be found in UniProtKB [@UniProtConsortium] under the accession number [**P07949**](https://www.uniprot.org/uniprotkb/P07949/entry) or the entry name [**RET_HUMAN**]((https://www.uniprot.org/uniprotkb/P07949/entry)).
 
@@ -58,7 +73,7 @@ In this training, we will focus on a specific protein domain: the kinase domain,
     _The predicted model [`AF-P07949-F1-v6`](https://alphafold.ebi.ac.uk/entry/AF-P07949-F1) by AlphaFold Protein Structure Database._
 
 ## 2.3 Rethinking the protein structure and function 
-TBC [@ptms-af3]
+TBC using "Assessing the relation between protein phosphorylation, alphafold3 models, and conformational variability" [@ptms-af3]
 
 ### 2.3.1 Proteins are dynamic systems, not static objects
 TBC

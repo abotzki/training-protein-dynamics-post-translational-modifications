@@ -10,15 +10,6 @@ This chapter moves from theory to practice by predicting the “anatomy” of th
 
 ## 2.1 Biophysical profiles
 
-As mentioned earlier, the **B2BTools** suite provides several predictors to analyse protein biophysical properties:
-
-- Backbone and side-chain dynamics (via **DynaMine**)
-- Intrinsically disordered residues (via **DisoMine**)
-- Early folding regions (via **EFoldMine**)
-- Beta-aggregation-prone regions (via **AgMata**)
-
-### 2.1.1 The predictors included in the B2BTools suite
-
 This package [@b2btools] offers biophysical feature predictors for protein sequences as well as different file parses and other utilities to help you with your protein data analysis. If your input data consists on one or more sequences not aligned, we provide you with the Single Sequence mode. On the other hand, if your input is a Multiple Sequence Alignment (MSA), we provide the MSA mode. For NMR data, we have the predictor ShiftCrypt (out of the scope of this course).
 
 | Predictor   | Description                          | Publication                          |
@@ -30,67 +21,102 @@ This package [@b2btools] offers biophysical feature predictors for protein seque
 | `PSPer` [@psper]   | PSP (Phase Separating Protein) predicts whether a protein is likely to phase-separate with a particular mechanism involving RNA interacts (FUS-like proteins). It will highlight the regions in your protein that are involved mechanistically, and provide an overall score. | [doi: 10.1093/bioinformatics/btz274](https://doi.org/10.1093/bioinformatics/btz274) |
 | `Shift Crypt` [@shiftcrypt]    | Auto-encoding NMR chemical shifts from their native vector space to a residue-level biophysical index | [doi: 10.1093/nar/gkaa391](https://doi.org/10.1093/nar/gkaa391)|
 
-### 2.1.1.1 DynaMine
+### 2.1.1 DynaMine
 
-DynaMine predicts **protein backbone dynamics** directly from the amino acid sequence. Instead of classifying residues as ordered or disordered, it estimates how flexible or rigid each residue is likely to be in solution.
+DynaMine predicts **local protein backbone dynamics** directly from the amino acid sequence. More specifically, it estimates how rigid or flexible each residue is expected to be in solution, based on fast (nanosecond-scale) backbone motions.
 
-The model was trained on NMR chemical shift data, which reflect protein behaviour in solution rather than in a single static structure. As a result, DynaMine captures intrinsic conformational tendencies that are not dependent on a specific folded state.
+The predictor was trained on backbone order parameters derived from **NMR chemical shift data**, which reflect protein behaviour in solution rather than a single static structure. Because of this, DynaMine captures intrinsic conformational tendencies that are independent of a specific folded state.
 
-The output is a per-residue score:
-- Low values indicate flexible or dynamic regions
-- High values indicate rigid regions with a tendency to adopt stable conformations
+The output is a per-residue numerical score:
 
-Importantly, backbone dynamics are **not equivalent to disorder**. A residue can be dynamic while still being part of a folded structure, and rigid regions are not guaranteed to be ordered in all contexts.
+- Higher values indicate rigid regions with a strong tendency to adopt stable conformations
+- Lower values indicate flexible or dynamic regions
 
-DynaMine results are best interpreted as **propensities**, not as absolute structural assignments.
+Backbone dynamics are **not equivalent to intrinsic disorder**. A residue may be flexible while still being part of a folded structure, and rigid residues are not guaranteed to be structured under all conditions. DynaMine scores should therefore be interpreted as **biophysical propensities**, not as absolute structural assignments.
 
----
+Specifically, for the backbone propensity prediction, the range values are:
 
-### 2.1.1.2 DisoMine
+- **Values > 1.0**: Membrane spanning regions
+- **Values > 0.80 and < 1.0**: Rigid conformations
+- **Values > 0.69 and < 0.80**: Context dependent
+- **Values < 0.69**: Flexible regions
 
-DisoMine predicts **intrinsic disorder** in proteins. Unlike many disorder predictors that operate directly on amino acid composition, DisoMine uses predicted biophysical properties—such as backbone dynamics, secondary structure propensity, and early folding—as its input features.
+!!! notes "Backbone plot example"
+    <figure>
+        <img src="../../assets/images/P08100_backbone.jpg" width="1048" alt="P07949 on Scop3P"/>
+        <figcaption>DynaMine backbone dynamics for P08100</figcaption>
+    </figure>
 
-This approach reflects the idea that disorder is an emergent property of multiple biophysical factors rather than a simple sequence pattern.
+### 2.1.2 DisoMine
 
-The output is a probability score for each residue:
-- Higher values indicate a higher likelihood of being intrinsically disordered
+DisoMine predicts **intrinsic disorder**, defined as regions of a protein that do not adopt a stable three-dimensional structure under physiological conditions.
+
+The model was trained on experimentally annotated disordered regions from curated datasets and predicts disorder at the residue level. Unlike many disorder predictors, DisoMine does not rely directly on amino acid composition or evolutionary profiles. Instead, it uses predicted biophysical properties—such as backbone dynamics, secondary structure propensity, and early folding behaviour—as input.
+
+The output is a probability score between 0 and 1:
+
+- Higher values indicate a higher likelihood that the residue is intrinsically disordered
 - Lower values indicate a tendency toward structured behaviour
 
-DisoMine predictions should be interpreted probabilistically. A high disorder score does not mean a region is always disordered, but that it is likely to lack a stable structure under physiological conditions or to adopt multiple conformations.
+DisoMine is particularly effective at identifying **long disordered regions**. The predictions are probabilistic and context-dependent: a high disorder score does not imply permanent disorder in all conditions, but rather a strong tendency to remain flexible or unstructured.
 
-Disordered regions often overlap with regulatory elements, interaction interfaces, and post-translational modification sites.
+The threshold for this prediction is:
 
----
+- **Above 0.5**: likely a disordered position
+- **Below**: unlikely a disordered position
 
-### 2.1.1.3 EFoldMine
 
-EFoldMine predicts **early folding residues**, defined as amino acids that are likely to become structured early during the folding process.
+!!! notes "Disorder plot example"
+    <figure>
+        <img src="../../assets/images/P08100_disorder.jpg" width="1048" alt="DisoMine disorder propensities for P08100"/>
+        <figcaption>DisoMine disorder propensities for P08100</figcaption>
+    </figure>
 
-The predictor is based on the idea that protein folding is not random, but guided by local sequence-encoded signals that initiate structure formation. EFoldMine was trained on experimental folding data and identifies residues that are likely to act as nucleation points.
+### 2.1.3 EFoldMine
+
+EFoldMine predicts **early folding residues**, defined as amino acids that are likely to form stable local structure at the very beginning of the protein folding process.
+
+The predictor was trained using experimental data derived from hydrogen–deuterium exchange experiments, which identify residues that gain protection early during folding. EFoldMine therefore focuses on **folding kinetics**, rather than final structure.
 
 The output highlights residues with high early folding propensity:
-- These residues are often important for folding pathways
-- They may contribute to stability even if they are not part of the final folded core
 
-Early folding regions are not necessarily rigid or conserved, and they do not always correspond to secondary structure elements. Instead, they indicate **kinetic importance** rather than final structure.
+- These residues are likely to initiate local structure formation
+- They may play a key role in guiding the folding pathway
 
-EFoldMine is particularly useful when studying mutations that affect folding efficiency or misfolding.
+Early folding residues are not necessarily rigid, conserved, or part of the final folded core. EFoldMine does not predict folding rates or final stability, but rather identifies **sequence-encoded folding initiation signals** that act early in the folding process.
 
----
+The threshold for this prediction is:
 
-### 2.1.1.4 AgMata
+- **Values > 0.169**: indicate residues that are likely to start the protein folding process
+- **Below**: indicate residues that are unlikely to start the protein folding process
 
-AgMata predicts regions that are prone to **beta-sheet aggregation** based on single-sequence information.
 
-The predictor identifies sequence patterns that favour intermolecular beta-sheet formation, a process often associated with protein aggregation and amyloid formation. These regions can be relevant in both pathological and functional contexts.
+!!! notes "EFoldMine plot example"
+    <figure>
+        <img src="../../assets/images/P08100_efoldmine.jpg" width="1048" alt="DisoMine disorder propensities for P08100"/>
+        <figcaption>EFoldMine early folding events for P08100</figcaption>
+    </figure>
 
-The output marks residues with higher aggregation propensity:
-- Higher values indicate increased risk of beta-aggregation
-- These regions often overlap with beta-strand-prone and hydrophobic segments
 
-AgMata predictions should not be interpreted as proof of aggregation, but as indicators of **intrinsic risk**. Cellular conditions, protein concentration, and binding partners strongly influence whether aggregation actually occurs.
+### 2.1.4 AgMata
 
-AgMata is especially informative when combined with disorder and dynamics predictions, as aggregation-prone regions often lie at the interface between structured and flexible domains.
+AgMata predicts **beta-sheet aggregation propensity** from single protein sequences. It identifies regions that are intrinsically prone to form intermolecular beta-sheet interactions, a key feature of amyloid-like aggregation.
+
+Unlike many aggregation predictors, AgMata is not directly trained on known aggregating sequences. Instead, it uses a generalized statistical potential that integrates predicted biophysical properties, including backbone dynamics and secondary structure tendencies.
+
+The output highlights regions with increased aggregation risk:
+
+- Higher values indicate a stronger intrinsic tendency toward beta-aggregation
+- Lower values indicate reduced aggregation propensity
+- Peaks indicate residues likely to be involved in beta-sheet aggregation.
+
+AgMata predictions reflect **intrinsic sequence-level risk**, not actual aggregation outcomes. Cellular context, protein concentration, interaction partners, and chaperones are not considered. The predictor is most informative when interpreted together with disorder and dynamics predictions.
+
+!!! notes "AgMata plot example"
+    <figure>
+        <img src="../../assets/images/P08100_agmata.jpg" width="1048" alt="DisoMine disorder propensities for P08100"/>
+        <figcaption>AgMata beta-aggregation for P08100</figcaption>
+    </figure>
 
 ## 2.2 Extracting the protein sequence
 
@@ -122,7 +148,14 @@ The first step is to download the protein sequence in FASTA format.
         └─── P07949.fasta
         ```
 
-## 2.2 Analysing single sequences (_standalone_ mode)
+## 2.3 Analysing single sequences (_standalone_ mode)
+
+As mentioned earlier, the **B2BTools** suite provides several predictors to analyse protein biophysical properties:
+
+- Backbone and side-chain dynamics (via **DynaMine**)
+- Intrinsically disordered residues (via **DisoMine**)
+- Early folding regions (via **EFoldMine**)
+- Beta-aggregation-prone regions (via **AgMata**)
 
 The Bio2Byte lab provides an online platform [@b2btools-webserver] to run the biophysical predictions described above for proteins of interest. The platform is available at:
 [https://bio2byte.be/online_predictors/](https://bio2byte.be/online_predictors/) (this resource is still under active development, and user feedback is highly appreciated. A previous version of the platform is available at: https://bio2byte.be/b2btools).
@@ -152,21 +185,21 @@ The Bio2Byte lab provides an online platform [@b2btools-webserver] to run the bi
         1. You will be able to find the results inside the "Single Sequence Predictions" table. 
         1. Your job will have an action button "View Results" that opens a link like `https://bio2byte.be/online_predictors/results/UUID/`.
 
-### 2.2.1 Understanding the results as biological profiles
+### 2.3.1 Understanding the results as biological profiles
 
-#### 2.2.1.1 Exploring intrinsic flexibility and folding propensity
+#### 2.3.1.1 Exploring intrinsic flexibility and folding propensity
 
-#### 2.2.1.2 Visualization of biophysical profiles
+#### 2.3.1.2 Visualization of biophysical profiles
 
-## 2.3 Multiple sequence alignments (MSA)
+## 2.4 Multiple sequence alignments (MSA)
 
 To fully exploit the predictive power of biophysical tools, it is useful to study the target protein in the context of related proteins. Comparing similar sequences allows the identification of conserved biophysical profiles as well as positions that show divergence across homologs.
 
-### 2.3.1 Working with the aligned kinase domain
+### 2.4.1 Working with the aligned kinase domain
 
 In the following hands-on activities the focus will be on the homolog kinase domains of the P07949's 90%-similarity proteins. 
 
-### 2.3.1.1 Fetching the similar proteins
+### 2.4.1.1 Fetching the similar proteins
 
 UniProtKB provides access to similar proteins directly from the protein entry page, in the **Similar proteins** section.
 
@@ -217,7 +250,7 @@ UniProtKB provides access to similar proteins directly from the protein entry pa
         └─── P07949.90-similar.fasta
         ```
 
-### 2.3.1.2 Building the MSA
+### 2.4.1.2 Building the MSA
 
 To continue this activity, the multiple sequence alignment (MSA) will be generated using the online **Clustal Omega** server provided by EMBL-EBI.
 
@@ -256,7 +289,7 @@ To continue this activity, the multiple sequence alignment (MSA) will be generat
         └─── P07949.90-similar.msa.fasta
         ```
 
-### 2.3.1.3 Extracting the domain of interest
+### 2.4.1.3 Extracting the domain of interest
 
 The next step is to focus the analysis on the kinase domain positions across all aligned sequences. For this purpose, the course provides a Google Colab notebook that runs a Python script to identify and extract the aligned positions corresponding to a defined amino acid range in the original reference sequence.
 
@@ -325,7 +358,7 @@ The next step is to focus the analysis on the kinase domain positions across all
         └─── P07949.90-similar.msa.kinase.fasta
         ```
 
-### 2.3.1.4 Predicting the biophysical features
+### 2.4.1.4 Predicting the biophysical features
 
 We are now ready to predict the aligned biophysical features using **B2BTools**.
 
@@ -342,7 +375,7 @@ We are now ready to predict the aligned biophysical features using **B2BTools**.
         1. Once the prediction job has completed, the results will appear in the **MSA Predictions** table. It takes approximately less than two minutes to finish.
         1. Click the **View Results** button to open the results page for the aligned kinase domain.
 
-### 2.3.2 Understanding the results as biological profiles
+### 2.4.2 Understanding the results as biological profiles
 
 #### 2.3.2.1 Exploring intrinsic flexibility and folding propensity
 
@@ -358,8 +391,17 @@ TBC
 
 For a selected protein, a set of "external resources" will be shown in the left navigation bar if the header is recognised as a UniProt entry.
 
-Clicking on the "Find PTMs on Scop3P" redirects you to the entry page on that resource: [https://iomics.ugent.be/scop3p/index?protein=P07949](https://iomics.ugent.be/scop3p/index?protein=P07949).
+!!! example "Hands-on: Finding phosphosites on Scop3P for P07949"
 
+    1. Select the `P07949` protein in the dropdown selector.
+    1. Clicking on the "Find PTMs on Scop3P" redirects you to the entry page on that resource: [https://iomics.ugent.be/scop3p/index?protein=P07949](https://iomics.ugent.be/scop3p/index?protein=P07949).
+
+    ??? success "Solution"
+        <figure>
+            <img src="../../assets/images/follow_up_scop3p.jpg" width="800" alt="P07949 on Scop3P"/>
+            <figcaption>P07949 on Scop3P</figcaption>
+        </figure>
+        
 ---
 
 !!! note "To be continued: : Go to chapter 4"
