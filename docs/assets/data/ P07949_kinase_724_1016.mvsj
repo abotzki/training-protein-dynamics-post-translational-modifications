@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "title": "AFDB P07949 — highlight kinase domain (724–1016)",
+    "version": "1",
+    "timestamp": "2026-01-09T00:00:00Z"
+  },
+  "root": {
+    "kind": "root",
+    "children": [
+      {
+        "kind": "download",
+        "params": {
+          "url": "https://alphafold.ebi.ac.uk/files/AF-P07949-F1-model_v6.cif"
+        },
+        "children": [
+          {
+            "kind": "parse",
+            "params": { "format": "mmcif" },
+            "children": [
+              {
+                "kind": "structure",
+                "params": { "type": "model" },
+                "children": [
+                  {
+                    "kind": "component",
+                    "params": { "selector": "protein" },
+                    "children": [
+                      {
+                        "kind": "representation",
+                        "params": { "type": "cartoon" },
+                        "children": [
+                          {
+                            "kind": "color",
+                            "params": { "color": "#b0b0b0" }
+                          },
+                          {
+                            "kind": "color",
+                            "params": {
+                              "selector": {
+                                "label_asym_id": "A",
+                                "beg_label_seq_id": 724,
+                                "end_label_seq_id": 1016
+                              },
+                              "color": "#d62728"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

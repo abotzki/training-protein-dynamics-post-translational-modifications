@@ -3,13 +3,14 @@ nav:
     - About: index.md
     - "Course schedule": course_schedule.md
     - Course Content:
-      - "1. Introducing the biological context": chapters/chapter_01.md
-      - "2. Building biological profiles": chapters/chapter_02.md
-      - "3. Working with post-translational modifications": chapters/chapter_03.md
-      - "4. Combining PTM annotations to biophysical properties": chapters/chapter_04.md
-      - "5. Closing": chapters/chapter_05.md
-      - "References": chapters/references.md
+      - "1. Introducing this course": chapters/chapter_01.md
+      - "2. Introducing the biological context": chapters/chapter_02.md
+      - "3. Building biological profiles": chapters/chapter_03.md
+      - "4. Working with post-translational modifications": chapters/chapter_04.md
+      - "5. Combining PTM annotations to biophysical properties": chapters/chapter_05.md
+      - "6. Closing": chapters/chapter_06.md
     - "Follow up training": follow_up_training.md
+    - "References": chapters/references.md
 
 theme:
   name: material

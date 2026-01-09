@@ -67,9 +67,15 @@ Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxic
 Please cite as:
 
   1. Enter your training citation here.
-  2. **Pathmanaban Ramasamy**, Demet Turan, Natalia Tichshenko, Niels Hulstaert, Elien Vandermarliere, Wim Vranken, & Lennart Martens. (2020). Scop3P: A Comprehensive Resource of Human Phosphosites within Their Full Context.  Journal of Proteome Research 2020 19 (8), 3478-3486. [https://10.1021/acs.jproteome.0c00306](https://10.1021/acs.jproteome.0c00306)
-  3. Luciano Porto Kagami, Gabriele Orlando, Daniele Raimondi, Francois Ancien, Bhawna Dixit, Jose Gavaldá-García, **Pathmanaban Ramasamy**, Joel Roca-Martínez, Konstantina Tzavella, Wim Vranken, b2bTools: online predictions for protein biophysical features and their conservation, Nucleic Acids Research, Volume 49, Issue W1, 2 July 2021, Pages W52–W59. [https://doi.org/10.1093/nar/gkab425](https://doi.org/10.1093/nar/gkab425)
-  4. Geert van Geest, Elin Kronander, Jose Alejandro Romero Herrera, Nadja Žlender, & Alexia Cardona. (2023). The ELIXIR Training Lesson Template - Developing Training Together (v1.0.0-alpha). Zenodo. [https://doi.org/10.5281/zenodo.7913092](https://doi.org/10.5281/zenodo.7913092). 
+  1. Jose Gavalda-Garcia, **Adrián Díaz**, Wim Vranken. (2024). bio2Byte Tools deployment as a Python package and Galaxy tool to predict protein biophysical properties. Bioinformatics, Volume 40, Issue 9, September 2024, btae543. [doi.org/10.1093/bioinformatics/btae543](https://doi.org/10.1093/bioinformatics/btae543) [@b2btools].
+  1. Luciano Porto Kagami, Gabriele Orlando, Daniele Raimondi, Francois Ancien, Bhawna Dixit, Jose Gavaldá-García, **Pathmanaban Ramasamy**, Joel Roca-Martínez, Konstantina Tzavella, Wim Vranken, b2bTools: online predictions for protein biophysical features and their conservation, Nucleic Acids Research, Volume 49, Issue W1, 2 July 2021, Pages W52–W59. [doi.org/10.1093/nar/gkab425](https://doi.org/10.1093/nar/gkab425) [@b2btools-webserver].
+  1. **Pathmanaban Ramasamy**, Demet Turan, Natalia Tichshenko, Niels Hulstaert, Elien Vandermarliere, Wim Vranken, & Lennart Martens. (2020). Scop3P: A Comprehensive Resource of Human Phosphosites within Their Full Context.  Journal of Proteome Research 2020 19 (8), 3478-3486. [10.1021/acs.jproteome.0c00306](https://10.1021/acs.jproteome.0c00306) [@Scop3P].
+
+## Training Template 
+
+Please cite as:
+
+  1. Geert van Geest, Elin Kronander, Jose Alejandro Romero Herrera, Nadja Žlender, & Alexia Cardona. (2023). The ELIXIR Training Lesson Template - Developing Training Together (v1.0.0-alpha). Zenodo. [doi.org/10.5281/zenodo.7913092](https://doi.org/10.5281/zenodo.7913092) [@geert_van_geest_2023_7913092]. 
 
 ---
 ## Setup
@@ -77,4 +83,4 @@ Please cite as:
 To run this course you need to:
 
 - Have in mind a TOKEN that will be used to access your B2BTools predictions.
-- A Google Account (in general, your `@gmail.com` email) to login on [Google Colab](https://colab.google.com).
+- A [Google Account](https://www.google.com/intl/en-GB/account/about/) (in general, your `@gmail.com` email) to login on [Google Colab](https://colab.google.com).
