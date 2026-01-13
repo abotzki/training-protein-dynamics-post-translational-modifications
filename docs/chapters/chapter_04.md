@@ -7,30 +7,30 @@ Accurate identification, annotation, and functional analysis of phosphorylation 
 Other resources often contain false positives and doesn't include the experimental metadata (localization probability, FDR, database used for searching)
 
 <figure>
-    <img src="../../assets/images/mass_spec.jpeg" width="600" alt="Mass-spec picture goes here"/>
-    <figcaption> Mass-spec picture goes here. </figcaption>
+    <img src="../../assets/images/Mass spec1.png" width="600" alt="Mass-spec picture goes here"/>
+    <figcaption> Mass-spec figure 1 </figcaption>
+</figure>
+
+<figure>
+    <img src="../../assets/images/mass spec2.1.png" width="600" alt="Mass-spec picture goes here"/>
+    <figcaption> Mass-spec figure 2 </figcaption>
+</figure>
+
+<figure>
+    <img src="../../assets/images/mass spec2.2.png" width="600" alt="Mass-spec picture goes here"/>
+    <figcaption> Mass-spec figure 3 </figcaption>
 </figure>
 
 What is often missing from these resources is biological and structural context, including mapping to protein structures, experimental provenance, and biophysical annotations.
 
 <figure>
-    <img src="../../assets/images/scop3p_publication_002.jpeg" width="600" alt="Image on elixir landing page"/>
-    <figcaption> Another picture goes here. </figcaption>
+    <img src="../../assets/images/Protein coverage.png" width="600" alt="Image on elixir landing page"/>
+    <figcaption> Protein coverage </figcaption>
 </figure>
 
 ScoP3P addresses this gap by integrating protein sequences (UniProtKB/Swiss-Prot), structural data (PDB), and uniformly reprocessed phosphoproteomics datasets (PRIDE) to annotate all known human phosphosites. In addition, each phosphoprotein is enriched with per-residue biophysical annotations, including structural propensity, solvent accessibility, disorder probability, and early folding regions.
 
-<figure>
-    <img src="../../assets/images/scop3p_publication_002.jpeg" width="600" alt="Image on elixir landing page"/>
-    <figcaption> Different data sources integrated into Scop3P. </figcaption>
-</figure>
-
 ScoP3P, available at [https://iomics.ugent.be/scop3p](https://iomics.ugent.be/scop3p), provides a dedicated platform for the visualization and analysis of phosphosites and supports the study of phosphosite–structure–function relationships.
-
-<figure>
-    <img src="../../assets/images/scop3p_publication.jpeg" width="600" alt="Image on elixir landing page"/>
-    <figcaption> Schematic representation of the Scop3P resource. </figcaption>
-</figure>
 
 
 !!! question "Chapter questions"

@@ -98,13 +98,18 @@ TBC using "Assessing the relation between protein phosphorylation, alphafold3 mo
 
 image 2.4.1
 
+
+
 ### 2.4.2 Limitations of deep learning–based structure prediction
 
 image 2.4.2
 
+struct_mem1.png
+
 ### 2.4.3 Memorization and dominant conformations
 
 image 2.3.3
+structure_memory2.png
 
 ---
 

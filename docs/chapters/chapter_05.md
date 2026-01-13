@@ -24,7 +24,10 @@ This activity gives an overview of exploring PTMs, mutations, biophysical proper
 
     ??? success "Solution"
     
-        Explain here with some screenshots the tabs.
+        <figure>
+            <img src="../../assets/images/Scop3P_PTM_viz_overview.png" width="800" alt="Mass-spec picture goes here"/>
+            <figcaption> Different results using the provided notebook </figcaption>
+        </figure>
 
 ## 5.2 Comparative biophysical analysis of wild-type and variant states
 
@@ -68,6 +71,8 @@ For this activity will mutate three positions of P07949:
     STPSDSLIYDDGLSEEETPLVDCNNAPLPRALPSTWIENKLYGMSDPNWPG
     ESPVPLTRADGTNTGFPRYPNDSVYANWMLSPSAAKLMDTFDS
     ```
+    
+<iframe src="/../assets/html/mutations.html" height="1100" width="100%" title="MolViewStory"></iframe>
 
 ### 5.2.1 Explore the effect of mutations (biophysical inference)
         
@@ -83,6 +88,11 @@ For this activity will mutate three positions of P07949:
         1. Predict the biophysical properties for the mutations
         1. Compare the biophysical properties between the wild type and mutant sequences.
         1. Infer the impact of mutations.
+        
+        <figure>
+            <img src="../../assets/images/Biophysics.png" width="800" alt="Mass-spec picture goes here"/>
+            <figcaption> Biophysics changes </figcaption>
+        </figure>
     
 ### 5.2.2 Explore the effect of mutations (structural inference)
 
@@ -154,7 +164,10 @@ The next step is to predict the variant structures using [AlphaFold 3 server](ht
         1. Click on the position of interest to highlight it.
         1. Select from the list the type of modification
         
-        add screenshot
+        <figure>
+            <img src="../../assets/images/alphafold3_ptms.jpg" width="800" alt="Mass-spec picture goes here"/>
+            <figcaption> Biophysics changes </figcaption>
+        </figure>
         
 
 Now the files are ready to be processed, let's continue to the next activity.
