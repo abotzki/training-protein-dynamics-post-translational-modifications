@@ -86,31 +86,6 @@ This story shows the different structures related to RET protein (P07949) focusi
 
 <iframe src="/../assets/html/chapter_02.html" height="1100" width="100%" title="MolViewStory"></iframe>
 
-## 2.4 Rethinking the protein structure and function 
-
-!!! question "Section questions"
-
-    1. Why do we need this training ?
-
-TBC using "Assessing the relation between protein phosphorylation, alphafold3 models, and conformational variability" [@ptms-af3]
-
-### 2.4.1 Proteins are dynamic systems, not static objects
-
-image 2.4.1
-
-
-
-### 2.4.2 Limitations of deep learning–based structure prediction
-
-image 2.4.2
-
-struct_mem1.png
-
-### 2.4.3 Memorization and dominant conformations
-
-image 2.3.3
-structure_memory2.png
-
 ---
 
 !!! note "To be continued: Go to chapter 3"

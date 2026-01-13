@@ -1,10 +1,19 @@
 Welcome to this VIB training. The authors of this course designed a full teaching day that combines theory with hands-on activities, allowing participants to apply the concepts in practice.
 
+!!! question "Section questions"
+
+    1. Why do we need this training ?
+    
 ---
 
 ## 1.1 Introducing the training methodology
 
 The protein of interest for this training is the human **proto-oncogene tyrosine-protein kinase receptor RET**, encoded by the **RET** gene. 
+
+1. We will predict biophysical features for this protein using the Bio2Byte online platform, specifically the **B2BTools** suite. To enable a deeper analysis of these biophysical properties, we will generate a multiple sequence alignment (MSA) of sequences sharing at least 90% identity. This alignment will be used to identify conserved and variable patterns across homologous sequences.
+1. The MSA will be created using **Clustal Omega**, and the aligned kinase domain will be extracted using a **Google Colab** notebook.
+1. Post-translational modifications (PTMs) for the protein of interest will be explored using the **Scop3P** online platform, which is directly linked from the B2BTools prediction results. After analyzing the available information on modifications, structures, and experimental evidence, we will follow a more detailed protocol to link biophysical patterns with PTMs.
+1. Finally, the course will address the impact of mutations. We will show how to modify the wild-type sequence and assess the effect of single amino acid substitutions on biophysical profiles and predicted protein structures using **AlphaFold v3**.
 
 !!! info "Protein sequence"
 
@@ -34,11 +43,6 @@ The protein of interest for this training is the human **proto-oncogene tyrosine
         STPSDSLIYDDGLSEEETPLVDCNNAPLPRALPSTWIENKLYGMSDPNWPGESPVPLTRA
         DGTNTGFPRYPNDSVYANWMLSPSAAKLMDTFDS
         ```
-
-1. We will predict biophysical features for this protein using the Bio2Byte online platform, specifically the **B2BTools** suite. To enable a deeper analysis of these biophysical properties, we will generate a multiple sequence alignment (MSA) of sequences sharing at least 90% identity. This alignment will be used to identify conserved and variable patterns across homologous sequences.
-1. The MSA will be created using **Clustal Omega**, and the aligned kinase domain will be extracted using a **Google Colab** notebook.
-1. Post-translational modifications (PTMs) for the protein of interest will be explored using the **Scop3P** online platform, which is directly linked from the B2BTools prediction results. After analyzing the available information on modifications, structures, and experimental evidence, we will follow a more detailed protocol to link biophysical patterns with PTMs.
-1. Finally, the course will address the impact of mutations. We will show how to modify the wild-type sequence and assess the effect of single amino acid substitutions on biophysical profiles and predicted protein structures using **AlphaFold v3**.
 
 ## 1.2 ELIXIR Belgium node services used in this training
 
@@ -77,3 +81,36 @@ The resource integrates public data from several major international databases, 
 
 !!! note "Let's get started: Go to chapter 2"
     [Next chapter](/../../chapters/chapter_02) explains the biological context.
+
+## 1.3 Rethinking the protein structure and function 
+
+From "Assessing the relation between protein phosphorylation, alphafold3 models, and conformational variability" [@ptms-af3]:
+
+> Proteins perform diverse functions critical to cellular processes. Transitions between functional states are often regulated by post-translational modifications (PTMs) such as phosphorylation, which dynamically influence protein structure, function, folding, and interactions. Dysregulation of PTMs can therefore contribute to diseases such as cancer and Alzheimer's. However, the structure–function relationship between proteins and their modifications remains poorly understood due to a lack of experimental structural data, the inherent diversity of PTMs, and the dynamic nature of proteins. 
+
+> Recent advances in deep learning, particularly AlphaFold, have transformed protein structure prediction with near-experimental accuracy. However, it remains unclear whether these models can effectively capture PTM-driven conformational changes, such as those induced by phosphorylation. Here, we systematically evaluated AlphaFold models (AF2, AF3-non phospho, and AF3-phospho) to assess their ability to predict phosphorylation-induced structural diversity. By analyzing experimentally derived conformational ensembles, we found that all models predominantly aligned with dominant structural states, often failing to capture phosphorylation-specific conformations. Despite its phosphorylation-aware design, AF3-phospho predictions provided only modest improvement over AF2 and AF3-non phospho predictions. 
+
+> Our findings highlight key challenges in modeling PTM-driven structural landscapes and underscore the need for more adaptable structure prediction frameworks capable of capturing modification-induced conformational variability.
+
+### 1.3.1 Proteins are dynamic systems, not static objects
+
+<figure>
+    <img src="../../assets/images/structure_memory2.png" width="800" alt="Image on elixir landing page"/>
+</figure>
+
+### 1.3.2 Limitations of deep learning–based structure prediction
+
+<figure>
+    <img src="../../assets/images/Protein coverage.png" width="800" alt="Image on elixir landing page"/>
+</figure>
+
+<figure>
+    <img src="../../assets/images/struct_mem1.png" width="800" alt="Image on elixir landing page"/>
+</figure>
+
+
+### 1.3.3 Memorization and dominant conformations
+
+<figure>
+    <img src="../../assets/images/Sturct_mem3.png" width="800" alt="Image on elixir landing page"/>
+</figure>
