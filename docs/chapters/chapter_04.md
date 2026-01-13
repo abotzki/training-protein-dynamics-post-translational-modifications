@@ -43,27 +43,80 @@ ScoP3P, available at [https://iomics.ugent.be/scop3p](https://iomics.ugent.be/sc
 ## 4.2 Exploring experimentally supported PTMs
 
 ### 4.2.1 Via the webserver 
-Here you can enter text and if you need to cite[@creative_commons_2022]
 
-!!! example "Hands-on: Challenge 1"
+!!! example "Hands-on: Website usage"
 
-    This is an example of text of Challenge 1
-
+    1. Explore the PTM map over the sequence length using lollypop plot.
+    1. Link the lollypop information to the structural representation.
+        1. Toggle between experimental and predicted structures.
+        1. Change visualisation properties such as style and colour.
+    1. Find the modification metadata from the summary table.
+    1. Explore the biophysical circular plot.
+        1. Mouse over to view the values.
+    1. From the peptide table, explore the phospho-sites identified by mass spectrometry experiments (project information, species, tissue/cell type).
+        1. Hint: you can also visualise the original spectra using the **USI** link.
+    1. From the structures table, explore the modifications related to experimental structures.
+        1. Hint: you can explore 
+            * The secondary-structure information (conservation, surface accessibility)
+            * Do you see multiple conformational state for the same protein ?
+    1. From the mutations table, explore the natural variant and the disease context.
+    
     ??? success "Solution"
 
-        This is an example solution for Challenge 1.
+        Exploring the modifications:
+        
+        <figure>
+            <img src="../../assets/images/SCOP3P_P07949.jpg" width="1000" alt="Image on elixir landing page"/>
+            <figcaption> Linking the lollypop information to the structural representation </figcaption>
+        </figure>
+        
+        Viewing the phospho projects:
+        
+        <figure>
+            <img src="../../assets/images/phospho_table.jpg" width="1000" alt="Image on elixir landing page"/>
+            <figcaption> explore the phospho-sites identified by mass spectrometry experiments </figcaption>
+        </figure>
+        
+        Structures and mutations:
+        
+        <figure>
+            <img src="../../assets/images/scop3p_last_tables.jpg" width="1000" alt="Image on elixir landing page"/>
+            <figcaption> Exploring the modifications related to experimental structures and diseases </figcaption>
+        </figure>
 
 
 ### 4.2.3 Via the REST API
 
-!!! example "Hands-on: Challenge 2"
-
-    This is an example of text of Challenge 1
-
+!!! example "Hands-on: REST API usage"
+    
+    For this activity open this interactive notebook: `Scop3P_API.ipynb`: 
+    <a target="_blank" href="https://colab.research.google.com/github/Bio2Byte/Scop3P-notebooks/blob/main/Scop3P_API.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
+    
+    1. Fetch protein sequence from UniProt
+    1. Fetch modifications from Scop3P
+    1. Parse the data
+    1. Explore the functional scores
+    
     ??? success "Solution"
 
-        This is an example solution for Challenge 1.
-
+        1. Open the [Colab Notebook](https://colab.research.google.com/github/Bio2Byte/Scop3P-notebooks/blob/main/Scop3P_API.ipynb).
+        1. Install the dependencies
+        1. Change the "Target protein" to "P07949"
+        1. Fetch the canonical sequence from UniProt REST API
+        1. Fetch the modifications from Scop3P REST API
+        1. Run the data parsing code cells
+        1. Run the "Functional scores" cell to visualise the plot
+        
+        ??? success "View functional scores"
+            
+            Plot extracted from the Colab notebook:
+            
+            <figure>
+                <img src="../../assets/images/functional_sites.png" width="600" alt="Image on elixir landing page"/>
+                <figcaption> P07949 functional sites </figcaption>
+            </figure>
 
 ---
 
