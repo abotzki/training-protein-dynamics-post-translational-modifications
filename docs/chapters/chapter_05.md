@@ -76,7 +76,7 @@ For this activity will mutate three positions of P07949:
 
 ### 5.2.1 Explore the effect of mutations (biophysical inference)
         
-!!! example "Hands-on: ### 5.2.1 Explore the effect of mutations (biophysical inference)"
+!!! example "Hands-on: Explore the effect of mutations (biophysical inference)"
     For this activity open this interactive notebook: `Scop3P_b2b_mutation_effect.ipynb`
     
     1. Predict the biophysical properties for the wild type
