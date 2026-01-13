@@ -1,8 +1,22 @@
+## 4.1 Why Scop3P as the go-to for modifications ?
+
 Protein phosphorylation is a key post-translational modification involved in many biological processes and is strongly associated with human diseases such as cancer and metabolic disorders.
 
 Accurate identification, annotation, and functional analysis of phosphorylation sites (phosphosites) are therefore essential to understand their biological roles. Phosphosites are mainly studied using phosphoproteomics approaches, which have produced large amounts of publicly available data. Several resources have been developed to collect and organize phosphosite information, but most of them focus primarily on protein sequences and basic site-level metadata.
 
+Other resources often contain false positives and doesn't include the experimental metadata (localization probability, FDR, database used for searching)
+
+<figure>
+    <img src="../../assets/images/mass_spec.jpeg" width="600" alt="Mass-spec picture goes here"/>
+    <figcaption> Mass-spec picture goes here. </figcaption>
+</figure>
+
 What is often missing from these resources is biological and structural context, including mapping to protein structures, experimental provenance, and biophysical annotations.
+
+<figure>
+    <img src="../../assets/images/scop3p_publication_002.jpeg" width="600" alt="Image on elixir landing page"/>
+    <figcaption> Another picture goes here. </figcaption>
+</figure>
 
 ScoP3P addresses this gap by integrating protein sequences (UniProtKB/Swiss-Prot), structural data (PDB), and uniformly reprocessed phosphoproteomics datasets (PRIDE) to annotate all known human phosphosites. In addition, each phosphoprotein is enriched with per-residue biophysical annotations, including structural propensity, solvent accessibility, disorder probability, and early folding regions.
 
@@ -26,7 +40,9 @@ ScoP3P, available at [https://iomics.ugent.be/scop3p](https://iomics.ugent.be/sc
     
 ---
 
-## 3.1 Exploring experimentally supported PTMs
+## 4.2 Exploring experimentally supported PTMs
+
+### 4.2.1 Via the webserver 
 Here you can enter text and if you need to cite[@creative_commons_2022]
 
 !!! example "Hands-on: Challenge 1"
@@ -38,7 +54,7 @@ Here you can enter text and if you need to cite[@creative_commons_2022]
         This is an example solution for Challenge 1.
 
 
-## 3.2 Mapping PTMs onto predicted structures
+### 4.2.3 Via the REST API
 
 !!! example "Hands-on: Challenge 2"
 
@@ -48,6 +64,11 @@ Here you can enter text and if you need to cite[@creative_commons_2022]
 
         This is an example solution for Challenge 1.
 
+
+---
+
+!!! warning "☕️ COFFEE BREAK"
+    Time to grab a coffee or tea. We'll be back in ten minutes...
 
 ---
 

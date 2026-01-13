@@ -2,7 +2,7 @@ site_name: Assess protein dynamics & post-translational modifications
 nav:
     - About: index.md
     - "Course schedule": course_schedule.md
-    - Course Content:
+    - "Course Content":
       - "1. Introducing this course": chapters/chapter_01.md
       - "2. Introducing the biological context": chapters/chapter_02.md
       - "3. Building biological profiles": chapters/chapter_03.md

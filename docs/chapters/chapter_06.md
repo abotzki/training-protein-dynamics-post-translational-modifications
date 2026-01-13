@@ -4,7 +4,7 @@ The workflow presented in this training is intended as a template that can be ad
 
 ---
 
-## 5.1 Lessons learnt
+## 6.1 Lessons learnt
 
 Throughout this training, we highlighted several practical and conceptual lessons, including:
 
@@ -15,7 +15,7 @@ Throughout this training, we highlighted several practical and conceptual lesson
 
 These lessons aim to support more informed and critical use of computational tools in biological research.
 
-## 5.2 Take-home messages
+## 6.2 Take-home messages
 
 The key messages of this training can be summarized as follows:
 
@@ -26,7 +26,7 @@ The key messages of this training can be summarized as follows:
 
 These points are intended to guide future analyses and encourage thoughtful tool usage.
 
-## 5.3 Discussion and open questions
+## 6.3 Discussion and open questions
 
 This section is intended as a space for reflection, discussion, and feedback.
 

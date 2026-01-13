@@ -28,12 +28,15 @@ This course is focused on the "Proto-oncogene tyrosine-protein kinase receptor R
 
     _Proto-oncogene tyrosine-protein kinase receptor Ret is located inside the human cells in "cell membrane" ([SL-0039](https://www.uniprot.org/locations/SL-0039)) and "endosome membrane" ([SL-0100](https://www.uniprot.org/locations/SL-0100))_
 
-This protein has a sequence length of 1114 amino acids. It can be found in UniProtKB [@UniProtConsortium] under the accession number [**P07949**](https://www.uniprot.org/uniprotkb/P07949/entry) or the entry name [**RET_HUMAN**]((https://www.uniprot.org/uniprotkb/P07949/entry)).
+This protein has a sequence length of 1114 amino acids. It can be found in UniProtKB [@UniProtConsortium] under the accession number [**P07949**](https://www.uniprot.org/uniprotkb/P07949/entry) or the entry name [**RET_HUMAN**](https://www.uniprot.org/uniprotkb/P07949/entry).
 
 !!! notes "Crystal structure 2IVS"
-    <iframe src="https://molstar.org/viewer/?pdb=2IVS&&hide-controls=1" height="600" width="100%" title="Protein Data Bank in Europe Knowledge Base - Entry 2IVS"></iframe>
+    
+    ??? success 'View 2IVS'
+    
+        <iframe src="https://molstar.org/viewer/?pdb=2IVS&&hide-controls=1" height="600" width="100%" title="Protein Data Bank in Europe Knowledge Base - Entry 2IVS"></iframe>
 
-    _[2IVS](https://www.ebi.ac.uk/pdbe/pdbe-kb/proteins/2IVS): Crystal structure of non-phosphorylated ret tyrosine kinase domain (Protein Data Bank in Europe Knowledge Base)_
+        _[2IVS](https://www.ebi.ac.uk/pdbe/pdbe-kb/proteins/2IVS): Crystal structure of non-phosphorylated ret tyrosine kinase domain (Protein Data Bank in Europe Knowledge Base)_
 
 According to the functional annotation provided by UniProt, this protein plays a central role in several cellular processes:
 
@@ -47,10 +50,10 @@ According to the functional annotation provided by UniProt, this protein plays a
 > - **It phosphorylates PTK2/FAK1.**
 
 !!! notes "Crystal structure 6NJA"
-    <iframe src="https://molstar.org/viewer/?pdb=6NJA&&hide-controls=1" height="600" width="100%" title="Protein Data Bank in Europe Knowledge Base - 6NJA entry"></iframe>
+    ??? success "View 6NJA"
+        <iframe src="https://molstar.org/viewer/?pdb=6NJA&&hide-controls=1" height="600" width="100%" title="Protein Data Bank in Europe Knowledge Base - 6NJA entry"></iframe>
 
-    _[6NJA](https://www.ebi.ac.uk/pdbe/pdbe-kb/proteins/6NJA): Crystal structure of phosphorylated ret tyrosine kinase domain (Protein Data Bank in Europe Knowledge Base)_
-
+        _[6NJA](https://www.ebi.ac.uk/pdbe/pdbe-kb/proteins/6NJA): Crystal structure of phosphorylated ret tyrosine kinase domain (Protein Data Bank in Europe Knowledge Base)_
 
 ## 2.2 The target Kinase domain
 
@@ -60,29 +63,48 @@ In this training, we will focus on a specific protein domain: the kinase domain,
 
     Here you can find the domain sequence in FASTA format ([PROSITE-ProRule: PRU00159](https://prosite.expasy.org/rule/PRU00159)).
 
-    ```
-    LVLGKTLGEGEFGKVVKATAFHLKGRAGYTTVAVKMLKENASPSELRDLLSEFNVLKQV
-    NHPHVIKLYGACSQDGPLLLIVEYAKYGSLRGFLRESRKVGPGYLGSGGSRNSSSLDHP
-    DERALTMGDLISFAWQISQGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRDVY
-    EEDSYVKRSQGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPER
-    LFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKRRDYL
-    ```
+    ??? success "View sequence"
     
-    <iframe src="https://molstar.org/viewer/?afdb=P07949&&hide-controls=1" height="600" width="100%" title="AlphaFold predicted model"></iframe>
+        ```fasta
+        LVLGKTLGEGEFGKVVKATAFHLKGRAGYTTVAVKMLKENASPSELRDLLSEFNVLKQV
+        NHPHVIKLYGACSQDGPLLLIVEYAKYGSLRGFLRESRKVGPGYLGSGGSRNSSSLDHP
+        DERALTMGDLISFAWQISQGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRDVY
+        EEDSYVKRSQGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPER
+        LFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKRRDYL
+        ```
     
-    _The predicted model [`AF-P07949-F1-v6`](https://alphafold.ebi.ac.uk/entry/AF-P07949-F1) by AlphaFold Protein Structure Database._
+    ??? success "View predicted model AF-P07949-F1-v6"
+        <iframe src="https://molstar.org/viewer/?afdb=P07949&&hide-controls=1" height="600" width="100%" title="AlphaFold predicted model"></iframe>
+        
+        _The predicted model [`AF-P07949-F1-v6`](https://alphafold.ebi.ac.uk/entry/AF-P07949-F1) by AlphaFold Protein Structure Database._
 
-## 2.3 Rethinking the protein structure and function 
+## 2.3 Structural overview
+
+> MolViewStories is a powerful web application that lets you create beautiful, interactive molecular visualizations. Whether you’re a researcher, educator, or student, MolViewStories helps you tell compelling scientific stories using 3D molecular structures.
+
+This story shows the different structures related to RET protein (P07949) focusing on the kinase domain:
+
+<iframe src="/../assets/html/chapter_02.html" height="1100" width="100%" title="MolViewStory"></iframe>
+
+## 2.4 Rethinking the protein structure and function 
+
+!!! question "Section questions"
+
+    1. Why do we need this training ?
+
 TBC using "Assessing the relation between protein phosphorylation, alphafold3 models, and conformational variability" [@ptms-af3]
 
-### 2.3.1 Proteins are dynamic systems, not static objects
-TBC
+### 2.4.1 Proteins are dynamic systems, not static objects
 
-### 2.3.2 Limitations of deep learning–based structure prediction
-TBC
+image 2.4.1
 
-### 2.3.3 Memorization and dominant conformations
-TBC
+### 2.4.2 Limitations of deep learning–based structure prediction
+
+image 2.4.2
+
+### 2.4.3 Memorization and dominant conformations
+
+image 2.3.3
 
 ---
 

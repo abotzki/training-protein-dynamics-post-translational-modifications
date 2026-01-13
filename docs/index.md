@@ -4,7 +4,7 @@
 
 ## Authors
 
-[cards class_name="authors" cols="3"(./docs/assets/cards/author_cards.yaml)]
+[cards class_name="authors" cols="2"(./docs/assets/cards/author_cards.yaml)]
 
 ## Lesson overview
 

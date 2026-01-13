@@ -8,7 +8,7 @@ This chapter moves from theory to practice by predicting the “anatomy” of th
 
 ---
 
-## 2.1 Biophysical profiles
+## 3.1 Biophysical profiles
 
 This package [@b2btools] offers biophysical feature predictors for protein sequences as well as different file parses and other utilities to help you with your protein data analysis. If your input data consists on one or more sequences not aligned, we provide you with the Single Sequence mode. On the other hand, if your input is a Multiple Sequence Alignment (MSA), we provide the MSA mode. For NMR data, we have the predictor ShiftCrypt (out of the scope of this course).
 
@@ -21,7 +21,7 @@ This package [@b2btools] offers biophysical feature predictors for protein seque
 | `PSPer` [@psper]   | PSP (Phase Separating Protein) predicts whether a protein is likely to phase-separate with a particular mechanism involving RNA interacts (FUS-like proteins). It will highlight the regions in your protein that are involved mechanistically, and provide an overall score. | [doi: 10.1093/bioinformatics/btz274](https://doi.org/10.1093/bioinformatics/btz274) |
 | `Shift Crypt` [@shiftcrypt]    | Auto-encoding NMR chemical shifts from their native vector space to a residue-level biophysical index | [doi: 10.1093/nar/gkaa391](https://doi.org/10.1093/nar/gkaa391)|
 
-### 2.1.1 DynaMine
+### 3.1.1 DynaMine
 
 DynaMine predicts **local protein backbone dynamics** directly from the amino acid sequence. More specifically, it estimates how rigid or flexible each residue is expected to be in solution, based on fast (nanosecond-scale) backbone motions.
 
@@ -47,7 +47,7 @@ Specifically, for the backbone propensity prediction, the range values are:
         <figcaption>DynaMine backbone dynamics for P08100</figcaption>
     </figure>
 
-### 2.1.2 DisoMine
+### 3.1.2 DisoMine
 
 DisoMine predicts **intrinsic disorder**, defined as regions of a protein that do not adopt a stable three-dimensional structure under physiological conditions.
 
@@ -72,7 +72,7 @@ The threshold for this prediction is:
         <figcaption>DisoMine disorder propensities for P08100</figcaption>
     </figure>
 
-### 2.1.3 EFoldMine
+### 3.1.3 EFoldMine
 
 EFoldMine predicts **early folding residues**, defined as amino acids that are likely to form stable local structure at the very beginning of the protein folding process.
 
@@ -98,7 +98,7 @@ The threshold for this prediction is:
     </figure>
 
 
-### 2.1.4 AgMata
+### 3.1.4 AgMata
 
 AgMata predicts **beta-sheet aggregation propensity** from single protein sequences. It identifies regions that are intrinsically prone to form intermolecular beta-sheet interactions, a key feature of amyloid-like aggregation.
 
@@ -118,7 +118,10 @@ AgMata predictions reflect **intrinsic sequence-level risk**, not actual aggrega
         <figcaption>AgMata beta-aggregation for P08100</figcaption>
     </figure>
 
-## 2.2 Extracting the protein sequence
+!!! warning "AgMata takes longer to predict the peaks"
+    Some of the activities will skip this predictor.
+
+## 3.2 Extracting the protein sequence
 
 The first step is to download the protein sequence in FASTA format.
 
@@ -148,7 +151,7 @@ The first step is to download the protein sequence in FASTA format.
         └─── P07949.fasta
         ```
 
-## 2.3 Analysing single sequences (_standalone_ mode)
+## 3.3 Analysing single sequences (_standalone_ mode)
 
 As mentioned earlier, the **B2BTools** suite provides several predictors to analyse protein biophysical properties:
 
@@ -185,21 +188,28 @@ The Bio2Byte lab provides an online platform [@b2btools-webserver] to run the bi
         1. You will be able to find the results inside the "Single Sequence Predictions" table. 
         1. Your job will have an action button "View Results" that opens a link like `https://bio2byte.be/online_predictors/results/UUID/`.
 
-### 2.3.1 Understanding the results as biological profiles
+### 3.3.1 Understanding the results as biological profiles
 
-#### 2.3.1.1 Exploring intrinsic flexibility and folding propensity
+#### 3.3.1.1 Exploring intrinsic flexibility and folding propensity
 
-#### 2.3.1.2 Visualization of biophysical profiles
+#### 3.3.1.2 Visualization of biophysical profiles
 
-## 2.4 Multiple sequence alignments (MSA)
+---
+
+!!! warning "☕️ COFFEE BREAK"
+    Time to grab a coffee or tea. We'll be back in ten minutes...
+
+---
+
+## 3.4 Multiple sequence alignments (MSA)
 
 To fully exploit the predictive power of biophysical tools, it is useful to study the target protein in the context of related proteins. Comparing similar sequences allows the identification of conserved biophysical profiles as well as positions that show divergence across homologs.
 
-### 2.4.1 Working with the aligned kinase domain
+### 3.4.1 Working with the aligned kinase domain
 
 In the following hands-on activities the focus will be on the homolog kinase domains of the P07949's 90%-similarity proteins. 
 
-### 2.4.1.1 Fetching the similar proteins
+### 3.4.1.1 Fetching the similar proteins
 
 UniProtKB provides access to similar proteins directly from the protein entry page, in the **Similar proteins** section.
 
@@ -250,7 +260,7 @@ UniProtKB provides access to similar proteins directly from the protein entry pa
         └─── P07949.90-similar.fasta
         ```
 
-### 2.4.1.2 Building the MSA
+### 3.4.1.2 Building the MSA
 
 To continue this activity, the multiple sequence alignment (MSA) will be generated using the online **Clustal Omega** server provided by EMBL-EBI.
 
@@ -289,7 +299,7 @@ To continue this activity, the multiple sequence alignment (MSA) will be generat
         └─── P07949.90-similar.msa.fasta
         ```
 
-### 2.4.1.3 Extracting the domain of interest
+### 3.4.1.3 Extracting the domain of interest
 
 The next step is to focus the analysis on the kinase domain positions across all aligned sequences. For this purpose, the course provides a Google Colab notebook that runs a Python script to identify and extract the aligned positions corresponding to a defined amino acid range in the original reference sequence.
 
@@ -358,7 +368,7 @@ The next step is to focus the analysis on the kinase domain positions across all
         └─── P07949.90-similar.msa.kinase.fasta
         ```
 
-### 2.4.1.4 Predicting the biophysical features
+### 3.4.1.4 Predicting the biophysical features
 
 We are now ready to predict the aligned biophysical features using **B2BTools**.
 
@@ -375,25 +385,26 @@ We are now ready to predict the aligned biophysical features using **B2BTools**.
         1. Once the prediction job has completed, the results will appear in the **MSA Predictions** table. It takes approximately less than two minutes to finish.
         1. Click the **View Results** button to open the results page for the aligned kinase domain.
 
-### 2.4.2 Understanding the results as biological profiles
+### 3.4.2 Understanding the results as biological profiles
 
-#### 2.3.2.1 Exploring intrinsic flexibility and folding propensity
+#### 3.3.2.1 Exploring intrinsic flexibility and folding propensity
 
-#### 2.3.2.2 Visualization of biophysical profiles
-
-TBC
-
-## 2.5 Exporting the results
+#### 3.3.2.2 Visualization of biophysical profiles
 
 TBC
 
-## 2.6 Connecting online resources
+## 3.5 Connecting online resources
 
 For a selected protein, a set of "external resources" will be shown in the left navigation bar if the header is recognised as a UniProt entry.
 
 !!! example "Hands-on: Finding phosphosites on Scop3P for P07949"
 
-    1. Select the `P07949` protein in the dropdown selector.
+    1. Look for all the modified kinases on Scop3P at https://iomics.ugent.be/scop3p/search?q=kinase.
+    1. Find and select `P07949` from the list. 
+    
+    Given the B2BTools page also includes the direct link, you can proceed with these steps: 
+    
+    1 Select the `P07949` protein in the dropdown selector.
     1. Clicking on the "Find PTMs on Scop3P" redirects you to the entry page on that resource: [https://iomics.ugent.be/scop3p/index?protein=P07949](https://iomics.ugent.be/scop3p/index?protein=P07949).
 
     ??? success "Solution"
@@ -403,6 +414,12 @@ For a selected protein, a set of "external resources" will be shown in the left 
         </figure>
         
 ---
+
+!!! warning "🥪 LUNCH BREAK"
+    Time to grab a coffee or tea. We'll be back in one and a half hour...
+
+---
+
 
 !!! note "To be continued: : Go to chapter 4"
     [Next chapter](/../../chapters/chapter_04) explains how to explore the modifications (PTMs).
