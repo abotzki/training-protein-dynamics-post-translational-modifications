@@ -1,6 +1,9 @@
-# Assess protein dynamics & post-translational modifications through ELIXIR Belgium Node services: B2BTools & Scop3P
+# Assess protein dynamics & post-translational modifications 
+**Through ELIXIR Belgium Node services: B2BTools & Scop3P**
 
 [![DOI](https://zenodo.org/badge/1120984068.svg)](https://doi.org/10.5281/zenodo.18242775)
+
+--- 
 
 The breakthrough of AlphaFold2 delivered structural models for nearly all proteins lacking experimental structures, opening new avenues to interrogate both sequence and structure. However, these models capture static snapshots rather than the dynamic conformational ensembles that govern protein behaviour.
 
