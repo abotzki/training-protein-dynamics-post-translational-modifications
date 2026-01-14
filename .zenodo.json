@@ -1,0 +1,43 @@
+{
+    "title": "Training Material: Assess protein dynamics & post-translational modifications",
+    "description" : "This lesson introduces modern approaches for interpreting protein behaviour beyond static structures. It explores how sequence-based predictors from the Bio2Byte Tools (B2BTools) reveal hidden biophysical properties such as dynamics, folding tendencies, and disorder, and how Scop3P enables the structural and functional analysis of phosphorylation sites. Together, these resources complement AlphaFold2 models by adding dynamic, regulatory, and biological context to protein structure predictions.",
+    "creators": [
+        {
+            "name": "Ramasamy, Pathmanaban",
+            "orcid": "0000-0003-4039-5230",
+            "affiliation": "Ghent University",
+            "type": "Author"
+        },
+        {
+           "name": "Díaz, Adrián",
+            "orcid": "0000-0003-0165-1318",
+            "affiliation": "Vrije Universiteit Brussel",
+            "type": "Author"
+        }
+    ],
+    "contributors": [],
+    "related_identifiers": [
+        {
+            "identifier": "https://doi.org/10.5281/zenodo.7913091",
+            "relation": "isDerivedFrom",
+            "resource_type": "software"
+        }
+    ],
+    "keywords": [
+        "FAIR", 
+        "ELIXIR", 
+        "training",
+        "biophysical",
+        "b2bTools",
+        "protein function",
+        "protein structure",
+        "structural biology",
+        "PTM",
+        "Scop3P",
+        "Scop3PTM",
+        "proteomics"
+    ],
+    "upload_type": "lesson",
+    "language": "eng",
+    "grants": []
+}
