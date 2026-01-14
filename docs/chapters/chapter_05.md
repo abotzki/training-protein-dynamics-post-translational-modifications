@@ -9,9 +9,7 @@ This activity gives an overview of exploring PTMs, mutations, biophysical proper
 
 !!! example "Hands-on: Structural and biophysical interpretation of PTMs and mutations"
     
-    For this activity open this interactive notebook: `Scop3P_PTM_structure_viz.ipynb`: <a target="_blank" href="https://colab.research.google.com/github/Bio2Byte/Scop3P-notebooks/blob/main/Scop3P_PTM_structure_viz.ipynb">
-        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
+    For this activity open the interactive notebook `Scop3P_PTM_structure_viz.ipynb`:
     
     1. Fetch PTMs from Scop3P REST API
     1. Fetch diseases variants from UniProt REST API
@@ -29,7 +27,63 @@ This activity gives an overview of exploring PTMs, mutations, biophysical proper
             <figcaption> Different results using the provided notebook </figcaption>
         </figure>
 
-## 5.2 Comparative biophysical analysis of wild-type and variant states
+## 5.2 Visualize the experimental peptide coverage on protein structures
+
+!!! example "Hands-on: Peptide mapper"
+
+    For this activity open these interactive notebooks: 
+    
+    1. `Peptide mapper.ipynb`: Fetch phospho peptides from Scop3P and map onto protein structures.
+    1. `Peptide_maper_fileupload.ipynb`: Upload your own data (Peptide table) and visualize the peptides and modifications on protein structures.
+    
+    ??? success "Solution for Peptide mapper.ipynb"
+        
+        Fetch phospho peptides from Scop3P and map onto protein structures:
+        
+        1. Open the notebook on Google Colab.
+        1. Import the required packages.
+        1. Follow the steps of the interactive form.
+            1. Enter the protein ID (ex: P07949) and click 'Load'
+            1. The app will let you choose between all peptides ('All rows') and unique spans (the peptide ranges are merged)
+            1. Map all petides on the AF structure using 'Map all' (shows the mass spec coverage of your protein)
+            1. Alternatively click one or multiple peptides on peptide panel to see their structural mapping
+            1. Hint:
+                - Explore what the search function does!
+                
+        !!! notes "Example"
+        
+            <figure>
+                <img src="../../assets/images/Peptide_mapper_scop3p_voila.png" width="800" alt="Mass-spec picture goes here"/>
+                <figcaption> </figcaption>
+            </figure>
+        
+    ??? success "Solution for Peptide_maper_fileupload.ipynb"
+    
+        Upload your own data (Peptide table) and gets a peptide file and visualize the peptides and modifications on protein structures
+        
+        1. Open the notebook on Google Colab.
+        1. Import the required packages.
+        1. Follow the steps of the interactive form.
+            1. Choose peptide file (tsv/tab delimkited text file)  and click 'Load file'
+            1. The app will autofill the columns using keywords or enter the column headers
+                1. (protein ID column name [ACC_ID], peptide seq column name [pep_seq] and the modified position column name [UP_POS]
+            1. Click 'Build mapping'
+            1. Select the protein from list for which you want to map the peptides (note: these proteins are identified in your sample)
+            1. Map all petides on the AF structure using 'Map all' (shows the mass spec coverage of your protein)
+            1. Alternatively click one or multiple peptides on peptide panel to see their structural mapping
+            1. Hint:
+                - Explore what the search function does! 
+            
+        
+        !!! notes "Example"
+        
+            <figure>
+                <img src="../../assets/images/Peptide_mapper_fileupload_voila.png" width="800" alt="Mass-spec picture goes here"/>
+                <figcaption> </figcaption>
+            </figure>
+        
+
+## 5.3 Comparative biophysical analysis of wild-type and variant states
 
 For this activity will mutate three positions of P07949:
 
@@ -85,10 +139,10 @@ For this activity will mutate three positions of P07949:
     
 <iframe src="/../assets/html/mutations.html" height="1100" width="100%" title="MolViewStory"></iframe>
 
-### 5.2.1 Explore the effect of mutations (biophysical inference)
+### 5.3.1 Explore the effect of mutations (biophysical inference)
         
 !!! example "Hands-on: Explore the effect of mutations (biophysical inference)"
-    For this activity open this interactive notebook: `Scop3P_b2b_mutation_effect.ipynb`
+    For this activity open the interactive notebook `Scop3P_b2b_mutation_effect.ipynb`:
     
     1. Predict the biophysical properties for the wild type
     1. Predict the biophysical properties for the mutant `S909P Y928P Y981P`
@@ -105,7 +159,7 @@ For this activity will mutate three positions of P07949:
             <figcaption> Biophysics changes </figcaption>
         </figure>
     
-### 5.2.2 Explore the effect of mutations (structural inference)
+### 5.3.2 Explore the effect of mutations (structural inference)
 
 Regarding the coordinate files for the structures, the predicted model by AlphaFold can be accessed directly from the AlphaFold Protein Structure Database. 
 
@@ -216,9 +270,12 @@ Now the files are ready to be processed, let's continue to the next activity.
  
 !!! example "Hands-on: Structural inference"
     
-    For this activity open this interactive notebook: `Scop3P_PTM_structure_viz.ipynb` (TM-align tab).
+    For this activity open the interactive notebook `Scop3P_PTM_structure_viz.ipynb` (TM-align tab):
 
-    1. Aligning and exploring protein structures (predicted vs experimental, phospho vs non-phospho, mutated vs wild type)
+    1. Aligning and exploring protein structures
+        1. predicted vs experimental
+        1. phospho vs non-phospho
+        1. mutated vs wild type
     
     ??? success "Solution"
 
