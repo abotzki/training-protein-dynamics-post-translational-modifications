@@ -1,17 +1,24 @@
-# Elixir Training Lesson template
+# Assess protein dynamics & post-translational modifications through ELIXIR Belgium Node services: B2BTools & Scop3P
 
-[![DOI](https://zenodo.org/badge/564252010.svg)](https://zenodo.org/badge/latestdoi/564252010)
+[![DOI](https://zenodo.org/badge/1120984068.svg)](https://doi.org/10.5281/zenodo.18242775)
 
+The breakthrough of AlphaFold2 delivered structural models for nearly all proteins lacking experimental structures, opening new avenues to interrogate both sequence and structure. However, these models capture static snapshots rather than the dynamic conformational ensembles that govern protein behaviour.
 
-For instruction on how to use the template, please follow this documentation: 
-https://elixir-europe-training.github.io/ELIXIR-TrP-LessonTemplateInstructions-MkDocs/
+The Bio2Byte Tools, published as B2BTools, is a suite of sequence-based predictors for unveiling the biophysical properties hidden in the amino acid language with ease: backbone dynamics, early folding events, disordered positions among other features. Developed by the lab led by Prof. Dr. Wim Vranken, this online platform is part of the ELIXIR Belgium node services. In parallel to this suite of tools, Scop3P, another ELIXIR Belgium node service, will allow you to explore and understand the impact of phospho-sites on human protein structure and function. It can serve as a springboard for researchers seeking to analyse and interpret a given phosphorylation site or phosphoprotein in a structural, biophysical, and biological context.
 
+## Open this training
 
-**Any issues?** Contact Geert van Geest (@GeertvanGeest) 
+Please visit our (training material)(https://bio2byte.github.io/training-protein-dynamics-post-translational-modifications/). 
 
+## Citing this lesson
 
+Please cite as:
 
-## If working locally
+  1. **Pathmanaban Ramasamy**, **Adrián Díaz** (2026). Training Material: Assess protein dynamics & post-translational modifications. Zenodo. [https://doi.org/10.5281/zenodo.18242776](https://doi.org/10.5281/zenodo.18242776).
+
+---
+
+## Local installation
 
 This website is generated with [MkDocs](https://www.mkdocs.org/), with the theme [Material](https://squidfunk.github.io/mkdocs-material/).
 
@@ -46,6 +53,15 @@ mkdocs serve --watch ./docs --livereload
 Live reload will update the generated output automatically every time a change is detected in the docs directory. 
 
 Check it out with your browser at [http://localhost:8000/](http://localhost:8000/).
+
+# About the training Template 
+
+For instruction on how to use the template, please follow this documentation: 
+https://elixir-europe-training.github.io/ELIXIR-TrP-LessonTemplateInstructions-MkDocs/
+
+
+**Any issues?** Contact Geert van Geest (@GeertvanGeest) 
+
 
 ## Citation
 

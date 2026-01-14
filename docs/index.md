@@ -62,11 +62,12 @@
 Greek Mythology icons made by [max.icons](https://www.flaticon.com/authors/maxicons) from [www.flaticon.com](www.flaticon.com) -->
 
 ---
+
 ## Citing this lesson
 
 Please cite as:
 
-  1. Enter your training citation here.
+  1. **Pathmanaban Ramasamy**, **Adrián Díaz** (2026). Training Material: Assess protein dynamics & post-translational modifications. Zenodo. [https://doi.org/10.5281/zenodo.18242776](https://doi.org/10.5281/zenodo.18242776).
   1. Jose Gavalda-Garcia, **Adrián Díaz**, Wim Vranken. (2024). bio2Byte Tools deployment as a Python package and Galaxy tool to predict protein biophysical properties. Bioinformatics, Volume 40, Issue 9, September 2024, btae543. [doi.org/10.1093/bioinformatics/btae543](https://doi.org/10.1093/bioinformatics/btae543) [@b2btools].
   1. Luciano Porto Kagami, Gabriele Orlando, Daniele Raimondi, Francois Ancien, Bhawna Dixit, Jose Gavaldá-García, **Pathmanaban Ramasamy**, Joel Roca-Martínez, Konstantina Tzavella, Wim Vranken, b2bTools: online predictions for protein biophysical features and their conservation, Nucleic Acids Research, Volume 49, Issue W1, 2 July 2021, Pages W52–W59. [doi.org/10.1093/nar/gkab425](https://doi.org/10.1093/nar/gkab425) [@b2btools-webserver].
   1. **Pathmanaban Ramasamy**, Demet Turan, Natalia Tichshenko, Niels Hulstaert, Elien Vandermarliere, Wim Vranken, & Lennart Martens. (2020). Scop3P: A Comprehensive Resource of Human Phosphosites within Their Full Context.  Journal of Proteome Research 2020 19 (8), 3478-3486. [10.1021/acs.jproteome.0c00306](https://10.1021/acs.jproteome.0c00306) [@Scop3P].
