@@ -21,12 +21,6 @@ This course is focused on the "Proto-oncogene tyrosine-protein kinase receptor R
     1. The membrane surrounding the endosome: Single-pass type I membrane protein
     
     Note: Predominantly located on the plasma membrane (PubMed:23333276, PubMed:9575150). In the presence of SORL1 and GFRA1, directed to endosomes (PubMed:23333276).
-    
-    <div class="subcellular" style="width: 600px; margin: auto 25%;">
-        <iframe src="https://raw.githubusercontent.com/Bio2Byte/training-protein-dynamics-post-translational-modifications/d168c148b9cb6928d088350b8678bacd2e43d049/docs/assets/html/subcellular.html" height="500" width="100%" title="1D-2.5D-3D"></iframe>
-    </div>
-
-    _Proto-oncogene tyrosine-protein kinase receptor Ret is located inside the human cells in "cell membrane" ([SL-0039](https://www.uniprot.org/locations/SL-0039)) and "endosome membrane" ([SL-0100](https://www.uniprot.org/locations/SL-0100))_
 
 This protein has a sequence length of 1114 amino acids. It can be found in UniProtKB [@UniProtConsortium] under the accession number [**P07949**](https://www.uniprot.org/uniprotkb/P07949/entry) or the entry name [**RET_HUMAN**](https://www.uniprot.org/uniprotkb/P07949/entry).
 
@@ -84,7 +78,7 @@ In this training, we will focus on a specific protein domain: the kinase domain,
 
 This story shows the different structures related to RET protein (P07949) focusing on the kinase domain:
 
-<iframe src="https://raw.githubusercontent.com/Bio2Byte/training-protein-dynamics-post-translational-modifications/d168c148b9cb6928d088350b8678bacd2e43d049/docs/assets/html/chapter_02.html" height="1100" width="100%" title="MolViewStory"></iframe>
+<iframe src="https://molstar.org/stories-viewer/v1?story-id=d21ff556&data-format=mvsx" style="width:1280px; height:720px; border:none;" title="Mol* Stories Viewer" allow="autoplay"></iframe>
 
 ---
 

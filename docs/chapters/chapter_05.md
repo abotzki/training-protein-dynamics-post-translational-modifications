@@ -137,7 +137,7 @@ For this activity will mutate three positions of P07949:
     └─── P07949_s909p_y928p_y981p.fasta
     ```
     
-<iframe src="https://raw.githubusercontent.com/Bio2Byte/training-protein-dynamics-post-translational-modifications/d168c148b9cb6928d088350b8678bacd2e43d049/docs/assets/html/mutations.html" height="1100" width="100%" title="MolViewStory"></iframe>
+<iframe src="https://molstar.org/stories-viewer/v1?story-id=6bde1abc&data-format=mvsx" style="width:1280px; height:720px; border:none;" title="Mol* Stories Viewer" allow="autoplay"></iframe>
 
 ### 5.3.1 Explore the effect of mutations (biophysical inference)
         
