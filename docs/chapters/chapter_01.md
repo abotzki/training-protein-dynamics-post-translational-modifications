@@ -8,15 +8,15 @@ Welcome to this VIB training. The authors of this course designed a full teachin
 ## We have the structures now — what Next?
 ### Where should we focus to understand protein behavior?
 
-Proteins are often presented as static 3D structures, but in reality they are **dynamic, context-dependent systems**. Function does not emerge from a single snapshot—it arises from **conformational landscapes**, **biophysical properties**, and **regulatory modifications** that change across conditions, cell types, and time.
+Proteins are often presented as static 3D structures, but in reality they are **dynamic**, context-dependent systems. Function does not emerge from a single snapshot—it arises from **conformational landscapes**, **biophysical properties**, and **regulatory modifications** that change across conditions, cell types, and time.
 
-Post-translational modifications, such as phosphorylation, can **reweight conformational states**, alter **interaction interfaces**, and **rewire signaling pathways** without changing the underlying sequence. Likewise, mutations—whether disease-causing or benign—do not act uniformly: their impact depends on **structural context**, **local dynamics**, **intrinsic disorder**, and **network connectivity** within the protein.
+Post-translational modifications, such as phosphorylation, can reweight conformational states, alter interaction interfaces, and rewire signaling pathways without changing the underlying sequence. Likewise, mutations—whether disease-causing or benign—do not act uniformly: their impact depends on **structural context**, **local dynamics**, **intrinsic disorder**, and **network connectivity** within the protein.
 
 This training bridges the gap between **sequence, structure, and function** by moving beyond static models to:
 
-- interpret **backbone dynamics**, **intrinsic disorder**, and **folding propensities**
-- place **PTMs and mutations** in their **structural and biophysical context**
-- understand how proteins **sample multiple functional states**, rather than a single “native” structure
+- interpret backbone dynamics, intrinsic disorder, and folding propensities
+- place PTMs and mutations in their **structural and biophysical context**
+- understand how proteins sample **multiple functional states**, rather than a single “native” structure
 
 By integrating **structural models**, **biophysical annotations**, and **experimental proteomics evidence**, we gain a **mechanistic view of protein function**—one that is essential for interpreting signaling, disease mutations, and regulatory complexity in real biological systems.
 
