@@ -307,7 +307,7 @@ Now the files are ready to be processed, let's continue to the next activity.
     
     For this activity open the Jupterlabl or interactive App here and go to Tab 6) TM-align:  
     
-     | Notebook (JupyterLab) | Interactive app (Voilà) |
+    | Notebook (JupyterLab) | Interactive app (Voilà) |
     |----------------------|--------------------------|
     | [![Open Notebook](https://mybinder.org/badge_logo.svg)](https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?filepath=notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb) | [![Launch App](https://mybinder.org/badge_logo.svg)](https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?urlpath=voila/render/notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb) |
 
