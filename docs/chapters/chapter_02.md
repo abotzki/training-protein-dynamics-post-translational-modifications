@@ -56,7 +56,9 @@ This protein has a sequence length of 1114 amino acids. It can be found in UniPr
 !!! notes "Crystal structure 2IVS"
     
     ??? success 'View 2IVS'
-    
+
+        Representation of the crystal structure using Mol*:
+
         <iframe src="https://molstar.org/viewer/?pdb=2IVS&&hide-controls=1" height="600" width="100%" title="Protein Data Bank in Europe Knowledge Base - Entry 2IVS"></iframe>
 
         _[2IVS](https://www.ebi.ac.uk/pdbe/pdbe-kb/proteins/2IVS): Crystal structure of non-phosphorylated ret tyrosine kinase domain (Protein Data Bank in Europe Knowledge Base)_
@@ -73,7 +75,11 @@ According to the functional annotation provided by UniProt, this protein plays a
 > - **It phosphorylates PTK2/FAK1.**
 
 !!! notes "Crystal structure 6NJA"
+
     ??? success "View 6NJA"
+
+        Representation of the crystal structure using Mol*:
+
         <iframe src="https://molstar.org/viewer/?pdb=6NJA&&hide-controls=1" height="600" width="100%" title="Protein Data Bank in Europe Knowledge Base - 6NJA entry"></iframe>
 
         _[6NJA](https://www.ebi.ac.uk/pdbe/pdbe-kb/proteins/6NJA): Crystal structure of phosphorylated ret tyrosine kinase domain (Protein Data Bank in Europe Knowledge Base)_
@@ -97,6 +103,7 @@ In this training, we will focus on a specific protein domain: the kinase domain,
         ```
     
     ??? success "View predicted model AF-P07949-F1-v6"
+
         <iframe src="https://molstar.org/viewer/?afdb=P07949&&hide-controls=1" height="600" width="100%" title="AlphaFold predicted model"></iframe>
         
         _The predicted model [`AF-P07949-F1-v6`](https://alphafold.ebi.ac.uk/entry/AF-P07949-F1) by AlphaFold Protein Structure Database._
