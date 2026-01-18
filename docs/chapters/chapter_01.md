@@ -5,10 +5,25 @@ Welcome to this VIB training. The authors of this course designed a full teachin
     1. Why do we need this training ?
     
 ---
+## We have the structures now — what Next?
+### Where should we focus to understand protein behavior?
+
+Proteins are often presented as static 3D structures, but in reality they are **dynamic, context-dependent systems**. Function does not emerge from a single snapshot—it arises from **conformational landscapes**, **biophysical properties**, and **regulatory modifications** that change across conditions, cell types, and time.
+
+Post-translational modifications, such as phosphorylation, can **reweight conformational states**, alter **interaction interfaces**, and **rewire signaling pathways** without changing the underlying sequence. Likewise, mutations—whether disease-causing or benign—do not act uniformly: their impact depends on **structural context**, **local dynamics**, **intrinsic disorder**, and **network connectivity** within the protein.
+
+This training bridges the gap between **sequence, structure, and function** by moving beyond static models to:
+
+- interpret **backbone dynamics**, **intrinsic disorder**, and **folding propensities**
+- place **PTMs and mutations** in their **structural and biophysical context**
+- understand how proteins **sample multiple functional states**, rather than a single “native” structure
+
+By integrating **structural models**, **biophysical annotations**, and **experimental proteomics evidence**, we gain a **mechanistic view of protein function**—one that is essential for interpreting signaling, disease mutations, and regulatory complexity in real biological systems.
 
 ## 1.1 Introducing the training methodology
 
 The protein of interest for this training is the human **proto-oncogene tyrosine-protein kinase receptor RET**, encoded by the **RET** gene. 
+This protein is a receptor tyrosine-protein kinase involved in numerous cellular mechanisms including cell proliferation, neuronal navigation, cell migration, and cell differentiation. It exits is multiple conformational states (phospho and non-phospho). You will learn more about it's biological context in Chapter 2.
 
 1. We will predict biophysical features for this protein using the Bio2Byte online platform, specifically the **B2BTools** suite. To enable a deeper analysis of these biophysical properties, we will generate a multiple sequence alignment (MSA) of sequences sharing at least 90% identity. This alignment will be used to identify conserved and variable patterns across homologous sequences.
 1. The MSA will be created using **Clustal Omega**, and the aligned kinase domain will be extracted using a **Google Colab** notebook.
