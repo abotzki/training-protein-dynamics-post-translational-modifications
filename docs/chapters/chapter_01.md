@@ -20,7 +20,7 @@ The protein of interest for this training is the human **proto-oncogene tyrosine
 
     Use the following link to launch the JupyterLab environment for this training:
 
-    [Launch JupyterLab](https://hub.compomics.com/user/bio2byte-scop3p-notebooks-euer21uw/lab/workspaces/auto-6/tree/notebooks)
+    [![Launch Binder](https://mybinder.org/badge_logo.svg)](https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD)
 
     The environment may take a few minutes to build and start. Please open the link now so that it is ready when needed later in the training.
 
