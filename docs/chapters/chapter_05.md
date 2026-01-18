@@ -9,9 +9,8 @@ This activity gives an overview of exploring PTMs, mutations, biophysical proper
 
 !!! example "Hands-on: Structural and biophysical interpretation of PTMs and mutations"
     
-    For this activity open the interactive notebook here [![Launch Binder](https://mybinder.org/badge_logo.svg)](
-    https://hub.compomics.com/user/bio2byte-scop3p-notebooks-09tor0ec/lab/workspaces/auto-l/tree/notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb
-    )
+    For this activity open the interactive notebook here [![Launch App](https://mybinder.org/badge_logo.svg)](https://hub.compomics.com/user/bio2byte-scop3p-notebooks-09tor0ec/voila/render/notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb)
+
     
     1. Fetch PTMs from Scop3P REST API
     1. Fetch diseases variants from UniProt REST API
