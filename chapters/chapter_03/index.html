@@ -1,0 +1,2102 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../chapter_02/">
+      
+      
+        <link rel="next" href="../chapter_04/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/elixir_favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>3. Building biological profiles - Assess protein dynamics & post-translational modifications</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#31-biophysical-profiles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+This training material is under active development and considered pre-alpha.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Assess protein dynamics &amp; post-translational modifications" class="md-header__button md-logo" aria-label="Assess protein dynamics & post-translational modifications" data-md-component="logo">
+      
+  <img src="../../assets/images/white-orange-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Assess protein dynamics & post-translational modifications
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. Building biological profiles
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Bio2Byte/training-protein-dynamics-post-translational-modifications" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Bio2Byte/training-protein-dynamics-post-translational-modifications
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Assess protein dynamics &amp; post-translational modifications" class="md-nav__button md-logo" aria-label="Assess protein dynamics & post-translational modifications" data-md-component="logo">
+      
+  <img src="../../assets/images/white-orange-logo.png" alt="logo">
+
+    </a>
+    Assess protein dynamics & post-translational modifications
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Bio2Byte/training-protein-dynamics-post-translational-modifications" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Bio2Byte/training-protein-dynamics-post-translational-modifications
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course_schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course schedule
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Content
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Course Content
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducing this course
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Introducing the biological context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Building biological profiles
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Building biological profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-biophysical-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Biophysical profiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Biophysical profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-dynamine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.1 DynaMine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-disomine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.2 DisoMine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-efoldmine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.3 EFoldMine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#314-agmata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.4 AgMata
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-extracting-the-protein-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Extracting the protein sequence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-analysing-single-sequences-standalone-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Analysing single sequences (standalone mode)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Analysing single sequences (standalone mode)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-understanding-the-results-as-biological-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.1 Understanding the results as biological profiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-multiple-sequence-alignments-msa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Multiple sequence alignments (MSA)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Multiple sequence alignments (MSA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-working-with-the-aligned-kinase-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1 Working with the aligned kinase domain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3411-fetching-the-similar-proteins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1.1 Fetching the similar proteins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3412-building-the-msa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1.2 Building the MSA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3413-extracting-the-domain-of-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1.3 Extracting the domain of interest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3414-predicting-the-aligned-biophysical-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1.4 Predicting the aligned biophysical features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-understanding-the-aligned-results-as-biological-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.2 Understanding the aligned results as biological profiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-analysing-the-50-identity-aligned-kinase-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Analysing the 50% identity aligned kinase domains
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-connecting-online-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Connecting online resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Working with post-translational modifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Combining PTM annotations to biophysical properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Closing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../follow_up_training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Follow up training
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>3. Building biological profiles</h1>
+
+<div><p>This chapter moves from theory to practice by predicting the “anatomy” of the protein at the level of its biophysical properties. Using the <strong>B2BTools</strong> suite, we will explore how different regions of the protein behave in terms of dynamics, structure, and flexibility.</p>
+<div class="admonition question">
+<p class="admonition-title">Chapter questions</p>
+<ol>
+<li>How to use the B2BTools online platform to predict biophysical profiles for protein sequences ?</li>
+<li>How to find biophysical patterns using the platform ? </li>
+</ol>
+</div>
+<hr>
+<h2 id="31-biophysical-profiles">3.1 Biophysical profiles</h2>
+<p>This package <sup id="fnref:b2btools"><a class="footnote-ref" href="#fn:b2btools">1</a></sup> offers biophysical feature predictors for protein sequences as well as different file parses and other utilities to help you with your protein data analysis. If your input data consists on one or more sequences not aligned, we provide you with the Single Sequence mode. On the other hand, if your input is a Multiple Sequence Alignment (MSA), we provide the MSA mode. For NMR data, we have the predictor ShiftCrypt (out of the scope of this course).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Predictor</th>
+<th>Description</th>
+<th style="text-align: left;">Publication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>DynaMine</code> <sup id="fnref:dynamine"><a class="footnote-ref" href="#fn:dynamine">2</a></sup></td>
+<td>Fast predictor of protein backbone dynamics using only sequence information as input. The version here also predicts side-chain dynamics and secondary structure predictors using the same principle.</td>
+<td style="text-align: left;"><a href="https://doi.org/10.1038/ncomms3741">doi: 10.1038/ncomms3741</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>DisoMine</code> <sup id="fnref:disomine"><a class="footnote-ref" href="#fn:disomine">3</a></sup></td>
+<td>Predicts protein disorder with recurrent neural networks not directly from the amino acid sequence, but instead from more generic predictions of key biophysical properties, here protein dynamics, secondary structure and early folding.</td>
+<td style="text-align: left;"><a href="https://doi.org/10.1016/j.jmb.2022.167579">doi: 10.1016/j.jmb.2022.167579</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>EFoldMine</code> <sup id="fnref:efoldmine"><a class="footnote-ref" href="#fn:efoldmine">4</a></sup></td>
+<td>Predicts from the primary amino acid sequence of a protein, which amino acids are likely involved in early folding events.</td>
+<td style="text-align: left;"><a href="https://doi.org/10.1038/s41598-017-08366-3">doi: 10.1038/s41598-017-08366-3</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>AgMata</code> <sup id="fnref:agmata"><a class="footnote-ref" href="#fn:agmata">5</a></sup></td>
+<td>Single-sequence based predictor of protein regions that are likely to cause beta-aggregation.</td>
+<td style="text-align: left;"><a href="https://doi.org/10.1093/bioinformatics/btz912">doi: 10.1093/bioinformatics/btz912</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PSPer</code> <sup id="fnref:psper"><a class="footnote-ref" href="#fn:psper">6</a></sup></td>
+<td>PSP (Phase Separating Protein) predicts whether a protein is likely to phase-separate with a particular mechanism involving RNA interacts (FUS-like proteins). It will highlight the regions in your protein that are involved mechanistically, and provide an overall score.</td>
+<td style="text-align: left;"><a href="https://doi.org/10.1093/bioinformatics/btz274">doi: 10.1093/bioinformatics/btz274</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Shift Crypt</code> <sup id="fnref:shiftcrypt"><a class="footnote-ref" href="#fn:shiftcrypt">7</a></sup></td>
+<td>Auto-encoding NMR chemical shifts from their native vector space to a residue-level biophysical index</td>
+<td style="text-align: left;"><a href="https://doi.org/10.1093/nar/gkaa391">doi: 10.1093/nar/gkaa391</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="311-dynamine">3.1.1 DynaMine</h3>
+<p>DynaMine predicts <strong>local protein backbone dynamics</strong> directly from the amino acid sequence. More specifically, it estimates how rigid or flexible each residue is expected to be in solution, based on fast (nanosecond-scale) backbone motions.</p>
+<p>The predictor was trained on backbone order parameters derived from <strong>NMR chemical shift data</strong>, which reflect protein behaviour in solution rather than a single static structure. Because of this, DynaMine captures intrinsic conformational tendencies that are independent of a specific folded state.</p>
+<p>The output is a per-residue numerical score:</p>
+<ul>
+<li>Higher values indicate rigid regions with a strong tendency to adopt stable conformations</li>
+<li>Lower values indicate flexible or dynamic regions</li>
+</ul>
+<p>Backbone dynamics are <strong>not equivalent to intrinsic disorder</strong>. A residue may be flexible while still being part of a folded structure, and rigid residues are not guaranteed to be structured under all conditions. DynaMine scores should therefore be interpreted as <strong>biophysical propensities</strong>, not as absolute structural assignments.</p>
+<p>Specifically, for the backbone propensity prediction, the range values are:</p>
+<ul>
+<li><strong>Values &gt; 1.0</strong>: Membrane spanning regions</li>
+<li><strong>Values &gt; 0.80 and &lt; 1.0</strong>: Rigid conformations</li>
+<li><strong>Values &gt; 0.69 and &lt; 0.80</strong>: Context dependent</li>
+<li><strong>Values &lt; 0.69</strong>: Flexible regions</li>
+</ul>
+<div class="admonition notes">
+<p class="admonition-title">Backbone plot example</p>
+<p><figure>
+    <img src="../../assets/images/P08100_backbone.jpg" width="1048" alt="P07949 on Scop3P">
+    <figcaption>DynaMine backbone dynamics for P08100</figcaption>
+</figure></p>
+</div>
+<h3 id="312-disomine">3.1.2 DisoMine</h3>
+<p>DisoMine predicts <strong>intrinsic disorder</strong>, defined as regions of a protein that do not adopt a stable three-dimensional structure under physiological conditions.</p>
+<p>The model was trained on experimentally annotated disordered regions from curated datasets and predicts disorder at the residue level. Unlike many disorder predictors, DisoMine does not rely directly on amino acid composition or evolutionary profiles. Instead, it uses predicted biophysical properties—such as backbone dynamics, secondary structure propensity, and early folding behaviour—as input.</p>
+<p>The output is a probability score between 0 and 1:</p>
+<ul>
+<li>Higher values indicate a higher likelihood that the residue is intrinsically disordered</li>
+<li>Lower values indicate a tendency toward structured behaviour</li>
+</ul>
+<p>DisoMine is particularly effective at identifying <strong>long disordered regions</strong>. The predictions are probabilistic and context-dependent: a high disorder score does not imply permanent disorder in all conditions, but rather a strong tendency to remain flexible or unstructured.</p>
+<p>The threshold for this prediction is:</p>
+<ul>
+<li><strong>Above 0.5</strong>: likely a disordered position</li>
+<li><strong>Below</strong>: unlikely a disordered position</li>
+</ul>
+<div class="admonition notes">
+<p class="admonition-title">Disorder plot example</p>
+<p><figure>
+    <img src="../../assets/images/P08100_disorder.jpg" width="1048" alt="DisoMine disorder propensities for P08100">
+    <figcaption>DisoMine disorder propensities for P08100</figcaption>
+</figure></p>
+</div>
+<h3 id="313-efoldmine">3.1.3 EFoldMine</h3>
+<p>EFoldMine predicts <strong>early folding residues</strong>, defined as amino acids that are likely to form stable local structure at the very beginning of the protein folding process.</p>
+<p>The predictor was trained using experimental data derived from hydrogen–deuterium exchange experiments, which identify residues that gain protection early during folding. EFoldMine therefore focuses on <strong>folding kinetics</strong>, rather than final structure.</p>
+<p>The output highlights residues with high early folding propensity:</p>
+<ul>
+<li>These residues are likely to initiate local structure formation</li>
+<li>They may play a key role in guiding the folding pathway</li>
+</ul>
+<p>Early folding residues are not necessarily rigid, conserved, or part of the final folded core. EFoldMine does not predict folding rates or final stability, but rather identifies <strong>sequence-encoded folding initiation signals</strong> that act early in the folding process.</p>
+<p>The threshold for this prediction is:</p>
+<ul>
+<li><strong>Values &gt; 0.169</strong>: indicate residues that are likely to start the protein folding process</li>
+<li><strong>Below</strong>: indicate residues that are unlikely to start the protein folding process</li>
+</ul>
+<div class="admonition notes">
+<p class="admonition-title">EFoldMine plot example</p>
+<p><figure>
+    <img src="../../assets/images/P08100_efoldmine.jpg" width="1048" alt="DisoMine disorder propensities for P08100">
+    <figcaption>EFoldMine early folding events for P08100</figcaption>
+</figure></p>
+</div>
+<h3 id="314-agmata">3.1.4 AgMata</h3>
+<p>AgMata predicts <strong>beta-sheet aggregation propensity</strong> from single protein sequences. It identifies regions that are intrinsically prone to form intermolecular beta-sheet interactions, a key feature of amyloid-like aggregation.</p>
+<p>Unlike many aggregation predictors, AgMata is not directly trained on known aggregating sequences. Instead, it uses a generalized statistical potential that integrates predicted biophysical properties, including backbone dynamics and secondary structure tendencies.</p>
+<p>The output highlights regions with increased aggregation risk:</p>
+<ul>
+<li>Higher values indicate a stronger intrinsic tendency toward beta-aggregation</li>
+<li>Lower values indicate reduced aggregation propensity</li>
+<li>Peaks indicate residues likely to be involved in beta-sheet aggregation.</li>
+</ul>
+<p>AgMata predictions reflect <strong>intrinsic sequence-level risk</strong>, not actual aggregation outcomes. Cellular context, protein concentration, interaction partners, and chaperones are not considered. The predictor is most informative when interpreted together with disorder and dynamics predictions.</p>
+<div class="admonition notes">
+<p class="admonition-title">AgMata plot example</p>
+<p><figure>
+    <img src="../../assets/images/P08100_agmata.jpg" width="1048" alt="DisoMine disorder propensities for P08100">
+    <figcaption>AgMata beta-aggregation for P08100</figcaption>
+</figure></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">AgMata takes longer to predict the peaks</p>
+<p>Some of the activities will skip this predictor due to long waiting times.</p>
+</div>
+<h2 id="32-extracting-the-protein-sequence">3.2 Extracting the protein sequence</h2>
+<p>The first step is to download the protein sequence in FASTA format.</p>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: P07949 canonical sequence</p>
+<ol>
+<li>Download the <strong>canonical protein sequence</strong> from UniProtKB. </li>
+<li>Visit the official UniProtKB website, locate the protein entry.</li>
+<li>Download the FASTA sequence from the contextual menu.</li>
+</ol>
+<details class="success">
+<summary>Solution</summary>
+<p>The following FASTA sequence corresponds to the protein of interest and was retrieved from
+<a href="https://rest.uniprot.org/uniprotkb/P07949.fasta">https://rest.uniprot.org/uniprotkb/P07949.fasta</a>:</p>
+<div class="highlight"><pre><span></span><code>&gt;sp<span class="p">|</span>P07949<span class="p">|</span>RET_HUMAN<span class="w"> </span>Proto-oncogene<span class="w"> </span>tyrosine-protein<span class="w"> </span>kinase<span class="w"> </span>receptor<span class="w"> </span>Ret<span class="w"> </span><span class="nv">OS</span><span class="o">=</span>Homo<span class="w"> </span>sapiens<span class="w"> </span><span class="nv">OX</span><span class="o">=</span><span class="m">9606</span><span class="w"> </span><span class="nv">GN</span><span class="o">=</span>RET<span class="w"> </span><span class="nv">PE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">SV</span><span class="o">=</span><span class="m">3</span>
+MAKATSGAAGLRLLLLLLLPLLGKVALGLYFSRDAYWEKLYVDQAAGTPLLYVHALRDAP
+EEVPSFRLGQHLYGTYRTRLHENNWICIQEDTGLLYLNRSLDHSSWEKLSVRNRGFPLLT
+...
+DGTNTGFPRYPNDSVYANWMLSPSAAKLMDTFDS
+</code></pre></div>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 80c-8.8 0-16 7.2-16 16v320c0 8.8 7.2 16 16 16h320c8.8 0 16-7.2 16-16V173.3c0-4.2-1.7-8.3-4.7-11.3L320 86.6V176c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V80zm80 0v80h128V80zM0 96c0-35.3 28.7-64 64-64h242.7c17 0 33.3 6.7 45.3 18.7l77.3 77.3c12 12 18.7 28.3 18.7 45.3V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm160 224a64 64 0 1 1 128 0 64 64 0 1 1-128 0"></path></svg></span> You should now have the file <code>P07949.fasta</code> available in your working environment.</p>
+<div class="highlight"><pre><span></span><code>./training-data-directory
+└───<span class="w"> </span>P07949.fasta
+</code></pre></div>
+</details>
+</div>
+<h2 id="33-analysing-single-sequences-standalone-mode">3.3 Analysing single sequences (<em>standalone</em> mode)</h2>
+<p>As mentioned earlier, the <strong>B2BTools</strong> suite provides several predictors to analyse protein biophysical properties:</p>
+<ul>
+<li>Backbone and side-chain dynamics (via <strong>DynaMine</strong>)</li>
+<li>Intrinsically disordered residues (via <strong>DisoMine</strong>)</li>
+<li>Early folding regions (via <strong>EFoldMine</strong>)</li>
+<li>Beta-aggregation-prone regions (via <strong>AgMata</strong>)</li>
+</ul>
+<p>The Bio2Byte lab provides an online platform <sup id="fnref:b2btools-webserver"><a class="footnote-ref" href="#fn:b2btools-webserver">8</a></sup> to run the biophysical predictions described above for proteins of interest. The platform is available at:
+<a href="https://bio2byte.be/online_predictors/">https://bio2byte.be/online_predictors/</a> (this resource is still under active development, and user feedback is highly appreciated. A previous version of the platform is available at: https://bio2byte.be/b2btools).</p>
+<div class="admonition warning">
+<p class="admonition-title">Attention: Required token</p>
+<p>First of all, write down in your notes a personal alphanumeric <strong>TOKEN</strong> to enable job submission and later retrieval of results on the B2BTools platform.</p>
+<ol>
+<li>Access the <a href="https://bio2byte.be/online_predictors/">B2BTools platform</a> and set your token.</li>
+<li>The token will be saved in your browser internal storage and remembered every time you access again the website.</li>
+</ol>
+<details class="question">
+<summary>Where is the TOKEN textbox?</summary>
+<p><figure>
+    <img src="../../assets/images/chapter_02_token.jpg" width="800" alt="Token input example">
+    <figcaption>Notice the input textbox for your TOKEN</figcaption>
+</figure></p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: Predicting the biophysical features</p>
+<ol>
+<li>Select the <strong>Single Sequence</strong> analysis type and upload your FASTA file.  </li>
+<li>Submitted jobs can be accessed from the <strong>Token results</strong> page:
+<a href="https://bio2byte.be/online_predictors/past-results/">https://bio2byte.be/online_predictors/past-results/</a>.</li>
+<li>Locate your job and open the corresponding results page.</li>
+</ol>
+<details class="success">
+<summary>Solution</summary>
+<ol>
+<li>You will be able to find the results inside the “Single Sequence Predictions” table. </li>
+<li>Your job will have an action button “View Results” that opens a link like <code>https://bio2byte.be/online_predictors/results/UUID/</code>.</li>
+</ol>
+</details>
+</div>
+<h3 id="331-understanding-the-results-as-biological-profiles">3.3.1 Understanding the results as biological profiles</h3>
+<h4 id="3311-visualization-of-biophysical-profiles">3.3.1.1 Visualization of biophysical profiles</h4>
+<details class="success">
+<summary>Explore the overview predictions</summary>
+<p><figure>
+    <img src="../../assets/images/singleseq_overview.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption>Plot for prediction values: x-axis represents the sequence positions and y-axis contains the values predicted by this tool.</figcaption>
+</figure></p>
+</details>
+<h4 id="3312-exploring-intrinsic-flexibility-and-folding-propensity">3.3.1.2 Exploring intrinsic flexibility and folding propensity</h4>
+<details class="success">
+<summary>Explore dynamics</summary>
+<p><figure>
+    <img src="../../assets/images/singleseq_dynamics.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption>Plot for prediction values: x-axis represents the sequence positions and y-axis contains the values predicted by this tool.</figcaption>
+</figure></p>
+</details>
+<details class="success">
+<summary>Explore Early folding events</summary>
+<p><figure>
+    <img src="../../assets/images/singleseq_efoldmine.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption>Plot for prediction values: x-axis represents the sequence positions and y-axis contains the values predicted by this tool.</figcaption>
+</figure></p>
+</details>
+<details class="success">
+<summary>Explore Disorder</summary>
+<p><figure>
+    <img src="../../assets/images/singleseq_disorder.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption>Plot for prediction values: x-axis represents the sequence positions and y-axis contains the values predicted by this tool.</figcaption>
+</figure></p>
+</details>
+<details class="success">
+<summary>Explore Beta-Aggregation propensities</summary>
+<p><figure>
+    <img src="../../assets/images/singleseq_agmata.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption>Plot for prediction values: x-axis represents the sequence positions and y-axis contains the values predicted by this tool.</figcaption>
+</figure></p>
+</details>
+<div class="admonition notes">
+<p class="admonition-title">Interactive results</p>
+<p>For further details: <a href="https://bio2byte.be/online_predictors/results/d2db23f2-044f-4521-ba4e-3486ba442ace/">Open the results on the B2BTools platform</a>.</p>
+</div>
+<hr>
+<div class="admonition warning">
+<p class="admonition-title">☕️ COFFEE BREAK</p>
+<p>Time to grab a coffee or tea. We’ll be back in ten minutes…</p>
+</div>
+<hr>
+<h2 id="34-multiple-sequence-alignments-msa">3.4 Multiple sequence alignments (MSA)</h2>
+<p>To fully exploit the predictive power of biophysical tools, it is useful to study the target protein in the context of related proteins. Comparing similar sequences allows the identification of conserved biophysical profiles as well as positions that show divergence across homologs.</p>
+<h3 id="341-working-with-the-aligned-kinase-domain">3.4.1 Working with the aligned kinase domain</h3>
+<p>In the following hands-on activities the focus will be on the homolog kinase domains of the P07949’s 90%-similarity proteins. </p>
+<h3 id="3411-fetching-the-similar-proteins">3.4.1.1 Fetching the similar proteins</h3>
+<p>UniProtKB provides access to similar proteins directly from the protein entry page, in the <strong>Similar proteins</strong> section.</p>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: Getting the 90%-identity protein sequences</p>
+<p>Open the protein entry in UniProtKB and locate the <strong>Similar proteins</strong> table at:
+<a href="https://www.uniprot.org/uniprotkb/P07949/entry#similar_proteins">https://www.uniprot.org/uniprotkb/P07949/entry#similar_proteins</a>.</p>
+<p>Select the entries with 90% sequence identity and choose to view all results in UniProtKB.</p>
+<p>Exclude other human proteins and short sequences to retain proteins with lengths between 1000 and 1120 amino acids.<br>
+Once the entries are selected, download the canonical sequences using the <strong>Download</strong> option in FASTA format, without compression.</p>
+<p>Before proceeding with the alignment, add the <code>P07949</code> sequence at the top of the downloaded FASTA file.</p>
+<details class="success">
+<summary>Solution</summary>
+<p>The canonical sequences can be retrieved from the following <a href="https://rest.uniprot.org/uniprotkb/stream?download=true&amp;format=fasta&amp;query=accession%3AA0A0D9REZ9+OR+accession%3AA0A2I2ZX13+OR+accession%3AA0A2I3H8C4+OR+accession%3AA0A2I3LXM4+OR+accession%3AA0A2I3TR47+OR+accession%3AA0A2J8IX92+OR+accession%3AA0A2J8IX93+OR+accession%3AA0A2J8XTA5+OR+accession%3AA0A2K5HW95+OR+accession%3AA0A2K5MKU6+OR+accession%3AA0A2K5V8L5+OR+accession%3AA0A2K5YH50+OR+accession%3AA0A2K6CCS4+OR+accession%3AA0A2K6R0I7+OR+accession%3AA0A2R9AWY2+OR+accession%3AA0A2R9B0Q5+OR+accession%3AA0A7N9CS34+OR+accession%3AA0A8C9HBV6+OR+accession%3AA0A8D2EQF8+OR+accession%3AF6S299+OR+accession%3AF6S7W7+OR+accession%3AG1S142+OR+accession%3AG3QLZ3+OR+accession%3AH2NA70+OR+accession%3AH2Q1T9+OR+accession%3AH9ZBZ9+OR+accession%3AH9ZC00">UniProtKB REST endpoint</a>.</p>
+<p>The FASTA file contains all the sequences: </p>
+<div class="highlight"><pre><span></span><code>&gt;tr<span class="p">|</span>A0A0D9REZ9<span class="p">|</span>A0A0D9REZ9_CHLSB<span class="w"> </span>Proto-oncogene<span class="w"> </span>tyrosine-protein<span class="w"> </span>kinase<span class="w"> </span>receptor<span class="w"> </span>Ret<span class="w"> </span><span class="nv">OS</span><span class="o">=</span>Chlorocebus<span class="w"> </span>sabaeus<span class="w"> </span><span class="nv">OX</span><span class="o">=</span><span class="m">60711</span><span class="w"> </span><span class="nv">GN</span><span class="o">=</span>RET<span class="w"> </span><span class="nv">PE</span><span class="o">=</span><span class="m">3</span><span class="w"> </span><span class="nv">SV</span><span class="o">=</span><span class="m">1</span>
+LTSLLPTVALGLYFSRDAYWEKLYVDQPAGTPLLYVHALRDAPEEVPSFRLGQHLYGTYR
+TRLHENNWICIQEDTGLLYLNRSLDRSSWEKLSGRNRGFPLLTVYLKVFLSPTFLREGEC
+...
+YANWMLSPSAAKLMDTFDS
+
+&gt;tr<span class="p">|</span>A0A2K5MKU6<span class="p">|</span>A0A2K5MKU6_CERAT<span class="w"> </span>Proto-oncogene<span class="w"> </span>tyrosine-protein<span class="w"> </span>kinase<span class="w"> </span>receptor<span class="w"> </span>Ret<span class="w"> </span><span class="nv">OS</span><span class="o">=</span>Cercocebus<span class="w"> </span>atys<span class="w"> </span><span class="nv">OX</span><span class="o">=</span><span class="m">9531</span><span class="w"> </span><span class="nv">GN</span><span class="o">=</span>RET<span class="w"> </span><span class="nv">PE</span><span class="o">=</span><span class="m">3</span><span class="w"> </span><span class="nv">SV</span><span class="o">=</span><span class="m">1</span>
+MAKATSGAAGLRLLLLLLLLPLLGKVALGLYFSRDAYWEKLYVDQPAGTPLLYVHALRDS
+PEEVPSFRLGQHLYGTYRTRLHENNWICIQEDTGLLYLNRSLDHSSWEKLSGRNRGFPLL
+...
+ADGTNTGFPRYANDSVYANWMLSPSAAKLMDTFDS
+...
+
+&gt;tr<span class="p">|</span>H9ZC00<span class="p">|</span>H9ZC00_MACMU<span class="w"> </span>Proto-oncogene<span class="w"> </span>tyrosine-protein<span class="w"> </span>kinase<span class="w"> </span>receptor<span class="w"> </span>Ret<span class="w"> </span><span class="nv">OS</span><span class="o">=</span>Macaca<span class="w"> </span>mulatta<span class="w"> </span><span class="nv">OX</span><span class="o">=</span><span class="m">9544</span><span class="w"> </span><span class="nv">GN</span><span class="o">=</span>RET<span class="w"> </span><span class="nv">PE</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">SV</span><span class="o">=</span><span class="m">1</span>
+MAKATSGAAGLRLLLLLLLLPLLGKGALGLYFSRDAYWEKLYVDQPAGTPLLYVHALRDA
+PEEVPSFRLGQHLYGTYRTRLHENNWICIQEDTGLLYLNRSLDRSSWEKLSGRNRGFPLL
+...
+ASTPSDSLLYDDGLSEEETPLVDCNNAPLPRALPSTWIENKLYGRISHAFTRF
+</code></pre></div>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 80c-8.8 0-16 7.2-16 16v320c0 8.8 7.2 16 16 16h320c8.8 0 16-7.2 16-16V173.3c0-4.2-1.7-8.3-4.7-11.3L320 86.6V176c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V80zm80 0v80h128V80zM0 96c0-35.3 28.7-64 64-64h242.7c17 0 33.3 6.7 45.3 18.7l77.3 77.3c12 12 18.7 28.3 18.7 45.3V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm160 224a64 64 0 1 1 128 0 64 64 0 1 1-128 0"></path></svg></span> You should now have the file <code>P07949.90-similar.fasta</code> available in your working environment.</p>
+<div class="highlight"><pre><span></span><code>./training-data-directory
+│───<span class="w"> </span>P07949.fasta
+└───<span class="w"> </span>P07949.90-similar.fasta
+</code></pre></div>
+</details>
+</div>
+<h3 id="3412-building-the-msa">3.4.1.2 Building the MSA</h3>
+<p>To continue this activity, the multiple sequence alignment (MSA) will be generated using the online <strong>Clustal Omega</strong> server provided by EMBL-EBI.</p>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: Aligning the sequences</p>
+<ol>
+<li>Open the Clustal Omega submission form at:
+<a href="https://www.ebi.ac.uk/jdispatcher/msa/clustalo">https://www.ebi.ac.uk/jdispatcher/msa/clustalo</a>.</li>
+<li>Upload the file <code>P07949.90-similar.fasta</code> as input.  </li>
+<li>Request the output format as <strong>Pearson/FASTA</strong> and keep the original sequence order by setting the <strong>order</strong> option to <em>input</em>.</li>
+<li>Set the job title to <code>P07949.90-similar.msa</code>.</li>
+</ol>
+<details class="success">
+<summary>Solution</summary>
+<p>After the job has completed on the EMBL-EBI servers, you will be redirected to the results page.<br>
+This page contains several tabs for exploring the alignment.</p>
+<p>From the <strong>Tool output</strong> tab, download the MSA by clicking the blue <strong>Download</strong> button.</p>
+<p>Example of the aligned P07949 protein sequence:</p>
+<div class="highlight"><pre><span></span><code>&gt;sp|P07949|RET_HUMAN Proto-oncogene tyrosine-protein kinase receptor Ret OS=Homo sapiens OX=9606 GN=RET PE=1 SV=3
+MAKATSGAAGLRLLLL--LLLPLLGKVALGLYFSRDAYWEKLYVDQAAGTPLLYVHALRD
+...
+LKQVNHPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYLGSGGSRNSS
+...
+LTRADGTNTGFPRYPNDSVYANWMLSPSAAKLMDTFDS
+</code></pre></div>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 80c-8.8 0-16 7.2-16 16v320c0 8.8 7.2 16 16 16h320c8.8 0 16-7.2 16-16V173.3c0-4.2-1.7-8.3-4.7-11.3L320 86.6V176c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V80zm80 0v80h128V80zM0 96c0-35.3 28.7-64 64-64h242.7c17 0 33.3 6.7 45.3 18.7l77.3 77.3c12 12 18.7 28.3 18.7 45.3V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm160 224a64 64 0 1 1 128 0 64 64 0 1 1-128 0"></path></svg></span> You should now have the file <code>P07949.90-similar.msa.fasta</code> available in your working environment.</p>
+<div class="highlight"><pre><span></span><code>./training-data-directory
+│───<span class="w"> </span>P07949.fasta
+│───<span class="w"> </span>P07949.90-similar.fasta
+└───<span class="w"> </span>P07949.90-similar.msa.fasta
+</code></pre></div>
+</details>
+</div>
+<h3 id="3413-extracting-the-domain-of-interest">3.4.1.3 Extracting the domain of interest</h3>
+<p>The next step is to focus the analysis on the kinase domain positions across all aligned sequences. For this purpose, the course provides a Google Colab notebook that runs a Python script to identify and extract the aligned positions corresponding to a defined amino acid range in the original reference sequence.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attention: Google Account required</p>
+<p>You must log in using a Google account to run the code in this notebook. By default, you can use your “@gmail.com” address.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: Extracting the aligned domain from the MSA</p>
+<ol>
+<li>Open the <a href="https://colab.research.google.com/drive/16GakNh96qJcQFqvl9bUwC_1F5ZpZHGWb?usp=sharing">Google Colab notebook</a> related to this activity.</li>
+<li>The notebook is divided into two main sections.  </li>
+<li>First, run the <strong>four hidden cells</strong> in the section <em>Dependencies and method definitions</em> by clicking the <strong>Run</strong> icon. This step loads the required Python libraries and helper functions into memory.</li>
+<li>Next, move to the <em>Usage</em> section and execute the cells in order.  </li>
+<li>The first cell will prompt you to upload the alignment file <code>P07949.90-similar.msa.fasta</code>.</li>
+<li>After the file is uploaded, fill in the fields in the <em>Extraction parameters</em> cell and click the <strong>Run</strong> icon to start the extraction.</li>
+<li>Once the execution is complete, download the output file from the <strong>Files</strong> panel to your local working environment.</li>
+</ol>
+<details class="success">
+<summary>Solution</summary>
+<ol>
+<li>Use the following parameters in the <em>Extraction parameters</em> cell, based on the kinase domain definition:<ul>
+<li><code>uniprot_id</code>: <code>P07949</code></li>
+<li><code>start_pos</code>: <code>724</code></li>
+<li><code>end_pos</code>: <code>1016</code></li>
+<li><code>max_gap_fraction</code>: <code>0.4</code> (40%)</li>
+<li><code>output_filename</code>: <code>P07949.90-similar.msa.kinase.fasta</code></li>
+</ul>
+</li>
+<li>Save the file from the <strong>Files</strong> panel on the left navigation (folder icon), locate the file, open the contextual menu, and select <strong>Download</strong>.</li>
+</ol>
+<details class="notes">
+<summary>Output console message</summary>
+<p>After running the cell, a new file will be generated and a summary message similar to the one below will be displayed:</p>
+<div class="highlight"><pre><span></span><code>Parameters:
+UniProt<span class="w"> </span>ID:<span class="w"> </span>P07949
+Start<span class="w"> </span>Position:<span class="w"> </span><span class="m">724</span>
+End<span class="w"> </span>Position:<span class="w"> </span><span class="m">1016</span>
+Max<span class="w"> </span>Gap<span class="w"> </span>Fraction:<span class="w"> </span><span class="m">0</span>.4
+For<span class="w"> </span>sp<span class="p">|</span>P07949<span class="p">|</span>RET_HUMAN:<span class="w"> </span>found<span class="w"> </span><span class="m">0</span>.006779661016949152<span class="w"> </span>as<span class="w"> </span>gap<span class="w"> </span>fraction<span class="w"> </span><span class="o">(</span>seq<span class="w"> </span>len:<span class="w"> </span><span class="m">295</span><span class="o">)</span>
+For<span class="w"> </span>tr<span class="p">|</span>A0A0D9REZ9<span class="p">|</span>A0A0D9REZ9_CHLSB:<span class="w"> </span>found<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>as<span class="w"> </span>gap<span class="w"> </span>fraction<span class="w"> </span><span class="o">(</span>seq<span class="w"> </span>len:<span class="w"> </span><span class="m">295</span><span class="o">)</span>
+...
+File<span class="w"> </span>P07949.90-similar.msa.kinase.fasta<span class="w"> </span>written<span class="w"> </span>using<span class="w"> </span>alignment<span class="w"> </span>columns:<span class="w"> </span><span class="m">725</span><span class="w"> </span>and<span class="w"> </span><span class="m">1020</span><span class="w"> </span><span class="o">(</span><span class="m">295</span><span class="w"> </span>residues<span class="o">)</span>
+</code></pre></div>
+</details>
+<details class="notes">
+<summary>Kinase sequences</summary>
+<p>The extracted alignment will start as follows: 
+</p><div class="highlight"><pre><span></span><code>&gt;sp|P07949|RET_HUMAN Proto-oncogene tyrosine-protein kinase receptor Ret OS=Homo sapiens OX=9606 GN=RET PE=1 SV=3
+LVLGKTLGEGEFGKVVKATAFHLKGRAGYTTVAVKMLKENASPSELRDLLSEFNVLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYLGSGGSRNSSSLDHP
+...
+NLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKRRDYL
+
+&gt;tr|A0A0D9REZ9|A0A0D9REZ9_CHLSB Proto-oncogene tyrosine-protein kinase receptor Ret OS=Chlorocebus sabaeus OX=60711 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQDAPGPLLLIVEYAKYGSLRGFLRESRKVGPGYLGSGGSRNSSSLDHP
+...
+NLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+</code></pre></div>
+</details>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 80c-8.8 0-16 7.2-16 16v320c0 8.8 7.2 16 16 16h320c8.8 0 16-7.2 16-16V173.3c0-4.2-1.7-8.3-4.7-11.3L320 86.6V176c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V80zm80 0v80h128V80zM0 96c0-35.3 28.7-64 64-64h242.7c17 0 33.3 6.7 45.3 18.7l77.3 77.3c12 12 18.7 28.3 18.7 45.3V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm160 224a64 64 0 1 1 128 0 64 64 0 1 1-128 0"></path></svg></span> You should now have the file <code>P07949.90-similar.msa.kinase.fasta</code> available in your working environment.</p>
+<div class="highlight"><pre><span></span><code>./training-data-directory
+│───<span class="w"> </span>P07949.fasta
+│───<span class="w"> </span>P07949.90-similar.fasta
+│───<span class="w"> </span>P07949.90-similar.msa.fasta
+└───<span class="w"> </span>P07949.90-similar.msa.kinase.fasta
+</code></pre></div>
+</details>
+</div>
+<h3 id="3414-predicting-the-aligned-biophysical-features">3.4.1.4 Predicting the aligned biophysical features</h3>
+<p>We are now ready to predict the aligned biophysical features using <strong>B2BTools</strong>.</p>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: Predicting the aligned biophysical features for the kinase domain</p>
+<ol>
+<li>Open a new browser tab and go to the online platform at:
+https://bio2byte.be/online_predictors</li>
+<li>This time, select <strong>Multiple Sequence Alignment</strong> as the analysis type instead of <strong>Single Sequence</strong>.<br>
+Upload the file <code>P07949.90-similar.msa.kinase.fasta</code> and submit the job.</li>
+<li>After submission, you will be redirected to the <strong>Token results</strong> page.</li>
+</ol>
+<details class="success">
+<summary>Solution</summary>
+<ol>
+<li>Once the prediction job has completed, the results will appear in the <strong>MSA Predictions</strong> table. It takes approximately less than two minutes to finish.</li>
+<li>Click the <strong>View Results</strong> button to open the results page for the aligned kinase domain.</li>
+</ol>
+</details>
+</div>
+<h3 id="342-understanding-the-aligned-results-as-biological-profiles">3.4.2 Understanding the aligned results as biological profiles</h3>
+<h4 id="3421-exploring-intrinsic-flexibility-and-folding-propensity">3.4.2.1 Exploring intrinsic flexibility and folding propensity</h4>
+<details class="success">
+<summary>Explore the overview values</summary>
+<p><figure>
+    <img src="../../assets/images/90sim_global.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption>Plot for prediction values: x-axis represents the sequence positions and y-axis contains the values predicted by this tool.</figcaption>
+</figure></p>
+</details>
+<details class="success">
+<summary>Explore the aligned values for P07949</summary>
+<p><figure>
+    <img src="../../assets/images/90sim_dynamics.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption>Aligned dynamics predictions for a single protein (including gaps).</figcaption>
+</figure></p>
+<p><figure>
+    <img src="../../assets/images/90sim_disorder_efoldmine_agmata.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption>Aligned early folding events, disorder and beta-aggregation predictions for a single protein (including gaps).</figcaption>
+</figure></p>
+</details>
+<details class="success">
+<summary>Explore the values mapped to the 3D structure</summary>
+<p><figure>
+    <img src="../../assets/images/90sim_structure.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption>Mapping 1D-3D over the predicted 3D structure by AlphaFold </figcaption>
+</figure></p>
+</details>
+<h4 id="3422-visualization-of-biophysical-profiles">3.4.2.2 Visualization of biophysical profiles</h4>
+<details class="success">
+<summary>Explore the 90%-identity aligned backbone dynamics</summary>
+<p><figure>
+    <img src="../../assets/images/90sim_backbone.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption> Explore the aligned predictions in the context of sequence conservation .</figcaption>
+</figure></p>
+</details>
+<details class="success">
+<summary>Explore the 90%-identity aligned early folding events</summary>
+<p><figure>
+    <img src="../../assets/images/90sim_efoldmine.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption> Explore the aligned predictions in the context of sequence conservation .</figcaption>
+</figure></p>
+</details>
+<details class="success">
+<summary>Explore the 90%-identity aligned disorder propensities</summary>
+<p><figure>
+    <img src="../../assets/images/90sim_disorder.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption> Explore the aligned predictions in the context of sequence conservation .</figcaption>
+</figure></p>
+</details>
+<details class="success">
+<summary>Explore the 90%-identity aligned beta-aggregation propensities</summary>
+<p><figure>
+    <img src="../../assets/images/90sim_agmata.jpg" width="1000" alt="P07949 on Scop3P">
+    <figcaption> Explore the aligned predictions in the context of sequence conservation .</figcaption>
+</figure></p>
+</details>
+<p>In conclusion, as you see, working with 90%-identity sequences shows how well conserved are the biophysical profiles for this domain.</p>
+<div class="admonition notes">
+<p class="admonition-title">Interactive results</p>
+<p>For further details: <a href="https://bio2byte.be/online_predictors/results/2cc3a5af-14be-42af-b5e3-4be85158c5be/">Open the results on the B2BTools platform</a>.</p>
+</div>
+<h2 id="35-analysing-the-50-identity-aligned-kinase-domains">3.5 Analysing the 50% identity aligned kinase domains</h2>
+<p>Given the 90% of identity does not allow us to see variability in the biophysical profiles, this section introduces the results for the sequences with 50% of identity extracted from UniProt.</p>
+<p>Using the sequences as input for Clustal Omega to align the sequences, the next step is to extract the aligned domain via the Google Colab Notebook.</p>
+<details class="notes">
+<summary>View the aligned kinase sequences</summary>
+<p>This is the alignment in FASTA format:</p>
+<div class="highlight"><pre><span></span><code>&gt;tr|A0A0D9REZ9|A0A0D9REZ9_CHLSB Proto-oncogene tyrosine-protein kinase receptor Ret OS=Chlorocebus sabaeus OX=60711 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQDAPGPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A1U7Q3L7|A0A1U7Q3L7_MESAU Proto-oncogene tyrosine-protein kinase receptor Ret OS=Mesocricetus auratus OX=10036 GN=Ret PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASQSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRDSRKIGPGYV---GGGGSRNSSSL
+DHPDERVLTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKKSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYHLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A2K5MKU6|A0A2K5MKU6_CERAT Proto-oncogene tyrosine-protein kinase receptor Ret OS=Cercocebus atys OX=9531 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A2K5V8L5|A0A2K5V8L5_MACFA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Macaca fascicularis OX=9541 GN=RET PE=3 SV=2
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A2K6CCS4|A0A2K6CCS4_MACNE Proto-oncogene tyrosine-protein kinase receptor Ret OS=Macaca nemestrina OX=9545 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A2R9B0Q5|A0A2R9B0Q5_PANPA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Pan paniscus OX=9597 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A2Y9LJM0|A0A2Y9LJM0_DELLE Proto-oncogene tyrosine-protein kinase receptor Ret OS=Delphinapterus leucas OX=9749 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASASELRDLLSEFNLLTQVS
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRDSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A452UNU5|A0A452UNU5_URSMA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Ursus maritimus OX=29073 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A4W2I9B2|A0A4W2I9B2_BOBOX Proto-oncogene tyrosine-protein kinase receptor Ret OS=Bos indicus x Bos taurus OX=30522 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYNLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A6I9MCH9|A0A6I9MCH9_PERMB Proto-oncogene tyrosine-protein kinase receptor Ret OS=Peromyscus maniculatus bairdii OX=230844 GN=Ret PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASQSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRDSRKIGPGYV---GSGGSRNSSSL
+DHPDERVLTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKKSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A8B8VKU7|A0A8B8VKU7_BALMU Proto-oncogene tyrosine-protein kinase receptor Ret OS=Balaenoptera musculus OX=9771 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASASELRDLLSEFNLLTQVS
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRDSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A8C0AKK2|A0A8C0AKK2_BOSMU Proto-oncogene tyrosine-protein kinase receptor Ret OS=Bos mutus grunniens OX=30521 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGILLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYNLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A8C0LH73|A0A8C0LH73_CANLU Proto-oncogene tyrosine-protein kinase receptor Ret OS=Canis lupus dingo OX=286419 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A8C0TSX7|A0A8C0TSX7_CANLF Proto-oncogene tyrosine-protein kinase receptor Ret OS=Canis lupus familiaris OX=9615 GN=RET PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A8C2MD48|A0A8C2MD48_CRIGR Proto-oncogene tyrosine-protein kinase receptor Ret OS=Cricetulus griseus OX=10029 GN=Ret PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASQSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRDSRKIGPGYV---GGGGSRNSSSL
+DHPDERVLTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKKSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A8C4LI87|A0A8C4LI87_EQUAS Proto-oncogene tyrosine-protein kinase receptor Ret OS=Equus asinus OX=9793 GN=RET PE=3 SV=2
+LVLGKTLGEGEFGKVVEATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A8C6C2Y9|A0A8C6C2Y9_MONMO Proto-oncogene tyrosine-protein kinase receptor Ret OS=Monodon monoceros OX=40151 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASASELRDLLSEFNLLTQVS
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRDSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A8C7BT94|A0A8C7BT94_NEOVI Proto-oncogene tyrosine-protein kinase receptor Ret OS=Neovison vison OX=452646 PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGDV---GSGGSRSSSYL
+DSPGERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A8C8XS60|A0A8C8XS60_PANLE Proto-oncogene tyrosine-protein kinase receptor Ret OS=Panthera leo OX=9689 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A8C9C6W7|A0A8C9C6W7_PHOSS Proto-oncogene tyrosine-protein kinase receptor Ret OS=Phocoena sinus OX=42100 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASASELRDLLSEFNLLTQVS
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRDSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A8I3PW06|A0A8I3PW06_CANLF Proto-oncogene tyrosine-protein kinase receptor Ret OS=Canis lupus familiaris OX=9615 GN=RET PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A9V1FDH5|A0A9V1FDH5_PANPR Proto-oncogene tyrosine-protein kinase receptor Ret OS=Panthera pardus OX=9691 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|F1MS00|F1MS00_BOVIN Proto-oncogene tyrosine-protein kinase receptor Ret OS=Bos taurus OX=9913 GN=RET PE=3 SV=3
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYNLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|F1RG22|F1RG22_PIG Proto-oncogene tyrosine-protein kinase receptor Ret OS=Sus scrofa OX=9823 GN=RET PE=3 SV=4
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRHSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|F6S299|F6S299_MACMU Proto-oncogene tyrosine-protein kinase receptor Ret OS=Macaca mulatta OX=9544 GN=RET PE=3 SV=3
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|F6WV32|F6WV32_HORSE Proto-oncogene tyrosine-protein kinase receptor Ret OS=Equus caballus OX=9796 GN=RET PE=3 SV=2
+LVLGKTLGEGEFGKVVEATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|G1MES8|G1MES8_AILME Proto-oncogene tyrosine-protein kinase receptor Ret OS=Ailuropoda melanoleuca OX=9646 GN=RET PE=3 SV=2
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|G1S142|G1S142_NOMLE Proto-oncogene tyrosine-protein kinase receptor Ret OS=Nomascus leucogenys OX=61853 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DDPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|G3QLZ3|G3QLZ3_GORGO Proto-oncogene tyrosine-protein kinase receptor Ret OS=Gorilla gorilla gorilla OX=9595 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|G3TIZ2|G3TIZ2_LOXAF Proto-oncogene tyrosine-protein kinase receptor Ret OS=Loxodonta africana OX=9785 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLHGACSQD--GPLFLIVEYAKYGSLRGFLRESRKVGPSYV---GSGGSRNSSYL
+DNPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|H2NA70|H2NA70_PONAB Proto-oncogene tyrosine-protein kinase receptor Ret OS=Pongo abelii OX=9601 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|H2Q1T9|H2Q1T9_PANTR Proto-oncogene tyrosine-protein kinase receptor Ret OS=Pan troglodytes OX=9598 GN=RET PE=3 SV=2
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|M3Z0Q6|M3Z0Q6_MUSPF Proto-oncogene tyrosine-protein kinase receptor Ret OS=Mustela putorius furo OX=9669 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLHGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGDV---GSGGSRSSSYL
+DSPGERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;sp|P07949|RET_HUMAN Proto-oncogene tyrosine-protein kinase receptor Ret OS=Homo sapiens OX=9606 GN=RET PE=1 SV=3
+LVLGKTLGEGEFGKVVKATAFHLKGRAGYTTVAVKMLKENASPSELRDLLSEFNVLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISQGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSQGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKRRDYL
+&gt;tr|A0A2I3LXM4|A0A2I3LXM4_PAPAN Proto-oncogene tyrosine-protein kinase receptor Ret OS=Papio anubis OX=9555 GN=RET PE=3 SV=2
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A2I3TR47|A0A2I3TR47_PANTR Proto-oncogene tyrosine-protein kinase receptor Ret OS=Pan troglodytes OX=9598 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A2Y9HVS1|A0A2Y9HVS1_NEOSC Proto-oncogene tyrosine-protein kinase receptor Ret OS=Neomonachus schauinslandi OX=29088 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A452SFQ5|A0A452SFQ5_URSAM Proto-oncogene tyrosine-protein kinase receptor Ret OS=Ursus americanus OX=9643 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A455AMB7|A0A455AMB7_PHYMC Proto-oncogene tyrosine-protein kinase receptor Ret OS=Physeter macrocephalus OX=9755 GN=RET PE=3 SV=2
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASASELRDLLSEFNLLTQVS
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRDSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A4W2IB41|A0A4W2IB41_BOBOX Proto-oncogene tyrosine-protein kinase receptor Ret OS=Bos indicus x Bos taurus OX=30522 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYNLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A667GWR4|A0A667GWR4_LYNCA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Lynx canadensis OX=61383 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A667HC96|A0A667HC96_LYNCA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Lynx canadensis OX=61383 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A6J1ZQD7|A0A6J1ZQD7_ACIJB Proto-oncogene tyrosine-protein kinase receptor Ret OS=Acinonyx jubatus OX=32536 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A6J3Q7G4|A0A6J3Q7G4_TURTR Proto-oncogene tyrosine-protein kinase receptor Ret OS=Tursiops truncatus OX=9739 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASASELRDLLSEFNLLTQVS
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRDSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A6P5AYE8|A0A6P5AYE8_BOSIN Proto-oncogene tyrosine-protein kinase receptor Ret OS=Bos indicus OX=9915 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYNLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A7N9CS34|A0A7N9CS34_MACFA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Macaca fascicularis OX=9541 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A8B7TAT6|A0A8B7TAT6_HIPAR Proto-oncogene tyrosine-protein kinase receptor Ret OS=Hipposideros armiger OX=186990 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVEATAFRLKGKAGYTTVAVKMLKENASPNELRDLLSEFNLLKQVN
+HPNVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRDSRKAGPGYV---GSRGSHGSSYL
+DNPDERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKQEPDKRPVFADISKDLEKMMVKRRDYL
+&gt;tr|A0A8B8U0M5|A0A8B8U0M5_CAMFR Proto-oncogene tyrosine-protein kinase receptor Ret OS=Camelus ferus OX=419612 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASTSEMRDLQSEFNLLKQVN
+HPQVIKLYGACSQG--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGDSRSSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A8B9YW94|A0A8B9YW94_BOSMU Proto-oncogene tyrosine-protein kinase receptor Ret OS=Bos mutus grunniens OX=30521 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIES-LDHIYTTQSDVWSFGILLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYNLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A8C9JHD3|A0A8C9JHD3_PANTA Ret proto-onco OS=Panthera tigris altaica OX=74533 GN=RET PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GKAGQG------------------TGSCPVQAGGSGTSKAAACL
+GHPRRRLPG--TEIRA-----------------------------ARRPGH-----WPER
+AVSLCPLTGGGRGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A8D2EQF8|A0A8D2EQF8_THEGE Proto-oncogene tyrosine-protein kinase receptor Ret OS=Theropithecus gelada OX=9565 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A8U0NS18|A0A8U0NS18_MUSPF Proto-oncogene tyrosine-protein kinase receptor Ret OS=Mustela putorius furo OX=9669 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLHGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGDV---GSGGSRSSSYL
+DSPGERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A9W2WDK0|A0A9W2WDK0_PHYMC Proto-oncogene tyrosine-protein kinase receptor Ret OS=Physeter macrocephalus OX=9755 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASASELRDLLSEFNLLTQVS
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRDSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0AAV0A2E7|A0AAV0A2E7_PHORO Proto-oncogene tyrosine-protein kinase receptor Ret OS=Phodopus roborovskii OX=109678 GN=Ret PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASQSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRDSRKIGPGYV---GSGGSRNSSSL
+DHPDERVLTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKKSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|L8HXX9|L8HXX9_9CETA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Bos mutus OX=72004 GN=M91_06547 PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGILLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYNLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A2I3H8C4|A0A2I3H8C4_NOMLE Proto-oncogene tyrosine-protein kinase receptor Ret OS=Nomascus leucogenys OX=61853 GN=RET PE=3 SV=1
+E-------------------------KDRLQPALCCISENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DDPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A2J8IX93|A0A2J8IX93_PANTR Proto-oncogene tyrosine-protein kinase receptor Ret OS=Pan troglodytes OX=9598 GN=CK820_G0052381 PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A2R9AWY2|A0A2R9AWY2_PANPA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Pan paniscus OX=9597 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0A3Q7R7R3|A0A3Q7R7R3_CALUR Proto-oncogene tyrosine-protein kinase receptor Ret OS=Callorhinus ursinus OX=34884 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A4U1ELZ6|A0A4U1ELZ6_MONMO Proto-oncogene tyrosine-protein kinase receptor Ret OS=Monodon monoceros OX=40151 GN=EI555_010818 PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASASELRDLLSEFNLLTQVS
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRDSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A4W2C1A7|A0A4W2C1A7_BOBOX Proto-oncogene tyrosine-protein kinase receptor Ret OS=Bos indicus x Bos taurus OX=30522 PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYNLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A4X1U427|A0A4X1U427_PIG Proto-oncogene tyrosine-protein kinase receptor Ret OS=Sus scrofa OX=9823 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRHSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A4X1U649|A0A4X1U649_PIG Proto-oncogene tyrosine-protein kinase receptor Ret OS=Sus scrofa OX=9823 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRHSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A673TBL3|A0A673TBL3_SURSU Proto-oncogene tyrosine-protein kinase receptor Ret OS=Suricata suricatta OX=37032 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A673TBM1|A0A673TBM1_SURSU Proto-oncogene tyrosine-protein kinase receptor Ret OS=Suricata suricatta OX=37032 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A6B0RFM7|A0A6B0RFM7_9CETA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Bos mutus OX=72004 GN=E5288_WYG019359 PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYNLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A6J2CLG4|A0A6J2CLG4_ZALCA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Zalophus californianus OX=9704 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A6P6C349|A0A6P6C349_PTEVA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Pteropus vampyrus OX=132908 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVEATAFRLKGKTGYMTVAVKMLKENASPNELRDLLSEFNLLKQVN
+HPNVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRGSRNSSYL
+DNPDERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMEKPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLEKMMVKRRDYL
+&gt;tr|A0A6P6C3D5|A0A6P6C3D5_PTEVA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Pteropus vampyrus OX=132908 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVEATAFRLKGKTGYMTVAVKMLKENASPNELRDLLSEFNLLKQVN
+HPNVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRGSRNSSYL
+DNPDERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMEKPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLEKMMVKRRDYL
+&gt;tr|A0A6P6HD24|A0A6P6HD24_PUMCO Proto-oncogene tyrosine-protein kinase receptor Ret OS=Puma concolor OX=9696 GN=RET PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A7J8GFA5|A0A7J8GFA5_ROUAE Proto-oncogene tyrosine-protein kinase receptor Ret OS=Rousettus aegyptiacus OX=9407 GN=HJG63_016583 PE=3 SV=1
+LVLGKTLGEGEFGKVVEATAFRLKGKAGYTTVAVKMLKENASPNELRDLLSEFNLLKQVN
+HPNVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRGSRNSNYL
+DNPDERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMEKPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLEKMMVKRRDYL
+&gt;tr|A0A7N5KJC5|A0A7N5KJC5_AILME Proto-oncogene tyrosine-protein kinase receptor Ret OS=Ailuropoda melanoleuca OX=9646 GN=RET PE=3 SV=2
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A811YYL9|A0A811YYL9_NYCPR Proto-oncogene tyrosine-protein kinase receptor Ret OS=Nyctereutes procyonoides OX=34880 GN=NYPRO_LOCUS12321 PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFQLKGKAGYTTVAVKMLKENASPSELRDLLSELNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEHAKYGSLRGFLRESRKAGPGSV---GSGGSRSSSYL
+DNPEERALTTGNLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSEGRIPVKWMAVESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKRGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADIGKDLEKMMVKNREYL
+&gt;tr|A0A811ZC71|A0A811ZC71_NYCPR Proto-oncogene tyrosine-protein kinase receptor Ret OS=Nyctereutes procyonoides OX=34880 GN=NYPRO_LOCUS19075 PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGSV---GSGGSRSSSYL
+DNPEERALTTGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSEGRIPVKWMAVESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKRGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADIGKDLEKMMVKNREYL
+&gt;tr|A0A8C0RNG4|A0A8C0RNG4_CANLF Proto-oncogene tyrosine-protein kinase receptor Ret OS=Canis lupus familiaris OX=9615 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A8C0TXR9|A0A8C0TXR9_CANLF Proto-oncogene tyrosine-protein kinase receptor Ret OS=Canis lupus familiaris OX=9615 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A8D1M7Z5|A0A8D1M7Z5_PIG Proto-oncogene tyrosine-protein kinase receptor Ret OS=Sus scrofa OX=9823 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRHSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A8D1SMX3|A0A8D1SMX3_PIG Proto-oncogene tyrosine-protein kinase receptor Ret OS=Sus scrofa OX=9823 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRHSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0A8I3PV09|A0A8I3PV09_CANLF Proto-oncogene tyrosine-protein kinase receptor Ret OS=Canis lupus familiaris OX=9615 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A9B0H3A6|A0A9B0H3A6_ODORO Proto-oncogene tyrosine-protein kinase receptor Ret OS=Odobenus rosmarus divergens OX=9708 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0A9L0TGC7|A0A9L0TGC7_HORSE Proto-oncogene tyrosine-protein kinase receptor Ret OS=Equus caballus OX=9796 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVEATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0AAD4Y0S5|A0AAD4Y0S5_OVIAM Proto-oncogene tyrosine-protein kinase receptor Ret OS=Ovis ammon polii OX=230172 GN=MG293_020669 PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0AAW0JHD4|A0AAW0JHD4_MYOGA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Myodes glareolus OX=447135 GN=U0070_021328 PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASQSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRDSRKIGPGYV---GSGGSRNSSSL
+DHPDERVLTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKKSKGRIPVKWMAIESLFDHVYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0AB34GHJ1|A0AB34GHJ1_ESCRO Proto-oncogene tyrosine-protein kinase receptor Ret OS=Eschrichtius robustus OX=9764 GN=J1605_014116 PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASASELRDLLSEFNLLTQVS
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRDSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|D2H6E6|D2H6E6_AILME Proto-oncogene tyrosine-protein kinase receptor Ret [Fragment] OS=Ailuropoda melanoleuca OX=9646 GN=PANDA_005545 PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|F6S7W7|F6S7W7_MACMU Proto-oncogene tyrosine-protein kinase receptor Ret OS=Macaca mulatta OX=9544 GN=RET PE=3 SV=3
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|H9ZBZ9|H9ZBZ9_MACMU Proto-oncogene tyrosine-protein kinase receptor Ret OS=Macaca mulatta OX=9544 GN=RET PE=2 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|H9ZC00|H9ZC00_MACMU Proto-oncogene tyrosine-protein kinase receptor Ret OS=Macaca mulatta OX=9544 GN=RET PE=2 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKVGPGYL---GSGGSRNSSSL
+DHPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|W5P1A8|W5P1A8_SHEEP Proto-oncogene tyrosine-protein kinase receptor Ret OS=Ovis aries OX=9940 GN=RET PE=3 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---G----RNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0ABI7WFU7|A0ABI7WFU7_FELCA Uncharacterized protein OS=Felis catus OX=9685 GN=RET PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0ABK0KWL2|A0ABK0KWL2_RAT Ret proto-oncogene OS=Rattus norvegicus OX=10116 GN=Ret PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASQSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRDSRKIGPAYV---SSGGSRNSSSL
+DHPDERVLTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKKSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0ABM0HRK2|A0ABM0HRK2_CERSS Proto-oncogene tyrosine-protein kinase receptor Ret isoform X2 OS=Ceratotherium simum simum OX=73337 GN=LOC101401849 PE=4 SV=1
+LVLGKTLGEGEFGKVVEATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0ABM0LFP2|A0ABM0LFP2_MICOH Proto-oncogene tyrosine-protein kinase receptor Ret OS=Microtus ochrogaster OX=79684 GN=Ret PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGRAGYTTVAVKMLKENASQSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRDSRKIGPGYV---GSGGSRNSSSL
+DHPDERVLTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRD
+VYEEDSYVKKSKGRIPVKWMAIESLFDHVYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0ABM2ENY1|A0ABM2ENY1_EQUPR Proto-oncogene tyrosine-protein kinase receptor Ret isoform X1 OS=Equus przewalskii OX=9798 GN=RET PE=4 SV=1
+LVLGKTLGEGEFGKVVEATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNPDERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKSRDYL
+&gt;tr|A0ABM3NUI2|A0ABM3NUI2_ACIJB Proto-oncogene tyrosine-protein kinase receptor Ret isoform X2 OS=Acinonyx jubatus OX=32536 GN=RET PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0ABM3SCF4|A0ABM3SCF4_BALAC Proto-oncogene tyrosine-protein kinase receptor Ret OS=Balaenoptera acutorostrata OX=9767 GN=RET PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASASELRDLLSEFNLLTQVS
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSRDSRNSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKEEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0ABM4YZ43|A0ABM4YZ43_VULVU Proto-oncogene tyrosine-protein kinase receptor Ret isoform X1 OS=Vulpes vulpes OX=9627 GN=RET PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPHVIKLYGACSQD--GPLFLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRSSSYL
+DNPEERALTMGDLISFAWQISRGMRYLAEMKLVHRDLAARNVLVAEGRKMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYGLMLQCWKQEPDKRPVFADISKDLEKMMVKNRDYL
+&gt;tr|A0ABM5E203|A0ABM5E203_VICPA Proto-oncogene tyrosine-protein kinase receptor Ret OS=Vicugna pacos OX=30538 GN=RET PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASTSEMRDLQSEFNLLKQVN
+HPQVIKLYGACSQG--GPLLLIVEYAKYGSLRGFLRESRKAGPGYM---GSGDNRSSSYL
+DNPEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+&gt;tr|A0ABN8ZWN7|A0ABN8ZWN7_RANTA Uncharacterized protein OS=Rangifer tarandus platyrhynchus OX=3082113 GN=MRATA1EN1_LOCUS26358 PE=4 SV=1
+LVLGKTLGEGEFGKVVKATAFRLKGKAGYTTVAVKMLKENASPSELRDLLSEFNLLKQVN
+HPQVIKLYGACSQD--GPLLLIVEYAKYGSLRGFLRESRKAGPGYV---GSGGSRNSSYL
+DNLEERALTMGDLISFAWQISRGMQYLAEMKLVHRDLAARNVLVAEGRRMKISDFGLSRD
+VYEEDSYVKRSKGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPE
+RLFNLLKTGYRMERPDNCSEEMYSLMLQCWKQEPDKRPVFADISKDLDKMMVKSRDYL
+</code></pre></div>
+</details>
+<p>Having the alignment ready, the B2BTools server can process this input file to return the biophysical profiles.</p>
+<details class="success">
+<summary>Explore the aligned backbone dynamics</summary>
+<p><figure>
+    <img src="../../assets/images/50sim_backbone.jpg" width="1048" alt="P07949 on Scop3P">
+    <figcaption>DynaMine backbone dynamics for 50% identity aligned kinase domains</figcaption>
+</figure></p>
+</details>
+<details class="success">
+<summary>Explore the aligned disorder</summary>
+<p><figure>
+    <img src="../../assets/images/50sim_disorder.jpg" width="1048" alt="P07949 on Scop3P">
+    <figcaption>DisoMine disorder propensities for 50% identity aligned kinase domains</figcaption>
+</figure></p>
+</details>
+<details class="success">
+<summary>Explore the aligned early folding events</summary>
+<p><figure>
+    <img src="../../assets/images/50sim_efoldmine.jpg" width="1048" alt="P07949 on Scop3P">
+    <figcaption>EFoldMine early folding events for 50% identity aligned kinase domains</figcaption>
+</figure></p>
+</details>
+<div class="admonition notes">
+<p class="admonition-title">Interactive results</p>
+<p>For further details: 
+<a href="https://bio2byte.be/online_predictors/results/1ce55de1-df7f-4ddb-8e6b-0367a05a0da9/">Open the results on the B2BTools platoform</a>.</p>
+</div>
+<h2 id="36-connecting-online-resources">3.6 Connecting online resources</h2>
+<p>For a selected protein, a set of “external resources” will be shown in the left navigation bar if the header is recognised as a UniProt entry.</p>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: Finding phosphosites on Scop3P for P07949</p>
+<ol>
+<li>Look for all the modified kinases on Scop3P at https://iomics.ugent.be/scop3p/search?q=kinase.</li>
+<li>Find and select <code>P07949</code> from the list. </li>
+</ol>
+<p>Given the B2BTools page also includes the direct link, you can proceed with these steps: </p>
+<p>1 Select the <code>P07949</code> protein in the dropdown selector.
+1. Clicking on the “Find PTMs on Scop3P” redirects you to the entry page on that resource: <a href="https://iomics.ugent.be/scop3p/index?protein=P07949">https://iomics.ugent.be/scop3p/index?protein=P07949</a>.</p>
+<details class="success">
+<summary>Solution</summary>
+<p><figure>
+    <img src="../../assets/images/follow_up_scop3p.jpg" width="800" alt="P07949 on Scop3P">
+    <figcaption>P07949 on Scop3P</figcaption>
+</figure></p>
+</details>
+</div>
+<hr>
+<div class="admonition warning">
+<p class="admonition-title">🥪 LUNCH BREAK</p>
+<p>Time to grab a coffee or tea. We’ll be back in one and a half hour…</p>
+</div>
+<hr>
+<div class="admonition note">
+<p class="admonition-title">To be continued: : Go to chapter 4</p>
+<p><a href="/../../chapters/chapter_04">Next chapter</a> explains how to explore the modifications (PTMs).</p>
+</div>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:b2btools">
+<p>Jose Gavalda-Garcia, Adrián Díaz, and Wim Vranken. Bio2byte tools deployment as a python package and galaxy tool to predict protein biophysical properties. <em>Bioinformatics (Oxford, England)</em>, 40(9):btae543, September 2024. URL: <a href="https://europepmc.org/articles/PMC11873786">https://europepmc.org/articles/PMC11873786</a>, <a href="https://doi.org/10.1093/bioinformatics/btae543">doi:10.1093/bioinformatics/btae543</a>. <a class="footnote-backref" href="#fnref:b2btools" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:dynamine">
+<p>Elisa Cilia, Rita Pancsa, Peter Tompa, Tom Lenaerts, and Wim F Vranken. From protein sequence to dynamics and disorder with dynamine. <em>Nature communications</em>, 4:2741, 2013. URL: <a href="https://doi.org/10.1038/ncomms3741">https://doi.org/10.1038/ncomms3741</a>, <a href="https://doi.org/10.1038/ncomms3741">doi:10.1038/ncomms3741</a>. <a class="footnote-backref" href="#fnref:dynamine" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:disomine">
+<p>Gabriele Orlando, Daniele Raimondi, Francesco Codicè, Francesco Tabaro, and Wim Vranken. Prediction of disordered regions in proteins with recurrent neural networks and protein dynamics. <em>Journal of Molecular Biology</em>, 434(12):167579, 2022. URL: <a href="https://www.sciencedirect.com/science/article/pii/S0022283622001590">https://www.sciencedirect.com/science/article/pii/S0022283622001590</a>, <a href="https://doi.org/https://doi.org/10.1016/j.jmb.2022.167579">doi:https://doi.org/10.1016/j.jmb.2022.167579</a>. <a class="footnote-backref" href="#fnref:disomine" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:efoldmine">
+<p>Daniele Raimondi, Gabriele Orlando, Rita Pancsa, Taushif Khan, and Wim F Vranken. Exploring the sequence-based prediction of folding initiation sites in proteins. <em>Scientific reports</em>, 7(1):8826, August 2017. URL: <a href="https://europepmc.org/articles/PMC5562875">https://europepmc.org/articles/PMC5562875</a>, <a href="https://doi.org/10.1038/s41598-017-08366-3">doi:10.1038/s41598-017-08366-3</a>. <a class="footnote-backref" href="#fnref:efoldmine" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:agmata">
+<p>Gabriele Orlando, Alexandra Silva, Sandra Macedo-Ribeiro, Daniele Raimondi, and Wim Vranken. Accurate prediction of protein beta-aggregation with generalized statistical potentials. <em>Bioinformatics</em>, 36(7):2076–2081, 12 2019. URL: <a href="https://doi.org/10.1093/bioinformatics/btz912">https://doi.org/10.1093/bioinformatics/btz912</a>, <a href="https://arxiv.org/abs/https://academic.oup.com/bioinformatics/article-pdf/36/7/2076/50670159/bioinformatics_36_7_2076.pdf">arXiv:https://academic.oup.com/bioinformatics/article-pdf/36/7/2076/50670159/bioinformatics_36_7_2076.pdf</a>, <a href="https://doi.org/10.1093/bioinformatics/btz912">doi:10.1093/bioinformatics/btz912</a>. <a class="footnote-backref" href="#fnref:agmata" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+<li id="fn:psper">
+<p>Gabriele Orlando, Daniele Raimondi, Francesco Tabaro, Francesco Codicè, Yves Moreau, and Wim F Vranken. Computational identification of prion-like rna-binding proteins that form liquid phase-separated condensates. <em>Bioinformatics</em>, 35(22):4617–4623, 04 2019. URL: <a href="https://doi.org/10.1093/bioinformatics/btz274">https://doi.org/10.1093/bioinformatics/btz274</a>, <a href="https://arxiv.org/abs/https://academic.oup.com/bioinformatics/article-pdf/35/22/4617/48978636/bioinformatics_35_22_4617.pdf">arXiv:https://academic.oup.com/bioinformatics/article-pdf/35/22/4617/48978636/bioinformatics_35_22_4617.pdf</a>, <a href="https://doi.org/10.1093/bioinformatics/btz274">doi:10.1093/bioinformatics/btz274</a>. <a class="footnote-backref" href="#fnref:psper" title="Jump back to footnote 6 in the text">↩</a></p>
+</li>
+<li id="fn:shiftcrypt">
+<p>Gabriele Orlando, Daniele Raimondi, Luciano Porto Kagami, and Wim F Vranken. Shiftcrypt: a web server to understand and biophysically align proteins through their nmr chemical shift values. <em>Nucleic Acids Research</em>, 48(W1):W36–W40, 05 2020. URL: <a href="https://doi.org/10.1093/nar/gkaa391">https://doi.org/10.1093/nar/gkaa391</a>, <a href="https://arxiv.org/abs/https://academic.oup.com/nar/article-pdf/48/W1/W36/33432832/gkaa391.pdf">arXiv:https://academic.oup.com/nar/article-pdf/48/W1/W36/33432832/gkaa391.pdf</a>, <a href="https://doi.org/10.1093/nar/gkaa391">doi:10.1093/nar/gkaa391</a>. <a class="footnote-backref" href="#fnref:shiftcrypt" title="Jump back to footnote 7 in the text">↩</a></p>
+</li>
+<li id="fn:b2btools-webserver">
+<p>Luciano Porto Kagami, Gabriele Orlando, Daniele Raimondi, Francois Ancien, Bhawna Dixit, Jose Gavaldá-García, Pathmanaban Ramasamy, Joel Roca-Martínez, Konstantina Tzavella, and Wim Vranken. B2btools: online predictions for protein biophysical features and their conservation. <em>Nucleic Acids Research</em>, 49(W1):W52–W59, 05 2021. URL: <a href="https://doi.org/10.1093/nar/gkab425">https://doi.org/10.1093/nar/gkab425</a>, <a href="https://arxiv.org/abs/https://academic.oup.com/nar/article-pdf/49/W1/W52/38842326/gkab425.pdf">arXiv:https://academic.oup.com/nar/article-pdf/49/W1/W52/38842326/gkab425.pdf</a>, <a href="https://doi.org/10.1093/nar/gkab425">doi:10.1093/nar/gkab425</a>. <a class="footnote-backref" href="#fnref:b2btools-webserver" title="Jump back to footnote 8 in the text">↩</a></p>
+</li>
+</ol>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../chapter_02/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. Introducing the biological context">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2. Introducing the biological context
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapter_04/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. Working with post-translational modifications">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                4. Working with post-translational modifications
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Template made by the ELIXIR Training Platform. Training content written by Pathmanaban Ramasamy and Adrián Díaz. This is a VIB Training. ELIXIR Belgium is a partner of this course.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

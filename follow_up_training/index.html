@@ -1,0 +1,1042 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../chapters/chapter_06/">
+      
+      
+        <link rel="next" href="../chapters/references/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/elixir_favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Follow up training - Assess protein dynamics & post-translational modifications</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11-biophysical-properties" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+This training material is under active development and considered pre-alpha.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Assess protein dynamics &amp; post-translational modifications" class="md-header__button md-logo" aria-label="Assess protein dynamics & post-translational modifications" data-md-component="logo">
+      
+  <img src="../assets/images/white-orange-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Assess protein dynamics & post-translational modifications
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Follow up training
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Bio2Byte/training-protein-dynamics-post-translational-modifications" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Bio2Byte/training-protein-dynamics-post-translational-modifications
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Assess protein dynamics &amp; post-translational modifications" class="md-nav__button md-logo" aria-label="Assess protein dynamics & post-translational modifications" data-md-component="logo">
+      
+  <img src="../assets/images/white-orange-logo.png" alt="logo">
+
+    </a>
+    Assess protein dynamics & post-translational modifications
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Bio2Byte/training-protein-dynamics-post-translational-modifications" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Bio2Byte/training-protein-dynamics-post-translational-modifications
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course_schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course schedule
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Content
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Course Content
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/chapter_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducing this course
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/chapter_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Introducing the biological context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/chapter_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Building biological profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/chapter_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Working with post-translational modifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/chapter_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Combining PTM annotations to biophysical properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/chapter_06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Closing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Follow up training
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Follow up training
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-biophysical-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Biophysical properties
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Biophysical properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-distribution-channels-of-the-b2btools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1.1 Distribution channels of the B2BTools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-about-bio2byte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1.2 About Bio2Byte
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-post-translational-modifications-ptms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Post-translational modifications (PTMs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Post-translational modifications (PTMs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-scop3p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2.1 ScoP3P
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-scop3ptm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2.2 ScoP3PTM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-about-compomics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2.3. About CompOmics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-structural-visualisations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Structural visualisations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapters/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Follow up training</h1>
+
+<div><p>This page is intended to help participants apply the concepts and workflows introduced in this course to their own proteins and research questions.</p>
+<hr>
+<h2 id="11-biophysical-properties">1.1 Biophysical properties</h2>
+<p>Biophysical properties such as early folding propensity, disorder probability, and backbone dynamics provide valuable complementary information to sequence and structure data. These features help researchers identify residues and regions that are important for protein folding, stability, and regulation.</p>
+<p>By analysing these properties, it becomes possible to distinguish between regions that are structurally stable and regions that are flexible, transient, or condition-dependent. This distinction is especially relevant for signaling proteins, where function often depends on conformational changes rather than rigid structures.</p>
+<h3 id="111-distribution-channels-of-the-b2btools">1.1.1 Distribution channels of the B2BTools</h3>
+<p>There are multiple alternatives to use the predictors either locally or using cloud resources:</p>
+<h4 id="1111-local-installation">1.1.1.1 Local installation</h4>
+<ol>
+<li>Via the Python Index (<code>pip</code>) <a href="https://pypi.org/project/b2bTools/">visit package page</a>: <code>pip install b2bTools</code></li>
+<li>Via the Conda package manager (<code>conda</code>) <a href="https://anaconda.org/channels/bioconda/packages/b2btools/overview">visit package page</a>: <code>conda install bioconda::b2btools</code></li>
+<li>Via containers (<code>biocontainers</code>) <a href="https://biocontainers.pro/tools/b2btools">visit containers page</a>: <ol>
+<li>Docker: <code>docker pull quay.io/biocontainers/b2btools:3.0.7--py310h8ea774a_2</code></li>
+<li>Singularity: <code>singularity run https://depot.galaxyproject.org/singularity/b2btools:3.0.7--py310hdbdd923_0</code>.</li>
+</ol>
+</li>
+</ol>
+<h4 id="1112-cloud-usage">1.1.1.2 Cloud usage</h4>
+<ol>
+<li>Online Notebooks on Google Colab: <a href="https://github.com/Bio2Byte/public_notebooks">visit the public repository on Github</a></li>
+<li>Using Galaxy platform for GUI oriented executions:<ol>
+<li>Belgian server: <a href="https://usegalaxy.be/root?tool_id=toolshed.g2.bx.psu.edu/repos/iuc/b2btools_single_sequence/b2btools_single_sequence/3.0.5+galaxy0">usegalaxy.be</a></li>
+<li>European server: <a href="https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/iuc/b2btools_single_sequence/b2btools_single_sequence/3.0.5+galaxy0">usegalaxy.eu</a></li>
+<li>Australian server: <a href="https://usegalaxy.org.au/root?tool_id=toolshed.g2.bx.psu.edu/repos/iuc/b2btools_single_sequence/b2btools_single_sequence/3.0.5+galaxy0">usegalaxy.org.au</a></li>
+</ol>
+</li>
+</ol>
+<h3 id="112-about-bio2byte">1.1.2 About Bio2Byte</h3>
+<p>This group is led by <a href="https://bio2byte.be/people/31">Prof. Dr. Wim Vranken</a> and it is part of the <a href="https://vub.be">Vrije Universiteit Brussel</a> in Belgium. </p>
+<p>Additional information about the Bio2Byte lab can be found at:</p>
+<ul>
+<li>Home page: <a href="https://bio2byte.be">https://bio2byte.be</a>  </li>
+<li>Latest publications: <a href="https://bio2byte.be/publications">https://bio2byte.be/publications</a></li>
+<li>Tools: <a href="https://bio2byte.be/tool/">https://bio2byte.be/tool/</a></li>
+<li>Databases: <a href="https://bio2byte.be/database/">https://bio2byte.be/database/</a></li>
+</ul>
+<h2 id="12-post-translational-modifications-ptms">1.2 Post-translational modifications (PTMs)</h2>
+<p>Post-translational modifications (PTMs) play a critical role in regulating protein activity, localization, interactions, and stability. Both <strong>ScoP3P</strong> <sup id="fnref:ScoP3P"><a class="footnote-ref" href="#fn:ScoP3P">1</a></sup> and <strong>ScoP3PTM</strong> aim to provide biological and structural context to these modifications, moving beyond simple site annotation.</p>
+<h3 id="121-scop3p">1.2.1 ScoP3P</h3>
+<p>One of the most extensively studied PTMs is protein phosphorylation. Advances in high-throughput mass spectrometry (MS/MS) have led to a rapid increase in publicly available phosphoproteomics data. However, many existing phosphorylation resources focus mainly on sequence information and phosphosite positions, often lacking structural and biophysical context.</p>
+<p>Structural information is particularly important when addressing a key biological question: how to distinguish functional phosphosites from non-functional or incidental ones.</p>
+<p>ScoP3P is a database of human phosphosites derived from public proteomics data. Each phosphosite is annotated with detailed, residue-level structural and biophysical information using state-of-the-art prediction tools. The platform is available at:
+https://iomics.ugent.be/scop3p/index</p>
+<div class="admonition success">
+<p class="admonition-title">P07949 example</p>
+<p>Visit the entry page for the protein of interest on ScoP3P:
+https://iomics.ugent.be/scop3p/index?protein=P07949</p>
+<p><figure>
+    <img src="../../assets/images/follow_up_scop3p.jpg" width="1024" alt="P07949 on ScoP3P">
+    <figcaption>P07949 on ScoP3P</figcaption>
+</figure></p>
+</div>
+<div class="admonition notes">
+<p class="admonition-title">REST API access</p>
+<p>There are several endpoints to fetch the data Scop3P through HTTP methods. The API is documented using Swagger at <a href="https://iomics.ugent.be/scop3p/swagger-ui/index.html">https://iomics.ugent.be/scop3p/swagger-ui/index.html</a>.</p>
+<div class="admonition question">
+<p class="admonition-title">P07949 REST API example</p>
+<p>The modifications for P07949 can be found at <a href="https://iomics.ugent.be/scop3p/api/modifications?accession=P07949">https://iomics.ugent.be/scop3p/api/modifications?accession=P07949</a>:</p>
+<details class="success">
+<summary>Show JSON response</summary>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"proteinName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Proto-oncogene tyrosine-protein kinase receptor Ret (EC 2.7.10.1) (Cadherin family member 12) (Proto-oncogene c-Ret) [Cleaved into: Soluble RET kinase fragment; Extracellular cell-membrane anchored RET cadherin 120 kDa fragment]"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"entryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RET_HUMAN"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"accession"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P07949"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://iomics.ugent.be/scop3p/index?protein=P07949"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"modifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"residue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"THR"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phosphorylation"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">291</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIDE"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"functionalScore"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"uniprotId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"accession"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"specificSinglyPhosphorylated"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"residue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TYR"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phosphorylation"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">606</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIDE"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"functionalScore"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"uniprotId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"accession"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"specificSinglyPhosphorylated"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"residue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SER"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phosphorylation"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Combined"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">696</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UP, PRIDE"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PubMed:19369195"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"functionalScore"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6410382</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"uniprotId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"accession"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"specificSinglyPhosphorylated"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"residue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SER"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phosphorylation"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">699</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIDE"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"functionalScore"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"uniprotId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"accession"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"specificSinglyPhosphorylated"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"residue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TYR"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phosphorylation"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Experimental"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">806</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UP"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PubMed:14711813"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"functionalScore"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"uniprotId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"accession"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"specificSinglyPhosphorylated"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"residue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TYR"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phosphorylation"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Experimental"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">809</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UP"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PubMed:14711813"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"functionalScore"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"uniprotId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"accession"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"specificSinglyPhosphorylated"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"residue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TYR"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phosphorylation"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Experimental"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UP"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PubMed:14711813,PubMed:16928683"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"functionalScore"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"uniprotId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"accession"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"specificSinglyPhosphorylated"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"residue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TYR"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phosphorylation"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Experimental"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">905</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UP"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PubMed:20117004,PubMed:14711813,PubMed:16928683,PubMed:28846099,PubMed:16778204"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"functionalScore"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"uniprotId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"accession"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"specificSinglyPhosphorylated"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"residue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TYR"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phosphorylation"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Experimental"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">981</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UP"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PubMed:14711813"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"functionalScore"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"uniprotId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"accession"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"specificSinglyPhosphorylated"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+</div>
+<h3 id="122-scop3ptm">1.2.2 ScoP3PTM</h3>
+<p>ScoP3P is being extended into <strong>ScoP3PTM</strong>, a broader resource that covers multiple types of post-translational modifications. The platform has expanded from 36 to 539 projects, and the number of processed spectra has grown from 60.2 million to approximately 1 billion. In addition to phosphorylation, ScoP3PTM includes more than 117 different modification types.</p>
+<div class="admonition success">
+<p class="admonition-title">P07949 example</p>
+<p>Visit the summary page for the protein of interest on ScoP3PTM:
+https://iomics.ugent.be/scop3ptm/P07949/summary</p>
+<p><figure>
+    <img src="../../assets/images/follow_up_scop3ptm.jpg" width="1024" alt="P07949 on ScoP3PTM">
+    <figcaption>P07949 on ScoP3PTM</figcaption>
+</figure></p>
+</div>
+<h3 id="123-about-compomics">1.2.3. About CompOmics</h3>
+<p>The <a href="https://www.compomics.com">CompOmics group</a>, headed by Prof. Dr. Lennart Martens, is part of the Department of Biomolecular Medicine of the Faculty of Medicine and Health Sciences of Ghent University, and the VIB-UGent Center for Medical Biotechnology of VIB, both in Ghent, Belgium.</p>
+<p>The group has its roots in Ghent, but has active members all over Europe, and specializes in the management, analysis and integration of high-throughput Omics data with an aim towards establishing solid data stores, processing methods and tools to enable downstream systems biology research.</p>
+<h2 id="13-structural-visualisations">1.3 Structural visualisations</h2>
+<p>Mol* (<code>/molstar/</code>) <sup id="fnref:MolStar"><a class="footnote-ref" href="#fn:MolStar">2</a></sup> is a widely used component for rendering and exploring three-dimensional macromolecular structures in the browser.</p>
+<p>In addition, the MolViewSpec <sup id="fnref:MolViewSpec"><a class="footnote-ref" href="#fn:MolViewSpec">3</a></sup> library (https://molstar.org/mol-view-spec/) allows users to describe molecular visual scenes using a simple, declarative language. These descriptions can then be loaded directly into the Mol* viewer, enabling reproducible and shareable structural visualizations.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:ScoP3P">
+<p>Pathmanaban Ramasamy, Demet Turan, Natalia Tichshenko, Niels Hulstaert, Elien Vandermarliere, Wim Vranken, and Lennart Martens. Scop3p: a comprehensive resource of human phosphosites within their full context. <em>Journal of proteome research</em>, 19(8):3478—3486, August 2020. URL: <a href="https://doi.org/10.1021/acs.jproteome.0c00306">https://doi.org/10.1021/acs.jproteome.0c00306</a>, <a href="https://doi.org/10.1021/acs.jproteome.0c00306">doi:10.1021/acs.jproteome.0c00306</a>. <a class="footnote-backref" href="#fnref:ScoP3P" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:MolStar">
+<p>David Sehnal, Sebastian Bittrich, Mandar Deshpande, Radka Svobodová, Karel Berka, Václav Bazgier, Sameer Velankar, Stephen K Burley, Jaroslav Koča, and Alexander S Rose. Mol* viewer: modern web app for 3d visualization and analysis of large biomolecular structures. <em>Nucleic Acids Research</em>, 49(W1):W431–W437, 05 2021. URL: <a href="https://doi.org/10.1093/nar/gkab314">https://doi.org/10.1093/nar/gkab314</a>, <a href="https://arxiv.org/abs/https://academic.oup.com/nar/article-pdf/49/W1/W431/38842088/gkab314.pdf">arXiv:https://academic.oup.com/nar/article-pdf/49/W1/W431/38842088/gkab314.pdf</a>, <a href="https://doi.org/10.1093/nar/gkab314">doi:10.1093/nar/gkab314</a>. <a class="footnote-backref" href="#fnref:MolStar" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:MolViewSpec">
+<p>Adam Midlik, Sebastian Bittrich, Jennifer R Fleming, Sreenath Nair, Sameer Velankar, Stephen K Burley, Jasmine Y Young, Brinda Vallat, and David Sehnal. Molviewspec: a mol* extension for describing and sharing molecular visualizations. <em>Nucleic Acids Research</em>, 53(W1):W408–W414, 05 2025. URL: <a href="https://doi.org/10.1093/nar/gkaf370">https://doi.org/10.1093/nar/gkaf370</a>, <a href="https://arxiv.org/abs/https://academic.oup.com/nar/article-pdf/53/W1/W408/63067309/gkaf370.pdf">arXiv:https://academic.oup.com/nar/article-pdf/53/W1/W408/63067309/gkaf370.pdf</a>, <a href="https://doi.org/10.1093/nar/gkaf370">doi:10.1093/nar/gkaf370</a>. <a class="footnote-backref" href="#fnref:MolViewSpec" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+</ol>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../chapters/chapter_06/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 6. Closing">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                6. Closing
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapters/references/" class="md-footer__link md-footer__link--next" aria-label="Next: References">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                References
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Template made by the ELIXIR Training Platform. Training content written by Pathmanaban Ramasamy and Adrián Díaz. This is a VIB Training. ELIXIR Belgium is a partner of this course.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.footer", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

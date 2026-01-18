@@ -1,0 +1,1216 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../chapter_04/">
+      
+      
+        <link rel="next" href="../chapter_06/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/elixir_favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>5. Combining PTM annotations to biophysical properties - Assess protein dynamics & post-translational modifications</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/neoteroi-mkdocs.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#51-structural-and-biophysical-interpretation-of-ptms-and-mutations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+This training material is under active development and considered pre-alpha.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Assess protein dynamics &amp; post-translational modifications" class="md-header__button md-logo" aria-label="Assess protein dynamics & post-translational modifications" data-md-component="logo">
+      
+  <img src="../../assets/images/white-orange-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Assess protein dynamics & post-translational modifications
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Combining PTM annotations to biophysical properties
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Bio2Byte/training-protein-dynamics-post-translational-modifications" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Bio2Byte/training-protein-dynamics-post-translational-modifications
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Assess protein dynamics &amp; post-translational modifications" class="md-nav__button md-logo" aria-label="Assess protein dynamics & post-translational modifications" data-md-component="logo">
+      
+  <img src="../../assets/images/white-orange-logo.png" alt="logo">
+
+    </a>
+    Assess protein dynamics & post-translational modifications
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Bio2Byte/training-protein-dynamics-post-translational-modifications" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Bio2Byte/training-protein-dynamics-post-translational-modifications
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course_schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course schedule
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Content
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Course Content
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducing this course
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Introducing the biological context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Building biological profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Working with post-translational modifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Combining PTM annotations to biophysical properties
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Combining PTM annotations to biophysical properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-structural-and-biophysical-interpretation-of-ptms-and-mutations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Structural and biophysical interpretation of PTMs and mutations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-visualize-the-experimental-peptide-coverage-on-protein-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Visualize the experimental peptide coverage on protein structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-comparative-biophysical-analysis-of-wild-type-and-variant-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Comparative biophysical analysis of wild-type and variant states
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Comparative biophysical analysis of wild-type and variant states">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#531-explore-the-effect-of-mutations-biophysical-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3.1 Explore the effect of mutations (biophysical inference)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#532-explore-the-effect-of-mutations-structural-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3.2 Explore the effect of mutations (structural inference)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Closing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../follow_up_training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Follow up training
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>5. Combining PTM annotations to biophysical properties</h1>
+
+<div><div class="admonition question">
+<p class="admonition-title">Chapter questions</p>
+<ol>
+<li>How can biophysical predictions help to interpret the functional impact of phosphosites?</li>
+<li>How to evaluate the impact of mutations using these tools?</li>
+</ol>
+</div>
+<h2 id="51-structural-and-biophysical-interpretation-of-ptms-and-mutations">5.1 Structural and biophysical interpretation of PTMs and mutations</h2>
+<p>This activity gives an overview of exploring PTMs, mutations, biophysical properties on protein structures. </p>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: Structural and biophysical interpretation of PTMs and mutations</p>
+<p>For this activity open the interactive notebook here: </p>
+<table>
+<thead>
+<tr>
+<th>Notebook (JupyterLab)</th>
+<th>Interactive app (Voilà)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?filepath=notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb"><img alt="Open Notebook" src="https://mybinder.org/badge_logo.svg"></a></td>
+<td><a href="https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?urlpath=voila/render/notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb"><img alt="Launch App" src="https://mybinder.org/badge_logo.svg"></a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>Chrome users</strong>:<br>
+Please open the <em>Notebook (JupyterLab)</em> link first to authenticate,<br>
+then launch the <em>Interactive app (Voilà)</em>.</p>
+</blockquote>
+<ol>
+<li>Fetch PTMs from Scop3P REST API</li>
+<li>Fetch diseases variants from UniProt REST API</li>
+<li>Map PTMs to experimental and predicted protein structures</li>
+<li>Predict the biophysical properties and visualise them on protein structures</li>
+<li>Explore protein structures as residue-interaction network (RIN)<ol>
+<li>Constructing the RINs </li>
+<li>Exploring PTMs and mutation on the network</li>
+</ol>
+</li>
+</ol>
+<details class="success">
+<summary>Solution</summary>
+<p><figure>
+    <img src="../../assets/images/Scop3P_PTM_viz_overview.png" width="800" alt="Mass-spec picture goes here">
+    <figcaption> Different results using the provided notebook </figcaption>
+</figure></p>
+</details>
+</div>
+<h2 id="52-visualize-the-experimental-peptide-coverage-on-protein-structures">5.2 Visualize the experimental peptide coverage on protein structures</h2>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: Peptide mapper</p>
+<p>For this activity open these interactive notebooks: </p>
+<ol>
+<li>
+<p>To fetch phospho peptides from Scop3P and map onto protein structures click one of the link below: </p>
+<table>
+<thead>
+<tr>
+<th>Notebook (JupyterLab)</th>
+<th>Interactive app (Voilà)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?filepath=notebooks/Peptide_mapper_scop3p_voila.ipynb"><img alt="Open Notebook" src="https://mybinder.org/badge_logo.svg"></a></td>
+<td><a href="https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?urlpath=voila/render/notebooks/Peptide_mapper_scop3p_voila.ipynb"><img alt="Launch App" src="https://mybinder.org/badge_logo.svg"></a></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<blockquote>
+<p>⚠️ Chrome users: open the Notebook link first to authenticate, then launch the app.</p>
+</blockquote>
+<ol>
+<li>
+<p>To upload your own data (Peptide table) and visualize the peptides and modifications on protein structures click one of the link below: </p>
+<table>
+<thead>
+<tr>
+<th>Notebook (JupyterLab)</th>
+<th>Interactive app (Voilà)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?filepath=notebooks/Peptide_mapper_fileupload_voila.ipynb"><img alt="Open Notebook" src="https://mybinder.org/badge_logo.svg"></a></td>
+<td><a href="https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?urlpath=voila/render/notebooks/Peptide_mapper_fileupload_voila.ipynb"><img alt="Launch App" src="https://mybinder.org/badge_logo.svg"></a></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<blockquote>
+<p>⚠️ Chrome users: open the Notebook link first to authenticate, then launch the app.</p>
+</blockquote>
+<details class="success">
+<summary>Solution for Peptide mapper.ipynb</summary>
+<p>Fetch phospho peptides from Scop3P and map onto protein structures:</p>
+<ol>
+<li>Open the notebook on Google Colab.</li>
+<li>Import the required packages.</li>
+<li>Follow the steps of the interactive form.<ol>
+<li>Enter the protein ID (ex: P07949) and click ‘Load’</li>
+<li>The app will let you choose between all peptides (‘All rows’) and unique spans (the peptide ranges are merged)</li>
+<li>Map all petides on the AF structure using ‘Map all’ (shows the mass spec coverage of your protein)</li>
+<li>Alternatively click one or multiple peptides on peptide panel to see their structural mapping</li>
+<li>Hint:<ul>
+<li>Explore what the search function does!</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<div class="admonition notes">
+<p class="admonition-title">Example</p>
+<p><figure>
+    <img src="../../assets/images/Peptide_mapper_scop3p_voila.png" width="800" alt="Mass-spec picture goes here">
+    <figcaption> </figcaption>
+</figure></p>
+</div>
+</details>
+<details class="success">
+<summary>Solution for Peptide_maper_fileupload.ipynb</summary>
+<p>Upload your own data (Peptide table) and gets a peptide file and visualize the peptides and modifications on protein structures</p>
+<ol>
+<li>Open the notebook on Google Colab.</li>
+<li>Import the required packages.</li>
+<li>Follow the steps of the interactive form.<ol>
+<li>Choose peptide file (tsv/tab delimkited text file)  and click ‘Load file’</li>
+<li>The app will autofill the columns using keywords or enter the column headers<ol>
+<li>(protein ID column name [ACC_ID], peptide seq column name [pep_seq] and the modified position column name [UP_POS]</li>
+</ol>
+</li>
+<li>Click ‘Build mapping’</li>
+<li>Select the protein from list for which you want to map the peptides (note: these proteins are identified in your sample)</li>
+<li>Map all petides on the AF structure using ‘Map all’ (shows the mass spec coverage of your protein)</li>
+<li>Alternatively click one or multiple peptides on peptide panel to see their structural mapping</li>
+<li>Hint:<ul>
+<li>Explore what the search function does! </li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<div class="admonition notes">
+<p class="admonition-title">Example</p>
+<p><figure>
+    <img src="../../assets/images/Peptide_mapper_fileupload_voila.png" width="800" alt="Mass-spec picture goes here">
+    <figcaption> </figcaption>
+</figure></p>
+</div>
+</details>
+</div>
+<h2 id="53-comparative-biophysical-analysis-of-wild-type-and-variant-states">5.3 Comparative biophysical analysis of wild-type and variant states</h2>
+<p>For this activity we will mutate three positions of P07949:</p>
+<ol>
+<li>Mutate the position 909: <code>S909P</code><ul>
+<li>Wild: Serine (<strong>SER</strong>, <strong>S</strong>)</li>
+<li>Variant: Proline (<strong>PRO</strong>, <strong>P</strong>)</li>
+</ul>
+</li>
+<li>Mutate the position 928: <code>Y928P</code><ul>
+<li>Wild: Tyrosine (<strong>TYR</strong>, <strong>Y</strong>)</li>
+<li>Variant: Proline (<strong>PRO</strong>, <strong>P</strong>)</li>
+</ul>
+</li>
+<li>Mutate the position 981: <code>Y981P</code><ul>
+<li>Wild: Tyrosine (<strong>TYR</strong>, <strong>Y</strong>)</li>
+<li>Variant: Proline (<strong>PRO</strong>, <strong>P</strong>)  </li>
+</ul>
+</li>
+</ol>
+<details class="info">
+<summary>Mutant sequence (FASTA)</summary>
+<p>This is an variant sequence in FASTA format for the <strong>three mutations</strong> (S909P, Y928P, Y981P):</p>
+<div class="highlight"><pre><span></span><code>&gt;sp|P07949| Mutated S909P Y928P Y981P
+MAKATSGAAGLRLLLLLLLPLLGKVALGLYFSRDAYWEKLYVDQAAGTPLL
+YVHALRDAPEEVPSFRLGQHLYGTYRTRLHENNWICIQEDTGLLYLNRSLD
+HSSWEKLSVRNRGFPLLTVYLKVFLSPTSLREGECQWPGCARVYFSFFNTS
+FPACSSLKPRELCFPETRPSFRIRENRPPGTFHQFRLLPVQFLCPNISVAY
+RLLEGEGLPFRCAPDSLEVSTRWALDREQREKYELVAVCTVHAGAREEVVM
+VPFPVTVYDEDDSAPTFPAGVDTASAVVEFKRKEDTVVATLRVFDADVVPA
+SGELVRRYTSTLLPGDTWAQQTFRVEHWPNETSVQANGSFVRATVHDYRLV
+LNRNLSISENRTMQLAVLVNDSDFQGPGAGVLLLHFNVSVLPVSLHLPSTY
+SLSVSRRARRFAQIGKVCVENCQAFSGINVQYKLHSSGANCSTLGVVTSAE
+DTSGILFVNDTKALRRPKCAELHYMVVATDQQTSRQAQAQLLVTVEGSYVA
+EEAGCPLSCAVSKRRLECEECGGLGSPTGRCEWRQGDGKGITRNFSTCSPS
+TKTCPDGHCDVVETQDINICPQDCLRGSIVGGHEPGEPRGIKAGYGTCNCF
+PEEEKCFCEPEDIQDPLCDELCRTVIAAAVLFSFIVSVLLSAFCIHCYHKF
+AHKPPISSAEMTFRRPAQAFPVSYSSSGARRPSLDSMENQVSVDAFKILED
+PKWEFPRKNLVLGKTLGEGEFGKVVKATAFHLKGRAGYTTVAVKMLKENAS
+PSELRDLLSEFNVLKQVNHPHVIKLYGACSQDGPLLLIVEYAKYGSLRGFL
+RESRKVGPGYLGSGGSRNSSSLDHPDERALTMGDLISFAWQISQGMQYLAE
+MKLVHRDLAARNILVAEGRKMKISDFGLSRDVYEEDSYVKRPQGRIPVKWM
+AIESLFDHIPTTQSDVWSFGVLLWEIVTLGGNPYPGIPPERLFNLLKTGHR
+MERPDNCSEEMPRLMLQCWKQEPDKRPVFADISKDLEKMMVKRRDYLDLAA
+STPSDSLIYDDGLSEEETPLVDCNNAPLPRALPSTWIENKLYGMSDPNWPG
+ESPVPLTRADGTNTGFPRYPNDSVYANWMLSPSAAKLMDTFDS
+</code></pre></div>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 80c-8.8 0-16 7.2-16 16v320c0 8.8 7.2 16 16 16h320c8.8 0 16-7.2 16-16V173.3c0-4.2-1.7-8.3-4.7-11.3L320 86.6V176c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V80zm80 0v80h128V80zM0 96c0-35.3 28.7-64 64-64h242.7c17 0 33.3 6.7 45.3 18.7l77.3 77.3c12 12 18.7 28.3 18.7 45.3V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm160 224a64 64 0 1 1 128 0 64 64 0 1 1-128 0"></path></svg></span> You could save the mutant as “P07949_s909p_y928p_y981p.fasta” in your working directory: </p>
+<div class="highlight"><pre><span></span><code>./training-data-directory
+│───<span class="w"> </span>P07949.fasta
+│───<span class="w"> </span>P07949.90-similar.fasta
+│───<span class="w"> </span>P07949.90-similar.msa.fasta
+│───<span class="w"> </span>P07949.90-similar.msa.kinase.fasta
+└───<span class="w"> </span>P07949_s909p_y928p_y981p.fasta
+</code></pre></div>
+</details>
+<iframe src="https://molstar.org/stories-viewer/v1?story-id=6bde1abc&amp;data-format=mvsx" style="width:1280px; height:720px; border:none;" title="Mol* Stories Viewer" allow="autoplay"></iframe>
+
+<h3 id="531-explore-the-effect-of-mutations-biophysical-inference">5.3.1 Explore the effect of mutations (biophysical inference)</h3>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: Explore the effect of mutations (biophysical inference)</p>
+<p>For this activity open the Jupyter Lab or interactive app here: </p>
+<table>
+<thead>
+<tr>
+<th>Notebook (JupyterLab)</th>
+<th>Interactive app (Voilà)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?filepath=notebooks/Scop3P_b2b_mutation_effect_voila_app.ipynb"><img alt="Open Notebook" src="https://mybinder.org/badge_logo.svg"></a></td>
+<td><a href="https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?urlpath=voila/render/notebooks/Scop3P_b2b_mutation_effect_voila_app.ipynb"><img alt="Launch App" src="https://mybinder.org/badge_logo.svg"></a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ Chrome users: open the Notebook link first to authenticate, then launch the app.</p>
+</blockquote>
+<ol>
+<li>Predict the biophysical properties for the wild type</li>
+<li>Predict the biophysical properties for the mutant <code>S909P Y928P Y981P</code></li>
+</ol>
+<details class="success">
+<summary>Solution</summary>
+<ol>
+<li>The notebook requires the positions to mutate (comma-separated values) and the amino acids (comma-separated values).</li>
+<li>Predict the biophysical properties for the mutations</li>
+<li>Compare the biophysical properties between the wild type and mutant sequences.</li>
+<li>Infer the impact of mutations.</li>
+</ol>
+<p><figure>
+    <img src="../../assets/images/Biophysics.png" width="800" alt="Mass-spec picture goes here">
+    <figcaption> Biophysics changes </figcaption>
+</figure></p>
+</details>
+</div>
+<h3 id="532-explore-the-effect-of-mutations-structural-inference">5.3.2 Explore the effect of mutations (structural inference)</h3>
+<p>Regarding the coordinate files for the structures, the predicted model by AlphaFold can be accessed directly from the AlphaFold Protein Structure Database. </p>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: Downloading the experimental and predicted models</p>
+<ol>
+<li>Download the experimental structure 6NJA for the phosphorylated kinase in PDB format (<code>6nja.pdb</code>)</li>
+<li>Download the experimental structure 2IVS for the non-phosphorylated kinase in PDB format (<code>2ivs.pdb</code>)</li>
+<li>Download the predicted structure AF-P07949-F1 for the AlphaFold model in PDB format (<code>AF-P07949-F1.pdb</code>)</li>
+<li>For the mutant and phospho structures, you will predict them in the next activity using AlphaFold Server.</li>
+</ol>
+<details class="success">
+<summary>Solution</summary>
+<p><strong>For the experimental structure 6NJA:</strong></p>
+<ol>
+<li>Visit the entry for 6NJA on the European Protein Data Bank: <a href="https://www.ebi.ac.uk/pdbe/entry/pdb/6nja">https://www.ebi.ac.uk/pdbe/entry/pdb/6nja</a></li>
+<li>Click on “Download file” and select “PDB file”</li>
+</ol>
+<p><strong>For the experimental structure 2IVS:</strong></p>
+<ol>
+<li>Visit the entry for 2IVS on the European Protein Data Bank: <a href="https://www.ebi.ac.uk/pdbe/entry/pdb/2ivs">https://www.ebi.ac.uk/pdbe/entry/pdb/2ivs</a></li>
+<li>Click on “Download file” and select “PDB file”</li>
+</ol>
+<p><strong>For the predicted structure:</strong></p>
+<ol>
+<li>Visit the <a href="https://alphafold.ebi.ac.uk">AlphaFold Protein Structure Database</a> and query the canonical structure by UniProt ID.</li>
+<li>Download the structure in PDB format (<code>.pdb</code> extension) to your working environment.<ol>
+<li>The canonical predicted structure is available on <a href="https://alphafold.ebi.ac.uk/entry/AF-P07949-F1">https://alphafold.ebi.ac.uk/entry/AF-P07949-F1</a>.</li>
+</ol>
+</li>
+</ol>
+</details>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 80c-8.8 0-16 7.2-16 16v320c0 8.8 7.2 16 16 16h320c8.8 0 16-7.2 16-16V173.3c0-4.2-1.7-8.3-4.7-11.3L320 86.6V176c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V80zm80 0v80h128V80zM0 96c0-35.3 28.7-64 64-64h242.7c17 0 33.3 6.7 45.3 18.7l77.3 77.3c12 12 18.7 28.3 18.7 45.3V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm160 224a64 64 0 1 1 128 0 64 64 0 1 1-128 0"></path></svg></span> You should now have these files in your working directory: </p>
+<div class="highlight"><pre><span></span><code>./training-data-directory
+│───<span class="w"> </span>P07949.fasta
+│───<span class="w"> </span>P07949.90-similar.fasta
+│───<span class="w"> </span>P07949.90-similar.msa.fasta
+│───<span class="w"> </span>P07949.90-similar.msa.kinase.fasta
+│───<span class="w"> </span>P07949_s909p_y928p_y981p.fasta
+│───<span class="w"> </span>AF-P07949-F1-model_v6.pdb
+│───<span class="w"> </span>6nja.pdb<span class="w"> </span>
+└───<span class="w"> </span>2ivs.pdb
+</code></pre></div>
+</div>
+<p>The next step is to predict the variant structures using <a href="https://alphafoldserver.com">AlphaFold 3 server</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Google account required</p>
+<p>You must log in using a Google account to enqueue structural prediction jobs. By default, you can use your “@gmail.com” address.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: Predicting the variant structures using AlphaFold server</p>
+<ol>
+<li>Open the AlphaFold Server at <a href="https://alphafoldserver.com">https://alphafoldserver.com</a> and log in using your Google Account. By default you are entitled with 30 jobs. </li>
+<li>Add the sequence for <code>P07949_S909P_Y928P_Y981P</code> in the “Server” form with a single copy. <ol>
+<li>Continue and preview the job to submit it as “P07949_S909P_Y928P_Y981P”.</li>
+</ol>
+</li>
+<li>Add the wild type sequence for <code>P07949</code> in the “Server” form<ol>
+<li>Add a “Phosphoserine” modification on the position 909.</li>
+<li>Add a “O-Phospho-L-tyrosine” modification on the position 928.</li>
+<li>Add a “O-Phospho-L-tyrosine” modification on the position 981.</li>
+<li>Continue and preview the job to submit it as “P07949_modifications”.</li>
+</ol>
+</li>
+<li>Download the <code>model_0</code> files after they are predicted.</li>
+<li>Convert the mmCIF files to PDB format using the convert tool <a href="https://project-gemmi.github.io/wasm/convert/cif2pdb.html">“cif2pdb”</a>.</li>
+</ol>
+<details class="success">
+<summary>Solution</summary>
+<p><strong>Standard prediction:</strong></p>
+<p>The enqueued job will be listed in the jobs table below the “Continue and review job” blue button. Once the job is completed, you can click on the job row to open the results page.</p>
+<p>From the results page you can download the model files in ZIP format to your working environment including structures and their associated confidence values:</p>
+<ul>
+<li>Five .cif files named fold_<job_name><em>model</em><n>cif, where “<n>” is the rank of the predicted structure. Structures are ranked from 0 to 4, where 0 has the highest confidence. The .cif files contain predicted structures in the mmCIF format. They can be viewed in any molecular viewer like PyMOL or ChimeraX.</n></n></job_name></li>
+<li>Five .json files named fold_<job_name><em>summary_confidences</em><n>.json, where “<n>” is the rank of the predicted structure from 0 to 4. These .json files contain summaries of the confidence metrics for the predictions (see below for more details on confidence metrics).</n></n></job_name></li>
+<li>Five .json files named fold_<job_name><em>full_data</em><n>.json, where “<n>” is the rank of the predicted structure from 0 to 4. These .json files contain detailed confidence metrics, such as full PAE data, for the predictions (see below for more on confidence metrics).</n></n></job_name></li>
+<li>A file named fold_<job_name>_job_request.json. This contains the inputs of the modelling job and could be used to re-run the job (for more details, see Advanced use of AlphaFold Server).</job_name></li>
+<li>A file named terms_of_use.md. This is a legal document detailing the terms of use for the predictions. </li>
+</ul>
+<p>Select the model_0 mmCIF file (<code>.cif</code>) to work with the model that has the highest confidence.</p>
+<p><strong>Adding PTMs:</strong></p>
+<ol>
+<li>Click on the “…” button to show the contextual menu.</li>
+<li>Select “+ PTMS” to open the “Post-Translational Modifications”.</li>
+<li>Click on the position of interest to highlight it.</li>
+<li>Select from the list the type of modification</li>
+</ol>
+<p><figure>
+    <img src="../../assets/images/alphafold3_ptms.jpg" width="800" alt="Mass-spec picture goes here">
+    <figcaption> Biophysics changes </figcaption>
+</figure></p>
+</details>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 80c-8.8 0-16 7.2-16 16v320c0 8.8 7.2 16 16 16h320c8.8 0 16-7.2 16-16V173.3c0-4.2-1.7-8.3-4.7-11.3L320 86.6V176c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V80zm80 0v80h128V80zM0 96c0-35.3 28.7-64 64-64h242.7c17 0 33.3 6.7 45.3 18.7l77.3 77.3c12 12 18.7 28.3 18.7 45.3V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm160 224a64 64 0 1 1 128 0 64 64 0 1 1-128 0"></path></svg></span> You should now have these files in your working directory: </p>
+<div class="highlight"><pre><span></span><code>./training-data-directory
+│───<span class="w"> </span>P07949.fasta
+│───<span class="w"> </span>P07949.90-similar.fasta
+│───<span class="w"> </span>P07949.90-similar.msa.fasta
+│───<span class="w"> </span>P07949.90-similar.msa.kinase.fasta
+│───<span class="w"> </span>P07949_s909p_y928p_y981p.fasta
+│───<span class="w"> </span>AF-P07949-F1-model_v6.pdb<span class="w"> </span><span class="c1"># AlphaFold model for P07949 in PDB format</span>
+│───<span class="w"> </span>6nja.pdb<span class="w"> </span><span class="c1"># Experimental structure for 6NJA in PDB format</span>
+│───<span class="w"> </span>2ivs.pdb<span class="w"> </span><span class="c1"># Experimental structure for 2IVS in PDB format</span>
+│───<span class="w"> </span>fold_p07949_modifications_model_0.cif<span class="w"> </span><span class="c1"># AlphaFold server prediction for phospho</span>
+│───<span class="w"> </span>fold_p07949_modifications_model_0.pdb<span class="w"> </span><span class="c1"># AlphaFold server prediction for phospho</span>
+│───<span class="w"> </span>fold_p07949_s909p_y928p_y981p.cif<span class="w"> </span><span class="c1"># AlphaFold server prediction for mutations</span>
+└───<span class="w"> </span>fold_p07949_s909p_y928p_y981p.pdb<span class="w"> </span><span class="c1"># AlphaFold server prediction for mutations</span>
+</code></pre></div>
+</div>
+<p>Now the files are ready to be processed, let’s continue to the next activity.</p>
+<div class="admonition example">
+<p class="admonition-title">Hands-on: Structural inference</p>
+<p>For this activity open the Jupterlabl or interactive App here and go to Tab 6) TM-align:  </p>
+<table>
+<thead>
+<tr>
+<th>Notebook (JupyterLab)</th>
+<th>Interactive app (Voilà)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?filepath=notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb"><img alt="Open Notebook" src="https://mybinder.org/badge_logo.svg"></a></td>
+<td><a href="https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?urlpath=voila/render/notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb"><img alt="Launch App" src="https://mybinder.org/badge_logo.svg"></a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>Chrome users</strong>:<br>
+Please open the <em>Notebook (JupyterLab)</em> link first to authenticate,<br>
+then launch the <em>Interactive app (Voilà)</em>.</p>
+</blockquote>
+<ol>
+<li>Aligning and exploring protein structures<ol>
+<li>predicted vs experimental</li>
+<li>phospho vs non-phospho</li>
+<li>mutated vs wild type</li>
+</ol>
+</li>
+</ol>
+<details class="success">
+<summary>Solution</summary>
+<ol>
+<li>Predicted vs Experimental (phospho)<ol>
+<li>Use the unmodified Alphafold model (<code>AF-P07949-F1.pdb</code>) vs 6NJA experimental structure (<code>6nja.pdb</code>)</li>
+</ol>
+</li>
+<li>Experimental phospho vs experimental non-phospho<ol>
+<li>6NJA experimental structure vs 2IVS experimental structure (<code>2ivs.pdb</code>)</li>
+</ol>
+</li>
+<li>Predicted Wild type vs predicted mutated<ol>
+<li>Use the unmodified Alphafold model (<code>AF-P07949-F1.pdb</code>) vs the AlphaFold server mutated structure (<code>P07949_S909P_Y928P_Y981P.pdb</code>)</li>
+</ol>
+</li>
+<li>Predicted Wild type vs predicted phospo<ol>
+<li>Use the unmodified Alphafold model (<code>AF-P07949-F1.pdb</code>) vs the AlphaFold server phospho structure (<code>P07949_modifications.pdb</code>)</li>
+</ol>
+</li>
+</ol>
+</details>
+</div>
+<hr>
+<div class="admonition warning">
+<p class="admonition-title">☕️ COFFEE BREAK</p>
+<p>Time to grab a coffee or tea. We’ll be back in ten minutes… Please stay for the closing session (feedback much appreciated)</p>
+</div>
+<hr>
+<div class="admonition note">
+<p class="admonition-title">To conclude: : Go to chapter 5</p>
+<p><a href="/../../chapters/chapter_05">Next chapter</a> wraps up all the learnings and hands on activities.</p>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../chapter_04/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Working with post-translational modifications">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. Working with post-translational modifications
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapter_06/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. Closing">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                6. Closing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Template made by the ELIXIR Training Platform. Training content written by Pathmanaban Ramasamy and Adrián Díaz. This is a VIB Training. ELIXIR Belgium is a partner of this course.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
