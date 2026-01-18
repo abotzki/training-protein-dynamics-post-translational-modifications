@@ -9,7 +9,7 @@ This activity gives an overview of exploring PTMs, mutations, biophysical proper
 
 !!! example "Hands-on: Structural and biophysical interpretation of PTMs and mutations"
     
-    For this activity open the interactive notebook here [![Launch App](https://mybinder.org/badge_logo.svg)](https://hub.compomics.com/user/bio2byte-scop3p-notebooks-09tor0ec/voila/render/notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb)
+    For this activity open the interactive notebook here: [![Launch App](https://mybinder.org/badge_logo.svg)](https://hub.compomics.com/user/bio2byte-scop3p-notebooks-09tor0ec/voila/render/notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb)
 
 
     
@@ -35,8 +35,10 @@ This activity gives an overview of exploring PTMs, mutations, biophysical proper
 
     For this activity open these interactive notebooks: 
     
-    1. `Peptide mapper.ipynb`: To fetch phospho peptides from Scop3P and map onto protein structures.
-    1. `Peptide_maper_fileupload.ipynb`: To upload your own data (Peptide table) and visualize the peptides and modifications on protein structures.
+    1. To fetch phospho peptides from Scop3P and map onto protein structures click here: [![Launch App](https://mybinder.org/badge_logo.svg)](https://hub.compomics.com/user/bio2byte-scop3p-notebooks-09tor0ec/voila/render/notebooks/Peptide_mapper_scop3p_voila.ipynb)
+
+    1. To upload your own data (Peptide table) and visualize the peptides and modifications on protein structures click here: [![Launch App](https://mybinder.org/badge_logo.svg)](https://hub.compomics.com/user/bio2byte-scop3p-notebooks-09tor0ec/voila/render/notebooks/Peptide_mapper_fileupload_voila.ipynb)
+
     
     ??? success "Solution for Peptide mapper.ipynb"
         
@@ -87,7 +89,7 @@ This activity gives an overview of exploring PTMs, mutations, biophysical proper
 
 ## 5.3 Comparative biophysical analysis of wild-type and variant states
 
-For this activity will mutate three positions of P07949:
+For this activity we will mutate three positions of P07949:
 
 1. Mutate the position 909: `S909P`
     * Wild: Serine (**SER**, **S**)
@@ -144,7 +146,9 @@ For this activity will mutate three positions of P07949:
 ### 5.3.1 Explore the effect of mutations (biophysical inference)
         
 !!! example "Hands-on: Explore the effect of mutations (biophysical inference)"
-    For this activity open the interactive notebook `Scop3P_b2b_mutation_effect.ipynb`:
+    
+    For this activity open the interactive app here:  [![Launch App](https://mybinder.org/badge_logo.svg)](https://hub.compomics.com/user/bio2byte-scop3p-notebooks-09tor0ec/voila/render/notebooks/Scop3P_b2b_mutation_effect_voila_app.ipynb)
+
     
     1. Predict the biophysical properties for the wild type
     1. Predict the biophysical properties for the mutant `S909P Y928P Y981P`
@@ -272,7 +276,7 @@ Now the files are ready to be processed, let's continue to the next activity.
  
 !!! example "Hands-on: Structural inference"
     
-    For this activity open the interactive notebook `Scop3P_PTM_structure_viz.ipynb` (TM-align tab):
+    For this activity open the interactive App here and go to Tab 6) TM-align:  [![Launch App](https://mybinder.org/badge_logo.svg)](https://hub.compomics.com/user/bio2byte-scop3p-notebooks-09tor0ec/voila/render/notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb) 
 
     1. Aligning and exploring protein structures
         1. predicted vs experimental
