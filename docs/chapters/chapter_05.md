@@ -9,7 +9,9 @@ This activity gives an overview of exploring PTMs, mutations, biophysical proper
 
 !!! example "Hands-on: Structural and biophysical interpretation of PTMs and mutations"
     
-    For this activity open the interactive notebook `Scop3P_PTM_structure_viz.ipynb`:
+    For this activity open the interactive notebook here [![Launch Binder](https://mybinder.org/badge_logo.svg)](
+    https://hub.compomics.com/user/bio2byte-scop3p-notebooks-09tor0ec/lab/workspaces/auto-l/tree/notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb
+    )
     
     1. Fetch PTMs from Scop3P REST API
     1. Fetch diseases variants from UniProt REST API
@@ -33,8 +35,8 @@ This activity gives an overview of exploring PTMs, mutations, biophysical proper
 
     For this activity open these interactive notebooks: 
     
-    1. `Peptide mapper.ipynb`: Fetch phospho peptides from Scop3P and map onto protein structures.
-    1. `Peptide_maper_fileupload.ipynb`: Upload your own data (Peptide table) and visualize the peptides and modifications on protein structures.
+    1. `Peptide mapper.ipynb`: To fetch phospho peptides from Scop3P and map onto protein structures.
+    1. `Peptide_maper_fileupload.ipynb`: To upload your own data (Peptide table) and visualize the peptides and modifications on protein structures.
     
     ??? success "Solution for Peptide mapper.ipynb"
         
