@@ -10,10 +10,10 @@ This activity gives an overview of exploring PTMs, mutations, biophysical proper
 !!! example "Hands-on: Structural and biophysical interpretation of PTMs and mutations"
     
     For this activity open the interactive notebook here: 
-
+    
     | Notebook (JupyterLab) | Interactive app (Voilà) |
     |----------------------|--------------------------|
-    | [![Open Notebook](https://img.shields.io/badge/Open-JupyterLab-orange?logo=jupyter)](https://hub.compomics.com/user/bio2byte-scop3p-notebooks-09tor0ec/lab/tree/notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb) | [![Launch App](https://mybinder.org/badge_logo.svg)](https://hub.compomics.com/user/bio2byte-scop3p-notebooks-09tor0ec/voila/render/notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb) |
+    | [![Open Notebook](https://mybinder.org/badge_logo.svg)](https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?filepath=notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb) | [![Launch App](https://mybinder.org/badge_logo.svg)](https://binder.compomics.com/v2/gh/Bio2Byte/Scop3P-notebooks/HEAD?urlpath=voila/render/notebooks/Scop3P_PTM_structure_viz_voila_app.ipynb) |
 
     > ⚠️ **Chrome users**:  
     > Please open the *Notebook (JupyterLab)* link first to authenticate,  
