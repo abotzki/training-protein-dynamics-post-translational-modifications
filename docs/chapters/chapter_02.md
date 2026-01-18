@@ -52,12 +52,12 @@ This protein has a sequence length of 1114 amino acids. It can be found in UniPr
         STPSDSLIYDDGLSEEETPLVDCNNAPLPRALPSTWIENKLYGMSDPNWPGESPVPLTRA
         DGTNTGFPRYPNDSVYANWMLSPSAAKLMDTFDS
         ```
-        
-!!! notes "Crystal structure 2IVS"
-    
-    ??? success 'View 2IVS'
 
-        Representation of the crystal structure using Mol*:
+!!! notes "Crystal structure 2IVS"
+
+    Representation of the crystal structure using Mol*:
+
+    ??? success "View 2IVS"
 
         <iframe src="https://molstar.org/viewer/?pdb=2IVS&&hide-controls=1" height="600" width="100%" title="Protein Data Bank in Europe Knowledge Base - Entry 2IVS"></iframe>
 
