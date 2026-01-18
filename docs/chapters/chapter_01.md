@@ -17,21 +17,22 @@ The protein of interest for this training is the human **proto-oncogene tyrosine
 
 !!! success "Training material: Jupyter notebooks"
 
-    Use the following link to launch the JupyterLab environment for this training:
-[Launch JupyterLab](https://hub.compomics.com/user/bio2byte-scop3p-notebooks-euer21uw/lab/workspaces/auto-6/tree/notebooks)
 
+    Use the following link to launch the JupyterLab environment for this training:
+
+    [Launch JupyterLab](https://hub.compomics.com/user/bio2byte-scop3p-notebooks-euer21uw/lab/workspaces/auto-6/tree/notebooks)
 
     The environment may take a few minutes to build and start. Please open the link now so that it is ready when needed later in the training.
-    
-    ??? notes "User-interface example"
-        
-        This is how the interface will look like:
-        
-        <figure>
-            <img src="../../assets/images/platform.jpg" width="600" alt="ELIXIR Belgium"/>
-            <figcaption>Jupyter lab interface.</figcaption>
-        </figure>
-        
+
+??? notes "User-interface example"
+
+    This is how the interface will look like:
+
+    <figure>
+        <img src="../../assets/images/platform.jpg" width="600" alt="ELIXIR Belgium"/>
+        <figcaption>JupyterLab interface.</figcaption>
+    </figure>
+
         
 
 ## 1.2 ELIXIR Belgium node services used in this training
