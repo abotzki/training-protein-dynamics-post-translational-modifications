@@ -5,8 +5,8 @@ http://purl.org/dc/terms/conformsTo:
   "@type": CreativeWork
   "@id": https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE
 description: The Bio2Byte Tools, published as B2BTools, is a suite of sequence-based predictors for unveiling the biophysical properties hidden in the amino acid language with ease: backbone dynamics, early folding events, disordered positions among other features. Developed by the lab led by Prof. Dr. Wim Vranken, this online platform is part of the ELIXIR Belgium node services. In parallel to this suite of tools, Scop3P, another ELIXIR Belgium node service, will allow you to explore and understand the impact of phospho-sites on human protein structure and function. It can serve as a springboard for researchers seeking to analyse and interpret a given phosphorylation site or phosphoprotein in a structural, biophysical, and biological context.
-keywords: B2BTools, post-translational modifications, Bioinformatics, Alphafold 
-name: ELIXIR Training Lesson template
+keywords: B2BTools, post-translational modifications, Bioinformatics, Alphafold
+name: Assess protein dynamics & post-translational modifications
 # lookup at https://spdx.org/licenses/
 license: CC-BY-4.0
 author:
