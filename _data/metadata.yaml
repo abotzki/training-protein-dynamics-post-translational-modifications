@@ -1,21 +1,20 @@
 "@context": https://schema.org/
 "@type": LearningResource
-"@id": https://elixir-europe-training.github.io/ELIXIR-TrP-LessonTemplate-MkDocs/
+"@id": https://bio2byte.github.io/training-protein-dynamics-post-translational-modifications/
 http://purl.org/dc/terms/conformsTo:
   "@type": CreativeWork
   "@id": https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE
-description: Template for ELIXIR lessons
-keywords: FAIR, OPEN, Bioinformatics, Teaching
+description: The Bio2Byte Tools, published as B2BTools, is a suite of sequence-based predictors for unveiling the biophysical properties hidden in the amino acid language with ease: backbone dynamics, early folding events, disordered positions among other features. Developed by the lab led by Prof. Dr. Wim Vranken, this online platform is part of the ELIXIR Belgium node services. In parallel to this suite of tools, Scop3P, another ELIXIR Belgium node service, will allow you to explore and understand the impact of phospho-sites on human protein structure and function. It can serve as a springboard for researchers seeking to analyse and interpret a given phosphorylation site or phosphoprotein in a structural, biophysical, and biological context.
+keywords: B2BTools, post-translational modifications, Bioinformatics, Alphafold 
 name: ELIXIR Training Lesson template
 # lookup at https://spdx.org/licenses/
 license: CC-BY-4.0
 author:
 - "@type": Person
-  name: Geert van Geest
-  email: geert.vangeest@sib.swiss
-  github: GeertvanGeest
-  orcid: 0000-0002-1561-078X
+  name: Adrián Díaz
+  github: agdiaz
+  orcid: 0000-0003-0165-1318
 - "@type": Person
-  name: Elin Kronander
-  github: elinkronander
-  orcid: 0000-0003-0280-6318
+  name:  Pathmanaban Ramasamy
+  github: pathmanaban
+  orcid: 0000-0003-4039-5230
