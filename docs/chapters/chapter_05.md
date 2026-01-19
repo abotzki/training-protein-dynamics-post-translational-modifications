@@ -240,7 +240,7 @@ Regarding the coordinate files for the structures, the predicted model by AlphaF
 The next step is to predict the variant structures using [AlphaFold 3 server](https://alphafoldserver.com).
 
 !!! warning "Google account required"
-    You must log in using a Google account to enqueue structural prediction jobs. By default, you can use your "@gmail.com" address.
+    You must log in using a Google account to enqueue structural prediction jobs. By default, you can use your `@gmail.com` address.
 
 !!! example "Hands-on: Predicting the variant structures using AlphaFold server"
 

@@ -339,7 +339,7 @@ The next step is to focus the analysis on the kinase domain positions across all
 
 !!! warning "Attention: Google Account required"
     
-    You must log in using a Google account to run the code in this notebook. By default, you can use your "@gmail.com" address.
+    You must log in using a Google account to run the code in this notebook. By default, you can use your `@gmail.com` address.
 
 !!! example "Hands-on: Extracting the aligned domain from the MSA"
 
